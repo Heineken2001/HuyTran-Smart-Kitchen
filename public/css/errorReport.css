@@ -1,0 +1,28 @@
+.report__body {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.error__title {
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: bold;
+    /* text-shadow: 1px 1px 4px rgb(26, 25, 25);
+     */
+     text-shadow: 0px 3px 0px #ffdd40, 0px 14px 10px rgba(0, 0, 0, 0.15),
+		0px 24px 2px rgba(0, 0, 0, 0.1), 0px 24px 30px rgba(0, 0, 0, 0.1);
+}
+
+.error__content {
+    width: 100%;
+    min-height: 400px;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    margin: 20px 20px 20px 20px;
+    font-size: 1.2rem;
+}
+
+.charkbtn {
+    position: relative;
+    margin-top: -20px;
+}
