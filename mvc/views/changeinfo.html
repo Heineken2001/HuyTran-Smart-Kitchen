@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/grid.css">
+    <link rel="stylesheet" href="../../public/css/app.css">
+    <title>Login</title>
+    <style>
+        /* @media (min-width: 1024px) and (max-width: 1239px) {
+            .login__header {
+                display: flex;
+            }
+        } */
+
+        @media (max-width:739px) {
+            .login__header__nav {
+                display: none;
+            }
+            .login__header__brand {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid wide container">
+        <div class="row">
+            <div class="col l-3 m-3 c-12 login__header">
+                <h1 class="login__header__brand">SmartKitchen</h1>
+            </div>
+            <div class="col l-3 m-3 c-0">
+                <ul class="login__header__nav">
+                    <li class="login__header__nav__list">Home</li>
+                    <li class="login__header__nav__list">Register</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row account__manage__body">
+            <div style="width: 100%; text-align:center; font-size: 30px; font-weight: 600; margin: 16px;">Change Infomation</div>
+            <div class="grid" style="display: flex; flex-direction: column; ">
+                <div class="row">
+                    <div class="col l-4 m-4 c-12 account__avatar">
+                        <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png" alt="" class="account__image">
+                    </div>
+                    <div class="col l-8 m-8 c-12" style="background-color:rgba(201,208,215,0.6); background-clip:content-box; padding:0 32px 0 32px;">
+                        <div class="account__info">Location:</div>
+                        <div class="account__info">Old Password:</div>
+                        <div class="account__info">New Password:</div>
+                        <div class="account__info">Confirm Password:</div>
+                    </div>
+                </div>
+                <button class="btn5-hover btn5 change__info__btn">Change Infomation</Button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+body {
+    /* margin-bottom: 32px; */
+    min-height: 100vh;
+    background-image: url('../images/kitchen.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 32px;
+}
+
+.login__header__brand {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+}
+
+.login__header {
+    display: flex;
+    align-items: center;
+}
+
+.login__header__nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-left: 32px;
+    height: 100%;
+}
+
+.login__header__nav__list + .login__header__nav__list {
+    margin-left: 32px;
+}
+
+.margintopbig {
+    margin-top: 60px;
+}
+
+.margintopnormal {
+    margin-top: 25px;
+}
+
+.login__submitbtn {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #3e4ebf;
+    border: none;
+    border-radius: 20px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #3e4ebf, #3e4ebf);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #3e4ebf;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+.btn5-hover {
+    width: 140px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 50px;
+    height: 40px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn5-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    color:#3e4ebf;
+}
+
+.btn5-hover:focus {
+    outline: none;
+}
+
+.btn5-hover.btn5 {
+    background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+    );
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.room__status__body {
+    margin-top: 100px;
+}
+
+.room__status__body__list {
+    min-height: 400px;
+    position: relative;
+    background-color: rgba(255,255,255,0.4);
+    background-clip: content-box;
+    margin-top: 16px;
+}
+
+.room__status__body__list__title {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(0,0,0,0.6);
+    background-clip: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.charkbtn {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.account__manage__body {
+    margin-top: 100px;
+    min-height: 600px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.change__info__btn {
+    width: 150px;
+    margin: 32px auto;
+}
+
+.account__image {
+    border-radius: 500px;
+    width: 60%;
+}
+
+.account__info {
+    margin: 16px;
+    font-size: 15px;
+    padding: 16px;
+    font-weight: 600;
+    min-width: 200px;
+}
+
+.account__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1113px) {
+    .account__image {
+        width: 80%;
+    }
+    .account__avatar {
+        margin-bottom: 32px;
+    }
+}

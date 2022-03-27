@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/grid.css">
+    <link rel="stylesheet" href="../../public/css/app.css">
+    <title>Login</title>
+    <style>
+        /* @media (min-width: 1024px) and (max-width: 1239px) {
+            .login__header {
+                display: flex;
+            }
+        } */
+
+        @media (max-width:739px) {
+            .login__header__nav {
+                display: none;
+            }
+            .login__header__brand {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid wide container">
+        <div class="row">
+            <div class="col l-3 m-3 c-12 login__header">
+                <h1 class="login__header__brand">SmartKitchen</h1>
+            </div>
+            <div class="col l-3 m-3 c-0">
+                <ul class="login__header__nav">
+                    <li class="login__header__nav__list">Home</li>
+                    <li class="login__header__nav__list">Register</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row room__status__body">
+            <div class="grid">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-12 room__status__body__list">
+                        <div class="room__status__body__list__title">Room Status</div>
+                        <div class="charkbtn">
+                            <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4 c-12 room__status__body__list">
+                        <div class="room__status__body__list__title">Gas</div>
+                        <div class="charkbtn">
+                            <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4 c-12 room__status__body__list">
+                        <div class="room__status__body__list__title">Humidity</div>
+                        <div class="charkbtn">
+                            <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4 c-12 room__status__body__list">
+                        <div class="room__status__body__list__title">Temperature</div>
+                        <div class="charkbtn">
+                            <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        </div>
+                    </div>
+                    <div class="col l-2-4 m-4 c-12 room__status__body__list">
+                        <div class="room__status__body__list__title">Light</div>
+                        <div class="charkbtn">
+                            <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
