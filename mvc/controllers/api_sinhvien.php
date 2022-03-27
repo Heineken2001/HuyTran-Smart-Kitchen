@@ -2,7 +2,7 @@
 class api_sinhvien extends controller{
     public function danhsach()
     {
-        $danhsach = $this->model("sinhvienModel");
+        //$danhsach = $this->model("sinhvienModel");
 
         
     }

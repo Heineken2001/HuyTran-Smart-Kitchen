@@ -1,13 +1,8 @@
 <?php
     class Controller {
-        public function model($model)
-        {
-            require_once "./mvc/models/".$model.".php";
-            return new $model;
-        }
-        public function view($view, $data=[])
-        {
-            require_once "./mvc/views/".$view.".php";
+        protected $load = array();
 
+        public function __construct() {
+            $this->load = new Load();
         }
     }
