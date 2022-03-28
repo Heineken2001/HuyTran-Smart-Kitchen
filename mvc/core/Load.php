@@ -10,6 +10,9 @@ class Load {
     }
 
     public function view($view, $data = null) {
+        if (isset($data)) {
+            extract($data);
+        }
         include_once "./mvc/views/".$view.".php";
     }
 }

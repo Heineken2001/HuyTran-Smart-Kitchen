@@ -2,7 +2,7 @@
 
 <p>Category: </p>
     <?php
-    foreach($data['category'] as $key => $value) {
+    foreach($category as $key => $value) {
         echo $value['name'].'<br/>';
     }
     ?>
