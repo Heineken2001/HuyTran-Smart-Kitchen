@@ -3,6 +3,7 @@
         include_once './mvc/core/'.$class.'.php';
     });
     include_once './mvc/config/config.php';
+    include './mvc/api/api.php';
     // require_once './mvc/core/app.php';
     // require_once './mvc/core/controller.php';
     // //require_once './mvc/core/db.php';
