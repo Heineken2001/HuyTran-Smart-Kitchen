@@ -4,6 +4,13 @@
             <div class="row">
                 <div class="col l-2-4 m-4 c-12 room__status__body__list">
                     <div class="room__status__body__list__title">Room Status</div>
+                    <h1>
+                        <?php 
+                            if ($data['light_now']) {
+                                echo "Có người";
+                            }; 
+                        ?>
+                    </h1>
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>

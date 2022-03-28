@@ -12,15 +12,23 @@
         public function homepage() {
             $json_light_url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data";
             $json_light = file_get_contents($json_light_url);
+            $light_result = json_decode($json_light);
+            // ---------------------------
 
-            $result = json_decode($json_light);
 
+
+            // Header
             $this->load->view('components/header');
 
+
+            // Body
             $this->load->view('home', [
-                "light_now" => $result[0]->value,
+                "light_now" => $light_result[0]->value,
+                
             ]);
 
+
+            // Footer
             $this->load->view('components/footer');
 
 
