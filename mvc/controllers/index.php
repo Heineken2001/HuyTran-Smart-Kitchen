@@ -10,12 +10,24 @@
         }
 
         public function homepage() {
-            $tbl = 'product';
+            $json_light_url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data";
+            $json_light = file_get_contents($json_light_url);
+
+            $result = json_decode($json_light);
+
             $this->load->view('components/header');
-            $homemodel = $this->load->model('homemodel');
-            $data['category'] = $homemodel->category($tbl);
-            $this->load->view('home', $data);
+
+            $this->load->view('home', [
+                "light_now" => $result[0]->value,
+            ]);
+
             $this->load->view('components/footer');
+
+
+            // foreach ($result as $key => $val) {
+            //     echo $val -> value; echo "\n";
+            // } 
+ 
         }
         
         public function notfound() {
