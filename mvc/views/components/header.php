@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="../../../public/css/grid.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/app.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/grid.css">
     <title>Login</title>
     <style>
         /* @media (min-width: 1024px) and (max-width: 1239px) {
