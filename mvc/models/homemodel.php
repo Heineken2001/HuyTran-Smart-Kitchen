@@ -11,4 +11,8 @@ class homemodel extends Model {
         // return $result;
         return $this->db->select($table);
     }
+
+    public function insertdata($table, $data) {
+        return $this->db->insert($table, $data);
+    }
 }

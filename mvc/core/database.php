@@ -10,4 +10,17 @@
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
         }
+
+        public function insert($table, $data) {
+            $keys = implode(",", array_keys($data));
+            $values = ":".implode(", :", array_keys($data));
+            $sql = "INSERT INTO $table($keys) VALUES($values)";
+            $statement = $this->prepare($sql);
+
+            foreach ($data as $key => $value) {
+                $statement->bindParam(":$keys",$value);
+            }
+
+            return $statement->execute();
+        }
     }
