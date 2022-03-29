@@ -125,8 +125,25 @@ class Api {
         //         "DevID" => 2
         //     );
         // }
-
         return $result;
+    }
+
+    public function getGasNow()
+    {
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );  
+        $response = file_get_contents("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-sensor/data/", false, stream_context_create($arrContextOptions));
+
+        $result = json_decode($response); 
+
+        $gas_now = $result[0]->value;
+
+        return $gas_now;
+
     }
 
 }

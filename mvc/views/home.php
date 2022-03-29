@@ -6,9 +6,7 @@
                     <div class="room__status__body__list__title">Room Status</div>
                     <h1>
                         <?php 
-                            if ($data['light_now']) {
-                                echo "Có người";
-                            }; 
+                            echo $gas_now;
                         ?>
                     </h1>
                     <div class="charkbtn">
@@ -37,6 +35,12 @@
                     <div class="room__status__body__list__title">Light</div>
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                    </div>
+                </div>
+
+                <div class="col l-12 m-12 c-12">
+                    <div class="charkbtn">
+                        <a href="<?php echo BASE_URL ?>/record/update"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
             </div>

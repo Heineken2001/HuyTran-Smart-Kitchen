@@ -1,17 +1,12 @@
 <?php
-    class index extends Controller {
+    class record extends Controller {
         public function __construct() {
             $data = array();
             parent::__construct();
         }
-
-        public function index() {
-            return $this->homepage();
-        }
-
-        public function homepage() {
+        public function update()
+        {
             $tbl_records = 'records';
-            $this->load->view('components/header');
             $homemodel = $this->load->model('homemodel');
             // $dev = $homemodel->getdevice('device');
             // print_r($dev);
@@ -78,16 +73,6 @@
                 $res = $homemodel->insertdata($tbl_records, $gas);
             }
 
-            $data['records'] = $homemodel->getdata('records');
-
-            $data['gas_now'] = $this->api->getGasNow();
-
-            $this->load->view('home', $data);
-            $this->load->view('components/footer');
-        }
-        
-        public function notfound() {
-            echo '404 Not Found';
         }
     }
 ?>
