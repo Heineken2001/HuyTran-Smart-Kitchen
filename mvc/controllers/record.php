@@ -73,6 +73,7 @@
                 $res = $homemodel->insertdata($tbl_records, $gas);
             }
 
+            header('Location: ' .BASE_URL );
         }
     }
 ?>
