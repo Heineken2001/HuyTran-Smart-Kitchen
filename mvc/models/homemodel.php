@@ -4,7 +4,7 @@ class homemodel extends Model {
         parent::__construct();
     }
 
-    public function category($table) {
+    public function getdevice($table) {
         // $sql = 'SELECT * FROM product ORDER BY ID DESC';
         // $query = $this->db->query($sql);
         // $result = $query->fetchAll();

@@ -13,7 +13,12 @@
             $tbl_records = 'records';
             $this->load->view('components/header');
             $homemodel = $this->load->model('homemodel');
+<<<<<<< Updated upstream
             
+=======
+            // $dev = $homemodel->getdevice('device');
+            // print_r($dev);
+>>>>>>> Stashed changes
             $data = $this->api->light();
             foreach ($data as $key => $value) {
                 $light = array(
