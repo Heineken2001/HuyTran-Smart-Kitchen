@@ -29,6 +29,8 @@
     </style>
 </head>
 <body>
+    <div class="background">
+    </div>
     <div class="grid wide container">
         <div class="row">
             <div class="col l-3 m-3 c-12 login__header">
