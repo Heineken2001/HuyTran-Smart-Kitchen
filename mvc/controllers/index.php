@@ -13,7 +13,8 @@
             $tbl_records = 'records';
             $this->load->view('components/header');
             $homemodel = $this->load->model('homemodel');
-            
+            // $dev = $homemodel->getdevice('device');
+            // print_r($dev);
             $data = $this->api->light();
             foreach ($data as $key => $value) {
                 $light = array(
@@ -64,18 +65,20 @@
                 $res = $homemodel->insertdata($tbl_records, $infrared);
             }
 
-            $this->load->view('home');
-            $this->load->view('components/footer');
-
+            
             $data5 = $this->api->gas();
             foreach ($data5 as $key => $value) {
                 $gas = array(
-                            "DATAS" => $value->value,
-                            "TIMES" => $value->created_at,
-                            "DevID" => 7
-                        );
+                    "DATAS" => $value->value,
+                    "TIMES" => $value->created_at,
+                    "DevID" => 7
+                );
                 $res = $homemodel->insertdata($tbl_records, $gas);
             }
+
+            $data['records'] = $homemodel->getdata('records');
+            $this->load->view('home', $data);
+            $this->load->view('components/footer');
         }
         
         public function notfound() {

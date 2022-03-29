@@ -5,7 +5,7 @@
         }
 
         public function select($tbl, $fetchStyle = PDO::FETCH_ASSOC) {
-            $sql = "SELECT * FROM $tbl ORDER BY ID DESC";
+            $sql = "SELECT * FROM $tbl ORDER BY DevID DESC";
             $statement = $this->prepare($sql);
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
