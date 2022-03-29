@@ -4,21 +4,22 @@
             parent::__construct($connect, $user, $pass);
         }
 
-        public function select($table, $fetchStyle = PDO::FETCH_ASSOC) {
-            $sql = "SELECT * FROM $table ORDER BY ID DESC";
+        public function select($tbl, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT * FROM $tbl ORDER BY ID DESC";
             $statement = $this->prepare($sql);
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
         }
 
-        public function insert($table, $data) {
+        public function insert($tbl, $data) {
             $keys = implode(",", array_keys($data));
             $values = ":".implode(", :", array_keys($data));
-            $sql = "INSERT INTO $table($keys) VALUES($values)";
+            $sql = "INSERT INTO $tbl($keys) VALUES($values)";
+            // $sql = "INSERT INTO records($keys) VALUES($values)";
             $statement = $this->prepare($sql);
 
             foreach ($data as $key => $value) {
-                $statement->bindParam(":$keys",$value);
+                $statement->bindValue(":$key",$value);
             }
 
             return $statement->execute();

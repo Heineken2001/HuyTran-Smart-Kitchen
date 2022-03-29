@@ -10,11 +10,20 @@
         }
 
         public function homepage() {
-            $tbl = 'product';
+            $tbl_records = 'records';
             $this->load->view('components/header');
             $homemodel = $this->load->model('homemodel');
-            $data['category'] = $homemodel->category($tbl);
-            $this->load->view('home', $data);
+           
+            $data = $this->api->light();
+            foreach ($data as $key => $value) {
+                $light = array(
+                            "DATAS" => $value->value,
+                            "TIMES" => $value->created_at,
+                            "DevID" => 2
+                        );
+                $res = $homemodel->insertdata($tbl_records, $light);
+            }
+            $this->load->view('home');
             $this->load->view('components/footer');
         }
         
