@@ -1,5 +1,5 @@
 <?php
-    class lightswitch extends Controller {
+    class buzzerswitch extends Controller {
         public function __construct() {
             $data = array();
             parent::__construct();
@@ -7,23 +7,23 @@
 
         public function switch()
         {
-            $datalight = 0;
+            $databuzzer = 3;
             if (isset($_POST)) {
                 if (!empty($_POST)) {
-                    $datalight = $_POST['light_switch1'];
+                    $databuzzer = $_POST['buzzer_switch1'];
                 }
             }
 
-            echo $datalight;
+            echo $databuzzer;
             
             $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data";
+            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-buzzer/data";
             
 
             $data_array = array(
                 
-                "value"=>$datalight
+                "value"=>$databuzzer,
                 
             );
 

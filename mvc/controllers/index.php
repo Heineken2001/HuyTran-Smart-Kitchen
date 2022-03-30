@@ -70,6 +70,8 @@
 
             $data['light_now'] = $this->api->getLightNow();
 
+            $data['buzzer_now'] = $this->api->getBuzzerNow();
+
             $this->load->view('home', $data);
             $this->load->view('components/footer');
         }
