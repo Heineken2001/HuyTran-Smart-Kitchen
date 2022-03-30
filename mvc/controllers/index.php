@@ -21,6 +21,8 @@
 
             $data['gas_now'] = $this->api->getGasNow();
 
+            $data['light_now'] = $this->api->getLightNow();
+
             $this->load->view('home', $data);
             $this->load->view('components/footer');
         }
