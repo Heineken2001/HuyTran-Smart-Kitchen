@@ -59,7 +59,8 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px; ">
                     <div class="room__status__body__list__title">Light</div>
-                    <img id="lightonoff" src="https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade" alt="light_off" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 30%">
+                    <!-- <img id="lightonoff" src="https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade" alt="light_off" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 30%"> -->
+                    <img id="lightonoff" src="https://cdn-icons-png.flaticon.com/512/3176/3176298.png" alt="light_onoff" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 30%">
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-light-form'>
                         <label class="switch" style="display: block; margin: auto; margin-top: 10%">
                             <input name='light_switch1' value="" <?php if ($light_now == 1) {echo 'checked';} ?> type="checkbox" id='checked_light'>
@@ -124,11 +125,13 @@
         isLightChecked = checkedLight.prop('checked')
         if (isLightChecked) {
             checkedLight.val('1')
-            lightonoff.src = "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
+            lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176298.png"
+            // "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
         }
         else {
             checkedLight.val('0')
-            lightonoff.src = "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
+            lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176276.png"
+            // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
         }
         isBuzzerChecked = checkBuzzer.prop('checked')
         if (isBuzzerChecked) {
@@ -142,13 +145,15 @@
         checkedLight.change(function() {
             if (checkedLight.val() == '1') {
                 checkedLight.val('0')
-                lightonoff.src = "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
+                lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176276.png"
+                // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
                 myLightForm.submit()
                 return
             }
             else {
                 checkedLight.val('1')
-                lightonoff.src = "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
+                lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176298.png"
+                // "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
                 myLightForm.submit()
             }
         })
