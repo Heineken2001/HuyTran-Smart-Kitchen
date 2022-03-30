@@ -16,7 +16,7 @@
                             ?>
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center;" >
-                            <div class="container_alert chart" data-size="200" data-value="79" data-arrow="up">
+                            <div class="container_alert chart" data-size="200" data-value="<?php echo ($gas_now/1023*100); ?>" data-arrow="up">
                             </div>
                         </div>
                         <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
@@ -36,7 +36,7 @@
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
-                <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
+                <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px; ">
                     <div class="room__status__body__list__title">Light</div>
 
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-form'>
