@@ -15,22 +15,24 @@
                             </h5>
                             
                         </h1>
-                        <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center;" >
+                        <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
                             <div class="container_alert chart" data-size="200" data-value="<?php echo ($gas_now/1023*100); ?>" data-arrow="up">
                             </div>
                         </div>
                     <!-- </div> -->
 
-                    <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form'>
-                        <label class="switch">
+                    <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
+                    <!-- <h5>Buzzer:</h5> -->
+                    <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
+                    <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
+                        <label class="switch" style="float: right;">
                             <input name='buzzer_switch1' value="" <?php if ($buzzer_now == 2) {echo 'checked';} ?> type="checkbox" id='checked_buzzer'>
                             <span class="slider round"></span>
                         </label>
+                        
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
                     </form>
-
-
-                    <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
+                    
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
@@ -109,6 +111,7 @@
         var myBuzzerForm = $('#my-buzzer-form')
 
         var lightonoff = document.getElementById('lightonoff')
+        var buzzeronoff = document.getElementById('buzzeronoff')
 
         isLightChecked = checkedLight.prop('checked')
         if (isLightChecked) {
@@ -120,9 +123,14 @@
             lightonoff.src = "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
         }
         isBuzzerChecked = checkBuzzer.prop('checked')
-        if (isBuzzerChecked) checkBuzzer.val('2')
-        else checkBuzzer.val('3')
-
+        if (isBuzzerChecked) {
+            checkBuzzer.val('2')
+            buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
+        }
+        else {
+            checkBuzzer.val('3')
+            buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
+        }
         checkedLight.change(function() {
             if (checkedLight.val() == '1') {
                 checkedLight.val('0')
@@ -140,11 +148,13 @@
         checkBuzzer.change(function() {
             if (checkBuzzer.val() == '2') {
                 checkBuzzer.val('3')
+                buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
                 myBuzzerForm.submit()
                 return
             }
             else {
                 checkBuzzer.val('2')
+                buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
                 myBuzzerForm.submit()
             }
         })
