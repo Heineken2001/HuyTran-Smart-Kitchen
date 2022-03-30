@@ -5,7 +5,7 @@
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Room Status</div>
                     <div class="charkbtn">
-                        <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="#"><button class="btn5-hover btn5">Summary Report</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
