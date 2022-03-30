@@ -72,6 +72,12 @@
 
             $data['buzzer_now'] = $this->api->getBuzzerNow();
 
+            $data['hooman_now'] = $this->api->getHoomanNow();
+
+            $data['humid_now'] = $this->api->getHumidNow();
+
+            $data['temp_now'] = $this->api->getTempNow();
+
             $this->load->view('home', $data);
             $this->load->view('components/footer');
         }

@@ -180,6 +180,57 @@ class Api {
         return $buzzer_now;
     }
 
+    public function getHoomanNow()
+    {
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );  
+        $response = file_get_contents("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-infrared-sensor/data", false, stream_context_create($arrContextOptions));
+
+        $result = json_decode($response); 
+
+        $hooman_now = $result[0]->value;
+
+        return $hooman_now;
+    }
+
+    public function getHumidNow()
+    {
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );  
+        $response = file_get_contents("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-humid/data", false, stream_context_create($arrContextOptions));
+
+        $result = json_decode($response); 
+
+        $humid_now = $result[0]->value;
+
+        return $humid_now;
+    }
+
+    public function getTempNow()
+    {
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );  
+        $response = file_get_contents("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-temp/data", false, stream_context_create($arrContextOptions));
+
+        $result = json_decode($response); 
+
+        $temp_now = $result[0]->value;
+
+        return $temp_now;
+    }
+
 }
 
 
