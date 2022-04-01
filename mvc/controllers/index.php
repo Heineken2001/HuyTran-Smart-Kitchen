@@ -79,7 +79,10 @@
 
             $data['gas_now'] = $this->api->getGasNow();
 
-            $data['light_now'] = $this->api->getLightNow();
+            $recordmodel = $this->load->model('recordnowmodel');
+            $data['light_now'] = $recordmodel->getLightdata();
+
+            // $data['light_now'] = $recordmodel[0];
 
             $data['buzzer_now'] = $this->api->getBuzzerNow();
 
