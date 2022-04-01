@@ -1,3 +1,9 @@
+<?php
+    foreach ($light_now as $key => $value) {
+        $light_now1 = $value['DATAS'];
+    }
+    echo $light_now1;
+?>
 <div class="grid wide container">
     <div class="row room__status__body">
         <div class="grid">
@@ -63,7 +69,7 @@
                     <img id="lightonoff" src="https://cdn-icons-png.flaticon.com/512/3176/3176298.png" alt="light_onoff" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 30%">
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-light-form'>
                         <label class="switch" style="display: block; margin: auto; margin-top: 10%">
-                            <input name='light_switch1' value="" <?php if ($light_now == 1) {echo 'checked';} ?> type="checkbox" id='checked_light'>
+                            <input name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" id='checked_light'>
                             <span class="slider round"></span>
                         </label>
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
@@ -78,7 +84,7 @@
     </div>
 </div>
 
-
+<script src="<?php echo BASE_URL?>/public/js/data.js"></script>
 <script>
     gasnow = document.getElementById('gas-now')
     if (gasnow.innerText == '232') {

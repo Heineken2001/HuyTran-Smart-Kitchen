@@ -24,4 +24,13 @@
 
             return $statement->execute();
         }
+
+        public function getLightNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 2 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
     }
