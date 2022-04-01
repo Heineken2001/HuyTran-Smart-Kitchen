@@ -13,9 +13,61 @@
             $tbl_records = 'records';
             $homemodel = $this->load->model('homemodel');
             $light = array(
-                "DATAS" => $_POST['status'],
-                "TIMES" => $_POST['time'],
+                "DATAS" => $_POST['light_status'],
+                "TIMES" => $_POST['light_time'],
                 "DevID" => 2
+            );
+            $res = $homemodel->insertdata($tbl_records, $light);
+
+            $buzzer = array(
+                "DATAS" => $_POST['buzzer_status'],
+                "TIMES" => $_POST['buzzer_time'],
+                "DevID" => 3
+            );
+            $res = $homemodel->insertdata($tbl_records, $buzzer);
+
+            $humid = array(
+                "DATAS" => $_POST['humid_status'],
+                "TIMES" => $_POST['humid_time'],
+                "DevID" => 4
+            );
+            $res = $homemodel->insertdata($tbl_records, $humid);
+
+            $temperature = array(
+                "DATAS" => $_POST['temperature_status'],
+                "TIMES" => $_POST['temperature_time'],
+                "DevID" => 5
+            );
+            $res = $homemodel->insertdata($tbl_records, $temperature);
+
+            $infrared = array(
+                "DATAS" => $_POST['infrared_status'],
+                "TIMES" => $_POST['infrared_time'],
+                "DevID" => 6
+            );
+            $res = $homemodel->insertdata($tbl_records, $infrared);
+
+            
+        }
+
+        public function addgasrecord() {
+            $tbl_records = 'records';
+            $homemodel = $this->load->model('homemodel');
+            $gas = array(
+                "DATAS" => $_POST['gas_status'],
+                "TIMES" => $_POST['gas_time'],
+                "DevID" => 7
+            );
+            $res = $homemodel->insertdata($tbl_records, $gas);
+        }
+
+        public function addlightrecord() {
+            $tbl_records = 'records';
+            $homemodel = $this->load->model('homemodel');
+            $light = array(
+                "DATAS" => $_POST['light_status'],
+                "TIMES" => $_POST['light_time'],
+                "DevID" => 7
             );
             $res = $homemodel->insertdata($tbl_records, $light);
         }
