@@ -61,6 +61,17 @@
             $res = $homemodel->insertdata($tbl_records, $gas);
         }
 
+        public function addlightrecord() {
+            $tbl_records = 'records';
+            $homemodel = $this->load->model('homemodel');
+            $light = array(
+                "DATAS" => $_POST['light_status'],
+                "TIMES" => $_POST['light_time'],
+                "DevID" => 7
+            );
+            $res = $homemodel->insertdata($tbl_records, $light);
+        }
+
         public function homepage() {
 
             $tbl_records = 'records';
