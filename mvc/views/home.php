@@ -78,7 +78,7 @@
     </div>
 </div>
 
-
+<script src="<?php echo BASE_URL?>/public/js/data.js"></script>
 <script>
     gasnow = document.getElementById('gas-now')
     if (gasnow.innerText == '232') {
