@@ -14,7 +14,7 @@
                 }
             }
 
-            echo $datalight;
+            //echo $datalight;
             
             $ch = curl_init();
 
@@ -69,7 +69,7 @@
                 "DevID" => 2
             );
             $res = $homemodel->insertdata($tbl_records, $light);
-            header('Location: ' .BASE_URL );
+            //header('Location: ' .BASE_URL );
 
         }
     }

@@ -14,7 +14,7 @@
                 }
             }
 
-            echo $databuzzer;
+            //echo $databuzzer;
             
             $ch = curl_init();
 
@@ -70,9 +70,6 @@
                 "DevID" => 3
             );
             $res = $homemodel->insertdata($tbl_records, $buzzer);
-
-            header('Location: ' .BASE_URL );
-
         }
     }
 ?>
