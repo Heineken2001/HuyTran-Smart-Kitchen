@@ -33,4 +33,36 @@
             return $statement->fetchAll($fetchStyle);
         }
 
+        public function getBuzzerNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 3 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
+        public function getHumidNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 4 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
+        public function getHoomanNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 6 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
+        public function getTempNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 5 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
     }

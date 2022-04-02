@@ -2,7 +2,18 @@
     foreach ($light_now as $key => $value) {
         $light_now1 = $value['DATAS'];
     }
-    echo $light_now1;
+    foreach ($buzzer_now as $key => $value) {
+        $buzzer_now1 = $value['DATAS'];
+    }
+    foreach ($humid_now as $key => $value) {
+        $humid_now1 = $value['DATAS'];
+    }
+    foreach ($hooman_now as $key => $value) {
+        $hooman_now1 = $value['DATAS'];
+    }
+    foreach ($temp_now as $key => $value) {
+        $temp_now1 = $value['DATAS'];
+    }
 ?>
 <div class="grid wide container">
     <div class="row room__status__body">
@@ -11,7 +22,7 @@
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Room Status</div>
                     <h5 style="text-align:center; margin: 5px auto; color:red"><?php
-                        if ($hooman_now == 1) echo "Hooman in room";
+                        if ($hooman_now1 == 1) echo "Hooman in room";
                         else echo "No hooman"    
                     ?></h5>
                     <div class="charkbtn">
@@ -36,7 +47,7 @@
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
                         <label class="switch" style="float: right;">
-                            <input name='buzzer_switch1' value="" <?php if ($buzzer_now == 2) {echo 'checked';} ?> type="checkbox" id='checked_buzzer'>
+                            <input name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" id='checked_buzzer'>
                             <span class="slider round"></span>
                         </label>
                         
@@ -49,7 +60,7 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Humidity</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:red">Độ ẩm hiện tại: <?php echo $humid_now;?>
+                    <h5 style="text-align:center; margin: 5px auto; color:red">Độ ẩm hiện tại: <?php echo $humid_now1;?>
                         </h5>
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
@@ -57,7 +68,7 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Temperature</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:red">Nhiệt độ hiện tại: <?php echo $temp_now;?>
+                    <h5 style="text-align:center; margin: 5px auto; color:red">Nhiệt độ hiện tại: <?php echo $temp_now1;?>
                         </h5>
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>

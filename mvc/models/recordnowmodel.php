@@ -12,6 +12,26 @@ class recordnowmodel extends Model {
         return $this->db->getLightNow();
     }
 
+    public function getBuzzerdata()
+    {
+        return $this->db->getBuzzerNow();
+    }
+
+    public function getHumiddata()
+    {
+        return $this->db->getHumidNow();
+    }
+
+    public function getHoomandata()
+    {
+        return $this->db->getHoomanNow();
+    }
+
+    public function getTempdata()
+    {
+        return $this->db->getTempNow();
+    }
+
     public function insertdata($tbl, $data) {
         return $this->db->insert($tbl, $data);
     }

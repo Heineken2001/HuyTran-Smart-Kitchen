@@ -136,13 +136,13 @@
 
             // $data['light_now'] = $recordmodel[0];
 
-            $data['buzzer_now'] = $this->api->getBuzzerNow();
+            $data['buzzer_now'] = $recordmodel->getBuzzerdata();
 
-            $data['hooman_now'] = $this->api->getHoomanNow();
+            $data['humid_now'] = $recordmodel->getHumiddata();
 
-            $data['humid_now'] = $this->api->getHumidNow();
+            $data['hooman_now'] = $recordmodel->getHoomandata();
 
-            $data['temp_now'] = $this->api->getTempNow();
+            $data['temp_now'] = $recordmodel->getTempdata();
 
             $this->load->view('home', $data);
             $this->load->view('components/footer');
