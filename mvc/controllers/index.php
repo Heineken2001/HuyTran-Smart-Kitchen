@@ -129,9 +129,11 @@
 
             //$data['records'] = $homemodel->getdata('records');
 
-            $data['gas_now'] = $this->api->getGasNow();
-
+            
             $recordmodel = $this->load->model('recordnowmodel');
+
+            $data['gas_now'] = $recordmodel->getGasdata();
+            
             $data['light_now'] = $recordmodel->getLightdata();
 
             // $data['light_now'] = $recordmodel[0];

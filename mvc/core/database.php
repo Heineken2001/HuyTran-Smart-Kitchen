@@ -65,4 +65,12 @@
             return $statement->fetchAll($fetchStyle);
         }
 
+        public function getGasNow($fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM records WHERE DevID = 7 ORDER BY RecID DESC LIMIT 1";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
     }
