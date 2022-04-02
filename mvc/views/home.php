@@ -40,7 +40,7 @@
                             
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
-                            <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>" data-arrow="up">
+                            <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>"  data-arrow="up">
                             </div>
                         </div>
                     <!-- </div> -->
@@ -50,7 +50,8 @@
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
                         <label class="switch" style="float: right;">
-                            <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" >
+                            <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" onclick="myFunction()">
+                            <!-- <?php if ($buzzer_now1 == 3) {echo 'disabled';} ?> -->
                             <span class="slider round"></span>
                         </label>
                         
@@ -168,8 +169,37 @@
     //     })
 
     // });
-
     
+    // var checkbuzzer1 = document.getElementById('checked_buzzer')
+    // console.log(checkbuzzer1.checked)
+    // if(checkbuzzer1.checked == true){
+    //     function myFunction(){
+    //         // console.log("HI")
+    //         if(checkbuzzer1.checked == true){
+    //             console.log(checkbuzzer1.checked)
+    //             console.log("HI")
+    //             checkbuzzer1.disabled = false
+    //         }
+    //         else{
+    //             checkbuzzer1.disabled = true
+    //         }
+    //     }
+    // }
+    // else{
+    //     function myFunction(){
+    //         // console.log("HI")
+    //         if(checkbuzzer1.checked == true){
+    //             console.log(checkbuzzer1.checked)
+    //             console.log("HI")
+    //             checkbuzzer1.disabled = false
+    //         }
+    //         else{
+    //             checkbuzzer1.disabled = true
+    //         }
+    //     }
+    // }
+    
+
     document.addEventListener('DOMContentLoaded', function() {
         var checkedLight = $('#checked_light') 
         var myLightForm = $('#my-light-form')
@@ -196,7 +226,7 @@
         isBuzzerChecked = checkBuzzer.prop('checked')
 
         var checkbuzzer = document.getElementById('checked_buzzer')
-        // var checknum = gasalert.dataset.value
+        var checknum = 0
         // console.log(parseFloat(checknum))
 
         if(parseFloat(gasalert.dataset.value) > 58.65102639){
@@ -206,23 +236,48 @@
             // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
             isBuzzerChecked = true
             checkbuzzer.checked = true
+            // checkBuzzer.prop('disabled',false)
+            // checkBuzzer.val('2')
         }
         else{
             // checkBuzzer.val('3')
             // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
             isBuzzerChecked = false
             checkbuzzer.checked = false
+            // checkBuzzer.prop('disabled',true)
+            // checkBuzzer.val('3')
         }
+
+        
+
+        // if(buzzeronoff.src == "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"){
+        //     console.log(buzzeronoff.src)
+        //     checknum += 1
+        //     checkBuzzer.prop('disabled',false)
+        //     console.log(checknum)
+        //     console.log(checkbuzzer.checked)
+        //     if(checknum == 1 && checkbuzzer.checked == false){
+        //         checkBuzzer.prop('disabled',true)
+        //     }
+        // }
+        
+        // else{
+        //     checkBuzzer.prop('disabled',false)
+        //     console.log(buzzeronoff.src)
+        // }
 
 
         if (isBuzzerChecked) {
+            // checkBuzzer.prop('disabled',false)
             checkBuzzer.val('2')
             buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
+            // checkbuzzer.checked = true
         }
         else {
+            // checkBuzzer.prop('disabled',true)
             checkBuzzer.val('3')
             buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
-            
+            // checkbuzzer.checked = false
         }
         checkedLight.change(function() {
             if (checkedLight.val() == '1') {
@@ -259,6 +314,8 @@
             if (checkBuzzer.val() == '2') {
                 checkBuzzer.val('3')
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
+                // checkBuzzer.prop('disabled',false)
+                // checkbuzzer.checked = false
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/buzzerswitch/switch",
@@ -272,6 +329,8 @@
             else {
                 checkBuzzer.val('2')
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
+                // checkBuzzer.prop('disabled',true)
+                // checkbuzzer.checked = true
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/buzzerswitch/switch",
