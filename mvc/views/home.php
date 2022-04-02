@@ -40,12 +40,12 @@
                             
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
-                            <div class="container_alert chart" data-size="200" data-value="<?php echo ($gas_now1/1023*100); ?>" data-arrow="up">
+                            <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>" data-arrow="up">
                             </div>
                         </div>
                     <!-- </div> -->
 
-                    <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
+                    <!-- <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script> -->
                     <!-- <h5>Buzzer:</h5> -->
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
@@ -63,16 +63,47 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Humidity</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:black">Độ ẩm hiện tại: <?php echo $humid_now1;?>
-                        </h5>
+                    <h5 style="text-align:center; margin: 5px auto; color:black">Độ ẩm hiện tại: <?php echo $humid_now1;?>%</h5>
+
+                    <div class="wrapper_humid" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%">
+                        <div class="container_humid chart_humid" data-size="200" data-value="<?php echo ($humid_now1); ?>" data-arrow="up"></div>
+                    </div>
+
+
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Temperature</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:black">Nhiệt độ hiện tại: <?php echo $temp_now1;?>
-                        </h5>
+                    <h5 style="text-align:center; margin: 5px auto; color:black">Nhiệt độ hiện tại: <?php echo $temp_now1;?>°C</h5>
+
+                    <div class="body_temp">
+                        <div class="container_temp">
+                            <div class="outer-circle">
+                                <div class="middle-circle">
+                                    <div class="inner-circle">
+                                        <span class="top">
+                                            0-50
+                                        </span>
+                                        <span class="mid">
+                                            <?php echo ($temp_now1); ?>
+                                        </span>
+                                        <span class="on-hover">
+                                            <?php echo ($temp_now1); ?>
+                                        </span>
+                                        <span class="bottom">
+                                            <!-- Kitchen                                       </span> -->
+                                        <div class="line">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
@@ -99,6 +130,13 @@
 </div>
 
 <script src="<?php echo BASE_URL?>/public/js/data.js"></script>
+
+<script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
+
+<script src="<?php echo BASE_URL ?>/public/js/humid.js"></script>
+
+<script src="<?php echo BASE_URL ?>/public/js/temp.js"></script>
+
 <script>
     gasnow = document.getElementById('gas-now')
     if (gasnow.innerText == '232') {
@@ -142,6 +180,8 @@
         var lightonoff = document.getElementById('lightonoff')
         var buzzeronoff = document.getElementById('buzzeronoff')
 
+        var gasalert = document.getElementById('gas_alert')
+
         isLightChecked = checkedLight.prop('checked')
         if (isLightChecked) {
             checkedLight.val('1')
@@ -154,6 +194,27 @@
             // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
         }
         isBuzzerChecked = checkBuzzer.prop('checked')
+
+        var checkbuzzer = document.getElementById('checked_buzzer')
+        // var checknum = gasalert.dataset.value
+        // console.log(parseFloat(checknum))
+
+        if(parseFloat(gasalert.dataset.value) > 58.65102639){
+            // console.log("HI")
+            // console.log(parseFloat(gasalert.dataset.value))
+            // checkBuzzer.val('2')
+            // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
+            isBuzzerChecked = true
+            checkbuzzer.checked = true
+        }
+        else{
+            // checkBuzzer.val('3')
+            // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
+            isBuzzerChecked = false
+            checkbuzzer.checked = false
+        }
+
+
         if (isBuzzerChecked) {
             checkBuzzer.val('2')
             buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
