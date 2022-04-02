@@ -50,7 +50,7 @@
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
                         <label class="switch" style="float: right;">
-                            <input name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" id='checked_buzzer'>
+                            <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" >
                             <span class="slider round"></span>
                         </label>
                         
@@ -114,7 +114,7 @@
                     <img id="lightonoff" src="https://cdn-icons-png.flaticon.com/512/3176/3176298.png" alt="light_onoff" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 37%">
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-light-form'>
                         <label class="switch" style="display: block; margin: auto; margin-top: 10%">
-                            <input name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" id='checked_light'>
+                            <input id='checked_light' name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" >
                             <span class="slider round"></span>
                         </label>
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
@@ -222,6 +222,7 @@
         else {
             checkBuzzer.val('3')
             buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
+            
         }
         checkedLight.change(function() {
             if (checkedLight.val() == '1') {
