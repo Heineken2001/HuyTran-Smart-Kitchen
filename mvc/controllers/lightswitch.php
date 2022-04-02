@@ -14,7 +14,7 @@
                 }
             }
 
-            echo $datalight;
+            //echo $datalight;
             
             $ch = curl_init();
 
