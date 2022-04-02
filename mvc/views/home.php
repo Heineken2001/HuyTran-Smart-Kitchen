@@ -164,14 +164,29 @@
                 checkedLight.val('0')
                 lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176276.png"
                 // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
-                myLightForm.submit()
+                // myLightForm.submit()
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/lightswitch/switch",
+                    data: {
+                        light_switch1: 0,
+                    },
+                    cache: false,
+                });
                 return
             }
             else {
                 checkedLight.val('1')
                 lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176298.png"
                 // "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
-                myLightForm.submit()
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/lightswitch/switch",
+                    data: {
+                        light_switch1: 1,
+                    },
+                    cache: false,
+                });
             }
         })
 
@@ -179,13 +194,27 @@
             if (checkBuzzer.val() == '2') {
                 checkBuzzer.val('3')
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
-                myBuzzerForm.submit()
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/buzzerswitch/switch",
+                    data: {
+                        buzzer_switch1: 3,
+                    },
+                    cache: false,
+                });
                 return
             }
             else {
                 checkBuzzer.val('2')
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
-                myBuzzerForm.submit()
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/buzzerswitch/switch",
+                    data: {
+                        buzzer_switch1: 2,
+                    },
+                    cache: false,
+                });
             }
         })
 
