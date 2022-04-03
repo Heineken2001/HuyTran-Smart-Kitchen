@@ -105,7 +105,7 @@ $(document).ready(function() {
             cache: false,
         });
          
-    },180000);
+    },6000);
 
     setInterval(function() {
         $.ajax({
@@ -118,7 +118,7 @@ $(document).ready(function() {
             cache: false,
         });
          
-    },60000);
+    },5000);
 
 });
 

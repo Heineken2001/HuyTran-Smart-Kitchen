@@ -14,6 +14,9 @@
     foreach ($temp_now as $key => $value) {
         $temp_now1 = $value['DATAS'];
     }
+    foreach ($gas_now as $key => $value) {
+        $gas_now1 = $value['DATAS'];
+    }
 ?>
 <div class="grid wide container">
     <div class="row room__status__body">
@@ -32,12 +35,12 @@
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Gas</div>
                         <h1 id="gas-now">
-                            <h5 style="text-align:center; margin: 5px auto; color:red">Nồng độ Gas hiện tại: <?php echo $gas_now;?>
+                            <h5 style="text-align:center; margin: 5px auto; color:red">Nồng độ Gas hiện tại: <?php echo $gas_now1;?>
                             </h5>
                             
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
-                            <div class="container_alert chart" data-size="200" data-value="<?php echo ($gas_now/1023*100); ?>" data-arrow="up">
+                            <div class="container_alert chart" data-size="200" data-value="<?php echo ($gas_now1/1023*100); ?>" data-arrow="up">
                             </div>
                         </div>
                     <!-- </div> -->

@@ -32,6 +32,11 @@ class recordnowmodel extends Model {
         return $this->db->getTempNow();
     }
 
+    public function getGasdata()
+    {
+        return $this->db->getGasNow();
+    }
+
     public function insertdata($tbl, $data) {
         return $this->db->insert($tbl, $data);
     }

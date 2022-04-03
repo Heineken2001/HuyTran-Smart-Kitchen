@@ -58,6 +58,7 @@
                 "TIMES" => $_POST['gas_time'],
                 "DevID" => 7
             );
+            
             $res = $homemodel->insertdata($tbl_records, $gas);
         }
 
@@ -129,11 +130,11 @@
 
             //$data['records'] = $homemodel->getdata('records');
 
-            $data['gas_now'] = $this->api->getGasNow();
-
+            
             $recordmodel = $this->load->model('recordnowmodel');
             $data['light_now'] = $recordmodel->getLightdata();
-
+            
+            $data['gas_now'] = $recordmodel->getGasdata();
             // $data['light_now'] = $recordmodel[0];
 
             $data['buzzer_now'] = $recordmodel->getBuzzerdata();
