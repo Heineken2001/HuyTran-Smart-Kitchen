@@ -12,12 +12,12 @@
         public function addrecord() {
             $tbl_records = 'records';
             $homemodel = $this->load->model('homemodel');
-            $light = array(
-                "DATAS" => $_POST['light_status'],
-                "TIMES" => $_POST['light_time'],
-                "DevID" => 2
-            );
-            $res = $homemodel->insertdata($tbl_records, $light);
+            // $light = array(
+            //     "DATAS" => $_POST['light_status'],
+            //     "TIMES" => $_POST['light_time'],
+            //     "DevID" => 2
+            // );
+            // $res = $homemodel->insertdata($tbl_records, $light);
 
             $buzzer = array(
                 "DATAS" => $_POST['buzzer_status'],
@@ -65,10 +65,16 @@
         public function addlightrecord() {
             $tbl_records = 'records';
             $homemodel = $this->load->model('homemodel');
+            $recordmodel = $this->load->model('recordnowmodel');
+            $data['light_now'] = $recordmodel->getLightdata();
+            foreach ($data['light_now'] as $key => $value) {
+                $light_now1 = $value['TIMES'];
+            }
+            if (strcmp($light_now1,$_POST['light_time']) == 0) return;
             $light = array(
                 "DATAS" => $_POST['light_status'],
                 "TIMES" => $_POST['light_time'],
-                "DevID" => 7
+                "DevID" => 2
             );
             $res = $homemodel->insertdata($tbl_records, $light);
         }

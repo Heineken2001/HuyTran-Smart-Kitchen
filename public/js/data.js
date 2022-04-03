@@ -91,8 +91,8 @@ $(document).ready(function() {
             type: "POST",
             url: "http://localhost:8080/Doandanganh/index/addrecord",
             data: {
-                light_status: lightdata[0],
-                light_time: lightdata[1],
+                // light_status: lightdata[0],
+                // light_time: lightdata[1],
                 buzzer_status: buzzerdata[0],
                 buzzer_time: buzzerdata[1],
                 humid_status: humiddata[0],
@@ -105,7 +105,21 @@ $(document).ready(function() {
             cache: false,
         });
          
-    },6000);
+    },180000);
+
+    setInterval(function() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/Doandanganh/index/addlightrecord",
+            data: {
+                light_status: lightdata[0],
+                light_time: lightdata[1],
+                
+            },
+            cache: false,
+        });
+         
+    },1000);
 
     setInterval(function() {
         $.ajax({
@@ -118,7 +132,7 @@ $(document).ready(function() {
             cache: false,
         });
          
-    },5000);
+    },60000);
 
 });
 
