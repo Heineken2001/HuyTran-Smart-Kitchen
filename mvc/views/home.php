@@ -50,7 +50,7 @@
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
                         <label class="switch" style="float: right;">
-                            <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" onclick="myFunction()">
+                            <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" onclick="">
                             <!-- <?php if ($buzzer_now1 == 3) {echo 'disabled';} ?> -->
                             <span class="slider round"></span>
                         </label>
@@ -226,27 +226,28 @@
         isBuzzerChecked = checkBuzzer.prop('checked')
 
         var checkbuzzer = document.getElementById('checked_buzzer')
-        var checknum = 0
+        var checklight = document.getElementById('checked_light')
+        // var checknum = 0
         // console.log(parseFloat(checknum))
 
-        if(parseFloat(gasalert.dataset.value) > 58.65102639){
+        // if(parseFloat(gasalert.dataset.value) > 58.65102639){
             // console.log("HI")
             // console.log(parseFloat(gasalert.dataset.value))
             // checkBuzzer.val('2')
             // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
-            isBuzzerChecked = true
-            checkbuzzer.checked = true
+            // isBuzzerChecked = true
+            // checkbuzzer.checked = true
             // checkBuzzer.prop('disabled',false)
             // checkBuzzer.val('2')
-        }
-        else{
+        // }
+        // else{
             // checkBuzzer.val('3')
             // buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
-            isBuzzerChecked = false
-            checkbuzzer.checked = false
+            // isBuzzerChecked = false
+            // checkbuzzer.checked = false
             // checkBuzzer.prop('disabled',true)
             // checkBuzzer.val('3')
-        }
+        // }
 
         
 
@@ -267,6 +268,8 @@
         // }
 
 
+        console.log(checkbuzzer.checked);
+
         if (isBuzzerChecked) {
             // checkBuzzer.prop('disabled',false)
             checkBuzzer.val('2')
@@ -285,6 +288,7 @@
                 lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176276.png"
                 // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"
                 // myLightForm.submit()
+                checklight.checked = false
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/lightswitch/switch",
@@ -299,6 +303,7 @@
                 checkedLight.val('1')
                 lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176298.png"
                 // "https://cdn-icons.flaticon.com/png/512/3430/premium/3430793.png?token=exp=1648614143~hmac=292332732fea5b71c12d96f96eec37ef"
+                checklight.checked = true
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/lightswitch/switch",
@@ -316,6 +321,9 @@
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936529.png"
                 // checkBuzzer.prop('disabled',false)
                 // checkbuzzer.checked = false
+                console.log('HI1')
+                checkbuzzer.checked = false
+                checkbuzzer.disabled = true
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/buzzerswitch/switch",
@@ -331,6 +339,7 @@
                 buzzeronoff.src = "https://cdn-icons-png.flaticon.com/512/5936/5936468.png"
                 // checkBuzzer.prop('disabled',true)
                 // checkbuzzer.checked = true
+                console.log('HI2')
                 $.ajax({
                     type: "POST",
                     url: "<?php echo BASE_URL?>/buzzerswitch/switch",
