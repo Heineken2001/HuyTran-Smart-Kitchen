@@ -53,23 +53,23 @@
 
             curl_close($ch);
 
-            $tbl_records = 'records';
-            $homemodel = $this->load->model('homemodel');
-            $arrContextOptions=array(
-                "ssl"=>array(
-                    "verify_peer"=>false,
-                    "verify_peer_name"=>false,
-                ),
-            );  
-            $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
+            // $tbl_records = 'records';
+            // $homemodel = $this->load->model('homemodel');
+            // $arrContextOptions=array(
+            //     "ssl"=>array(
+            //         "verify_peer"=>false,
+            //         "verify_peer_name"=>false,
+            //     ),
+            // );  
+            // $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
     
-            $result = json_decode($response); 
-            $buzzer = array(
-                "DATAS" => $result[0]->value,
-                "TIMES" => $result[0]->created_at,
-                "DevID" => 3
-            );
-            $res = $homemodel->insertdata($tbl_records, $buzzer);
+            // $result = json_decode($response); 
+            // $buzzer = array(
+            //     "DATAS" => $result[0]->value,
+            //     "TIMES" => $result[0]->created_at,
+            //     "DevID" => 3
+            // );
+            // $res = $homemodel->insertdata($tbl_records, $buzzer);
         }
     }
 ?>
