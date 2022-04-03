@@ -19,35 +19,87 @@
             // );
             // $res = $homemodel->insertdata($tbl_records, $light);
 
-            $buzzer = array(
-                "DATAS" => $_POST['buzzer_status'],
-                "TIMES" => $_POST['buzzer_time'],
-                "DevID" => 3
-            );
-            $res = $homemodel->insertdata($tbl_records, $buzzer);
+            $recordmodel = $this->load->model('recordnowmodel');
 
-            $humid = array(
-                "DATAS" => $_POST['humid_status'],
-                "TIMES" => $_POST['humid_time'],
-                "DevID" => 4
-            );
-            $res = $homemodel->insertdata($tbl_records, $humid);
+            $data['buzzer_now'] = $recordmodel->getBuzzerdata();
+            foreach ($data['buzzer_now'] as $key => $value) {
+                $buzzer_now1 = $value['TIMES'];
+            }
+            if (strcmp($buzzer_now1,$_POST['buzzer_time']) != 0) {
+                $buzzer = array(
+                    "DATAS" => $_POST['buzzer_status'],
+                    "TIMES" => $_POST['buzzer_time'],
+                    "DevID" => 3
+                );
+                $res = $homemodel->insertdata($tbl_records, $buzzer);
+            }
 
-            $temperature = array(
-                "DATAS" => $_POST['temperature_status'],
-                "TIMES" => $_POST['temperature_time'],
-                "DevID" => 5
-            );
-            $res = $homemodel->insertdata($tbl_records, $temperature);
+            $data['humid_now'] = $recordmodel->getHumiddata();
+            foreach ($data['humid_now'] as $key => $value) {
+                $humid_now1 = $value['TIMES'];
+            }
+            if (strcmp($humid_now1,$_POST['humid_time']) != 0) {
+                $humid = array(
+                    "DATAS" => $_POST['humid_status'],
+                    "TIMES" => $_POST['humid_time'],
+                    "DevID" => 4
+                );
+                $res = $homemodel->insertdata($tbl_records, $humid);
+            }
 
-            $infrared = array(
-                "DATAS" => $_POST['infrared_status'],
-                "TIMES" => $_POST['infrared_time'],
-                "DevID" => 6
-            );
-            $res = $homemodel->insertdata($tbl_records, $infrared);
+            $data['temperature_now'] = $recordmodel->getTempdata();
+            foreach ($data['temperature_now'] as $key => $value) {
+                $temperature_now1 = $value['TIMES'];
+            }
+            if (strcmp($temperature_now1,$_POST['temperature_time']) != 0) {
+                $temperature = array(
+                    "DATAS" => $_POST['temperature_status'],
+                    "TIMES" => $_POST['temperature_time'],
+                    "DevID" => 5
+                );
+                $res = $homemodel->insertdata($tbl_records, $temperature);
+            }
 
-            
+            $data['infrared_now'] = $recordmodel->getHoomandata();
+            foreach ($data['infrared_now'] as $key => $value) {
+                $infrared_now1 = $value['TIMES'];
+            }
+            if (strcmp($infrared_now1,$_POST['infrared_time']) != 0) {
+                $infrared = array(
+                    "DATAS" => $_POST['infrared_status'],
+                    "TIMES" => $_POST['infrared_time'],
+                    "DevID" => 6
+                );
+                $res = $homemodel->insertdata($tbl_records, $infrared);
+            }
+
+            $data['gas_now'] = $recordmodel->getGasdata();
+            foreach ($data['gas_now'] as $key => $value) {
+                $gas_now1 = $value['TIMES'];
+            }
+            if (strcmp($gas_now1,$_POST['gas_time']) != 0) {
+                $gas = array(
+                    "DATAS" => $_POST['gas_status'],
+                    "TIMES" => $_POST['gas_time'],
+                    "DevID" => 7
+                );
+                
+                $res = $homemodel->insertdata($tbl_records, $gas);
+            }
+
+
+            $data['light_now'] = $recordmodel->getLightdata();
+            foreach ($data['light_now'] as $key => $value) {
+                $light_now1 = $value['TIMES'];
+            }
+            if (strcmp($light_now1,$_POST['light_time']) != 0) {
+                $light = array(
+                    "DATAS" => $_POST['light_status'],
+                    "TIMES" => $_POST['light_time'],
+                    "DevID" => 2
+                );
+                $res = $homemodel->insertdata($tbl_records, $light);
+            }
         }
 
         public function addgasrecord() {

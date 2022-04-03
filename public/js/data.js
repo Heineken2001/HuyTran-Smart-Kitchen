@@ -85,40 +85,40 @@ $(document).ready(function() {
 
 
     console.log(lightdata);
-    setInterval(function() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/Doandanganh/index/addlightrecord",
-            data: {
-                light_status: lightdata[0],
-                light_time: lightdata[1],
+    // setInterval(function() {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://localhost:8080/Doandanganh/index/addlightrecord",
+    //         data: {
+    //             light_status: lightdata[0],
+    //             light_time: lightdata[1],
                 
-            },
-            cache: false,
-        });
+    //         },
+    //         cache: false,
+    //     });
          
-    },500);
+    // },500);
     
-    setInterval(function() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/Doandanganh/index/addgasrecord",
-            data: {
-                gas_status: gasdata[0],
-                gas_time: gasdata[1],
-            },
-            cache: false,
-        });
+    // setInterval(function() {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://localhost:8080/Doandanganh/index/addgasrecord",
+    //         data: {
+    //             gas_status: gasdata[0],
+    //             gas_time: gasdata[1],
+    //         },
+    //         cache: false,
+    //     });
          
-    },60000);
+    // },60000);
     
     setInterval(function() {
         $.ajax({
             type: "POST",
             url: "http://localhost:8080/Doandanganh/index/addrecord",
             data: {
-                // light_status: lightdata[0],
-                // light_time: lightdata[1],
+                light_status: lightdata[0],
+                light_time: lightdata[1],
                 buzzer_status: buzzerdata[0],
                 buzzer_time: buzzerdata[1],
                 humid_status: humiddata[0],
@@ -127,11 +127,14 @@ $(document).ready(function() {
                 temperature_time: temperaturedata[1],
                 infrared_status: infrareddata[0],
                 infrared_time: infrareddata[1],
+                gas_status: gasdata[0],
+                gas_time: gasdata[1],
+        
             },
             cache: false,
         });
          
-    },180000);
+    },1000);
 
 
 
