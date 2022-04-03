@@ -85,6 +85,32 @@ $(document).ready(function() {
 
 
     console.log(lightdata);
+    setInterval(function() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/Doandanganh/index/addlightrecord",
+            data: {
+                light_status: lightdata[0],
+                light_time: lightdata[1],
+                
+            },
+            cache: false,
+        });
+         
+    },500);
+    
+    setInterval(function() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/Doandanganh/index/addgasrecord",
+            data: {
+                gas_status: gasdata[0],
+                gas_time: gasdata[1],
+            },
+            cache: false,
+        });
+         
+    },60000);
     
     setInterval(function() {
         $.ajax({
@@ -107,32 +133,7 @@ $(document).ready(function() {
          
     },180000);
 
-    setInterval(function() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/Doandanganh/index/addlightrecord",
-            data: {
-                light_status: lightdata[0],
-                light_time: lightdata[1],
-                
-            },
-            cache: false,
-        });
-         
-    },1000);
 
-    setInterval(function() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/Doandanganh/index/addgasrecord",
-            data: {
-                gas_status: gasdata[0],
-                gas_time: gasdata[1],
-            },
-            cache: false,
-        });
-         
-    },60000);
 
 });
 
