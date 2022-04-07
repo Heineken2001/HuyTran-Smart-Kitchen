@@ -1,90 +1,106 @@
 $(document).ready(function() {
-    function light() {
+    async function light() {
         var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
         return temp
     }
-    function buzzer() {
+    async function buzzer() {
         var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-buzzer/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
-        return temp
-    }
-    
-    function humid() {
-        var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-humid/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-buzzer/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        // return temp
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
         return temp
     }
     
-    function temperature() {
+    async function humid() {
         var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-temp/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-humid/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
         return temp
     }
     
-    function infrared() {
+    async function temperature() {
         var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-infrared-sensor/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-temp/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        // return temp
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
         return temp
     }
     
-    function gas() {
+    async function infrared() {
         var temp = []
-        $response = fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-sensor/data");
-        $response
-        .then(response => response.json())
-        .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
-        .catch(function(error)  {
-            console.log("Noooooo! Something error:");
-            console.log(error);
-        });
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-infrared-sensor/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        // return temp
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
+        return temp
+    }
+    
+    async function gas() {
+        var temp = []
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-sensor/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        // return temp
+        let data = await $response.json();
+        temp.push(data[0].value); temp.push(data[0].created_at);
         return temp
     }
 
-    lightdata = light();
-    buzzerdata = buzzer();
-    humiddata = humid();
-    temperaturedata = temperature();
-    infrareddata = infrared();
-    gasdata = gas();
+    // lightdata = light();
+    // buzzerdata = buzzer();
+    // humiddata = humid();
+    // temperaturedata = temperature();
+    // infrareddata = infrared();
+    // gasdata = gas();
 
 
-    console.log(lightdata);
+    //console.log(lightdata);
     // setInterval(function() {
     //     $.ajax({
     //         type: "POST",
@@ -112,7 +128,16 @@ $(document).ready(function() {
          
     // },60000);
     
-    setInterval(function() {
+    setInterval( async function() {
+        lightdata = await light();
+    buzzerdata =  await buzzer();
+    humiddata = await humid();
+    temperaturedata = await temperature();
+    infrareddata = await infrared();
+    gasdata = await gas();
+    // console.log(lightdata[0])
+    // console.log(humiddata[1])
+
         $.ajax({
             type: "POST",
             url: "http://localhost:8080/Doandanganh/index/addrecord",
@@ -133,7 +158,8 @@ $(document).ready(function() {
             },
             cache: false,
         });
-         
+        // console.log(Math.random());
+        // console.log(light())
     },1000);
 
 

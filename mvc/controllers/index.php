@@ -207,6 +207,8 @@
             $data['temp_now'] = $recordmodel->getTempdata();
 
             $this->load->view('home', $data);
+            $datamodel = $this->load->model('data');
+            $datamodel->light();
             $this->load->view('components/footer');
         }
         
