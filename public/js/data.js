@@ -157,10 +157,14 @@ $(document).ready(function() {
         
             },
             cache: false,
+            success: function(result) {
+                location.reload();
+                //$("#divSettings").html(this);
+            }
         });
         // console.log(Math.random());
         // console.log(light())
-    },1000);
+    },500);
 
 
 
