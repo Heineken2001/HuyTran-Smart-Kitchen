@@ -18,40 +18,46 @@ class register extends Controller {
     {
         $this->load->view('components/header');
 
-        if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmpassword'])) {
+        if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmpassword']) && $_POST['fname']!="" && $_POST['username']!="" && $_POST['email']!="" && $_POST['password']!="" && $_POST['confirmpassword']!="") {
             $fname = $_POST['fname'];
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
             $confirmpassword = $_POST['confirmpassword'];
+            
+            $tbl_user = 'users';
+            $usermodel = $this->load->model('usermodel');
+            // echo $username;
+            $userlist = $usermodel->checkregis($username);
+            
+            // print_r($userlist);
+            if (sizeof($userlist)!=0) {
+                $_SESSION['notice'] = "Account already exists! Please choose another username.";
+                header("location:" . BASE_URL .  "/register");
+            }
+            
+            else if ($password != $confirmpassword) {
+                $_SESSION['notice'] = "Invalid confirmed password!!";
+                header("location:" . BASE_URL .  "/register");
+            }
+    
+            else {
+                $user = array (
+                    "USRNAME" => $username,
+                    "FNAME" => $fname,
+                    "PASS" => $password,
+                    "EMAIL" => $email,
+                );
+                $res = $usermodel->insertdata($tbl_user, $user);
+                $this->load->view('registersuccess', []);
+                // header("location" . BASE_URL . "/login");
+            }
         }
-        else header("location:" . BASE_URL .  "/register");
-
-        if ($password != $confirmpassword) {
-            header("location:" . BASE_URL .  "/register");
-        }
-
-        $tbl_user = 'users';
-        $usermodel = $this->load->model('usermodel');
-        // echo $username;
-        $userlist = $usermodel->checkregis($username);
-        
-        // print_r($userlist);
-        if (sizeof($userlist)!=0) {
-            header("location:" . BASE_URL .  "/register");
-        }
-
         else {
-            $user = array (
-                "USRNAME" => $username,
-                "FNAME" => $fname,
-                "PASS" => $password,
-                "EMAIL" => $email,
-            );
-            $res = $usermodel->insertdata($tbl_user, $user);
-            $this->load->view('registersuccess', []);
-            // header("location" . BASE_URL . "/login");
+            $_SESSION['notice'] ="All field can not be empty!"; 
+            header("location:" . BASE_URL .  "/register");
         }
+
         $this->load->view('components/footer');
     }
 }

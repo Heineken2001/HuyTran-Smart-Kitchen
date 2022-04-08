@@ -38,11 +38,12 @@
             <div class="col l-3 m-3 c-12 login__header">
                 <h1 class="login__header__brand">SmartKitchen</h1>
             </div>
-            <div class="col l-3 m-3 c-0">
+            <div class="col l-6 m-8 c-0">
                 <ul class="login__header__nav">
                     <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>">Home</a></li>
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Login</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Log In</a></li>
                     <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register">Register</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
                 </ul>
             </div>
         </div>

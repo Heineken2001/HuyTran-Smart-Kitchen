@@ -22,25 +22,33 @@
                 <h1 class="margintopnormal">CREATE NEW ACCOUNT</h1>
                 <h4 class="margintopnormal">Already A Member? <a href="<?php echo BASE_URL ?>/login">Log In</a></h4>
                 <div class="form__group field" style="margin-top: 50px;">
-                    <input type="text" class="form__field" placeholder="Full Name" name="fname" id='fname' required />
+                    <input type="text" class="form__field" placeholder="Full Name" name="fname" id='fname' />
                     <label for="fname" class="form__label">Full Name</label>
                 </div>
                 <div class="form__group field">
-                    <input type="text" class="form__field" placeholder="Username" name="username" id='username' required />
+                    <input type="text" class="form__field" placeholder="Username" name="username" id='username' />
                     <label for="username" class="form__label">Username</label>
                 </div>
                 <div class="form__group field">
-                    <input type="email" class="form__field" placeholder="Email" name="email" id='email' required />
+                    <input type="email" class="form__field" placeholder="Email" name="email" id='email' />
                     <label for="email" class="form__label">Email</label>
                 </div>
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Password" name="password" id='password' required />
+                    <input type="password" class="form__field" placeholder="Password" name="password" id='password' />
                     <label for="password" class="form__label">Password</label>
                 </div>
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Password" name="confirmpassword" id='confirmpassword' required />
+                    <input type="password" class="form__field" placeholder="Password" name="confirmpassword" id='confirmpassword' />
                     <label for="confirmpassword" class="form__label">Confirm Password</label>
                 </div>
+                <p style="color: red; margin-top:16px;">
+                    <?php 
+                        if (isset($_SESSION["notice"])) {
+                            echo $_SESSION['notice'];
+                            unset($_SESSION['notice']);
+                        }
+                    ?>
+                </p>
                 <button type="submit" class="btn5-hover btn5">Sign In</Button>
             </form>
         </div>
