@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/app.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/grid.css">
     <title>Login</title>
@@ -35,6 +37,9 @@
     </div>
     <div class="grid wide container">
         <div class="row">
+            <!-- <i class="fa-solid fa-bars" style="font-size: 30px; margin: auto 0;"></i>
+            <input type="checkbox" name="navmobile" id="navmobile">
+            <label for="navmobile">Ken</label> -->
             <div class="col l-3 m-3 c-12 login__header">
                 <h1 class="login__header__brand">SmartKitchen</h1>
             </div>

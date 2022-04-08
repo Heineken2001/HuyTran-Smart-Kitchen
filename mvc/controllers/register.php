@@ -49,8 +49,8 @@ class register extends Controller {
                     "EMAIL" => $email,
                 );
                 $res = $usermodel->insertdata($tbl_user, $user);
-                $this->load->view('registersuccess', []);
-                // header("location" . BASE_URL . "/login");
+                // $this->load->view('registersuccess', []);
+                header("location" . BASE_URL . "/login");
             }
         }
         else {
