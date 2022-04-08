@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="60">
+    <!-- <meta http-equiv="refresh" content="60"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
@@ -40,8 +40,9 @@
             </div>
             <div class="col l-3 m-3 c-0">
                 <ul class="login__header__nav">
-                    <li class="login__header__nav__list">Home</li>
-                    <li class="login__header__nav__list">Register</li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>">Home</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Login</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register">Register</a></li>
                 </ul>
             </div>
         </div>

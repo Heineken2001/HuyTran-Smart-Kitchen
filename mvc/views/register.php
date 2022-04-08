@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/css/grid.css">
-    <link rel="stylesheet" href="../../public/css/app.css">
-    <title>Login</title>
+
     <style>
         /* @media (min-width: 1024px) and (max-width: 1239px) {
             .login__header {
@@ -26,26 +15,17 @@
             }
         }
     </style>
-</head>
-<body>
     <div class="grid wide container">
-        <div class="row">
-            <div class="col l-3 m-3 c-12 login__header">
-                <h1 class="login__header__brand">SmartKitchen</h1>
-            </div>
-            <div class="col l-3 m-3 c-0">
-                <ul class="login__header__nav">
-                    <li class="login__header__nav__list">Home</li>
-                    <li class="login__header__nav__list">Register</li>
-                </ul>
-            </div>
-        </div>
         <div class="row margintopbig">
-            <form class="col l-5 m-8 c-12" id="form-register" method="POST" action="">
+            <form class="col l-5 m-8 c-12" id="form-register" method="POST" action="<?php echo BASE_URL ?>/register/create">
                 <h3>Register</h3>
                 <h1 class="margintopnormal">CREATE NEW ACCOUNT</h1>
-                <h4 class="margintopnormal">Already A Member? <a href="#">Log In</a></h4>
+                <h4 class="margintopnormal">Already A Member? <a href="<?php echo BASE_URL ?>/login">Log In</a></h4>
                 <div class="form__group field" style="margin-top: 50px;">
+                    <input type="text" class="form__field" placeholder="Full Name" name="fname" id='fname' required />
+                    <label for="fname" class="form__label">Full Name</label>
+                </div>
+                <div class="form__group field">
                     <input type="text" class="form__field" placeholder="Username" name="username" id='username' required />
                     <label for="username" class="form__label">Username</label>
                 </div>
@@ -61,9 +41,7 @@
                     <input type="password" class="form__field" placeholder="Password" name="confirmpassword" id='confirmpassword' required />
                     <label for="confirmpassword" class="form__label">Confirm Password</label>
                 </div>
-                <a href="#"><button type="submit" class="btn5-hover btn5">Sign In</Button></a>
+                <button type="submit" class="btn5-hover btn5">Sign In</Button>
             </form>
         </div>
     </div>
-</body>
-</html>
