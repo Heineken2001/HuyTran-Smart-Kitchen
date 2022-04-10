@@ -47,6 +47,7 @@ class register extends Controller {
                     "FNAME" => $fname,
                     "PASS" => $password,
                     "EMAIL" => $email,
+                    "GASBOUND" => 600
                 );
                 $res = $usermodel->insertdata($tbl_user, $user);
                 // $this->load->view('registersuccess', []);

@@ -17,6 +17,7 @@
     foreach ($gas_now as $key => $value) {
         $gas_now1 = $value['DATAS'];
     }
+    // echo $_SESSION['userid'];
 ?>
 <div class="grid wide container">
     <div class="row room__status__body">
