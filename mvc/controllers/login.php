@@ -15,7 +15,7 @@ class login extends Controller {
     {
         if (isset($_POST['username']) && isset($_POST['password']) && $_POST['username']!="" && $_POST['password']!="") {
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            $password = md5($_POST['password']);
             // $tbl_user = 'users';
             $usermodel = $this->load->model('usermodel');
             $userlist = $usermodel->checklogin($username, $password);
@@ -60,7 +60,7 @@ class login extends Controller {
 
             curl_close($ch);
 
-                header("location:". BASE_URL . "/");
+                header("Location: ".BASE_URL."/");
             }
             else {
                 $_SESSION['notice'] = 'Invalid username or password! Please check again';
