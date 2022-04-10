@@ -38,15 +38,15 @@
                         </ul>
                     </div> -->
                     <div style="margin-top: 0px; text-align: center">
-                        <a href="#"><button class="btn5-hover btn5 active">Date</Button></a>
-                        <a href="#"><button class="btn5-hover btn5">Month</Button></a>
-                        <a href="#"><button class="btn5-hover btn5">Year</Button></a>
+                        <a id="dategas" href="#"><button class="btn5-hover btn5 active">Date</Button></a>
+                        <a id="monthgas" href="#"><button class="btn5-hover btn5">Month</Button></a>
+                        <a id="yeargas" href="#"><button class="btn5-hover btn5">Year</Button></a>
                     </div>
                     <div>
                         
                     <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong ngày:...</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong tháng:...</h5>
-                    <h5 id="gasdyear" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong năm:...</h5>
+                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng:...</h5>
+                    <h5 id="gasdyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong năm:...</h5>
 
                     </div>
                 </div>
