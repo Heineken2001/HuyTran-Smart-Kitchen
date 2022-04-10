@@ -16,9 +16,9 @@
 
 <div class="grid wide container">
     <div style="text-align:center; margin-top: 0">
-        <h1 style="margin-top: 50px">Gas Concentration</h1>
+        <h1 style="margin-top: 100px">Gas Concentration</h1>
     </div>
-    <div class="row room__status__body">
+    <div class="row room__status__body" style="margin-top: 50px">
         
         <div class="grid">
         
@@ -65,3 +65,8 @@
 
 
 <script src="<?php echo BASE_URL?>/public/js/gaschart.js"></script>
+
+
+<script>
+
+</script>
