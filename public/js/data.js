@@ -164,7 +164,7 @@ $(document).ready(function() {
         });
         // console.log(Math.random());
         // console.log(light())
-    },800);
+    },500);
 
 
 
