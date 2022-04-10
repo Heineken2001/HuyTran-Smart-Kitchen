@@ -124,9 +124,9 @@
                     </form>
 
                 </div>
-                <div class="col l-12 m-12 c-12">
+                <!-- <div class="col l-12 m-12 c-12">
                         <a href="<?php echo BASE_URL?>/record/update"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Update</Button></a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
