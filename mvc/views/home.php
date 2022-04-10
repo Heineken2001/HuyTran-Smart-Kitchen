@@ -26,8 +26,8 @@
                     <div class="room__status__body__list__title">Room Status</div>
                     <h5 id="humantest" style="text-align:center; margin: 5px auto; color:black"><?php
                         if ($hooman_now1 == 1) echo "Human in room";
-                        else echo "No human"    
-                    ?></h5>
+                        else echo "No human"?>
+                    </h5>
                     <img id="humanonoff" src="https://cdn-icons-png.flaticon.com/512/2723/2723537.png" alt="human" style="height: 120px; width:120px; display: block; margin: auto; margin-top: 37%">
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Summary Report</Button></a>
