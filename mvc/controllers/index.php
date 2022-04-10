@@ -6,7 +6,19 @@
         }
 
         public function index() {
-            return $this->homepage();
+            if (isset($_SESSION['user'])) {
+                return $this->homepage();
+            }
+            else return $this->loginpage();
+
+            // return $this->homepage();
+        }
+
+        public function loginpage()
+        {
+            $this->load->view('components/header');
+            $this->load->view('login');
+            $this->load->view('components/footer');
         }
 
         public function addrecord() {

@@ -24,10 +24,11 @@
             <div class="row">
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Room Status</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:red"><?php
+                    <h5 id="humantest" style="text-align:center; margin: 5px auto; color:black"><?php
                         if ($hooman_now1 == 1) echo "Human in room";
-                        else echo "No human"    
-                    ?></h5>
+                        else echo "No human"?>
+                    </h5>
+                    <img id="humanonoff" src="https://cdn-icons-png.flaticon.com/512/2723/2723537.png" alt="human" style="height: 120px; width:120px; display: block; margin: auto; margin-top: 37%">
                     <div class="charkbtn">
                         <a href="#"><button class="btn5-hover btn5">Summary Report</Button></a>
                     </div>
@@ -199,6 +200,7 @@
     //     }
     // }
     
+    // console.log(<?php $hooman_now1?>)
 
     document.addEventListener('DOMContentLoaded', function() {
         var checkedLight = $('#checked_light') 
@@ -210,7 +212,19 @@
         var lightonoff = document.getElementById('lightonoff')
         var buzzeronoff = document.getElementById('buzzeronoff')
 
+        var humanonoff = document.getElementById('humanonoff')
+        var humantest = document.getElementById('humantest')
+
+        if(humantest.innerText == "Human in room"){
+            humanonoff.src = "https://cdn-icons-png.flaticon.com/512/2723/2723537.png"
+        }
+        else{
+            humanonoff.src = "https://cdn-icons-png.flaticon.com/512/2723/2723532.png"
+        }
+
         var gasalert = document.getElementById('gas_alert')
+
+        
 
         isLightChecked = checkedLight.prop('checked')
         if (isLightChecked) {

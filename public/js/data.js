@@ -140,7 +140,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/Doandanganh/index/addrecord",
+            url: "http://localhost/project/Doandanganh/index/addrecord",
             data: {
                 light_status: lightdata[0],
                 light_time: lightdata[1],
@@ -157,7 +157,7 @@ $(document).ready(function() {
         
             },
             cache: false,
-            success: function(result) {
+            success: function() {
                 location.reload();
                 //$("#divSettings").html(this);
             }

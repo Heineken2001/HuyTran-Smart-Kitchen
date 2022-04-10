@@ -11,6 +11,23 @@
             return $statement->fetchAll($fetchStyle);
         }
 
+        public function getUser($user, $fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "SELECT * FROM users WHERE USRNAME='$user'";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            // echo $user; echo '\n';
+            return $statement->fetchAll($fetchStyle);
+        }
+
+        public function validate($user, $pass, $fetchStyle = PDO::FETCH_ASSOC) 
+        {   
+            $sql = "SELECT * FROM users WHERE USRNAME='$user' AND PASS='$pass'";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle = PDO::FETCH_ASSOC);
+        }
+
         public function insert($tbl, $data) {
             $keys = implode(",", array_keys($data));
             $values = ":".implode(", :", array_keys($data));
