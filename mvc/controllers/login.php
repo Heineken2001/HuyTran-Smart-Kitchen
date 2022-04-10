@@ -22,6 +22,7 @@ class login extends Controller {
     
             if (sizeof($userlist)!=0) {
                 $_SESSION['user'] = $username;
+                
                 $data = $usermodel->checkregis($username);
                 foreach($data as $key => $value) {
                     $_SESSION['userid'] = $value['ContID'];
@@ -60,7 +61,8 @@ class login extends Controller {
 
             curl_close($ch);
 
-                header("Location: ".BASE_URL."/");
+            if ($username!="admin") header("Location: ".BASE_URL."/");
+            else header("Location: ".BASE_URL."/admin");
             }
             else {
                 $_SESSION['notice'] = 'Invalid username or password! Please check again';

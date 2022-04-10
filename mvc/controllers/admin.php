@@ -7,7 +7,9 @@
 
         public function index() {
             if (isset($_SESSION['user'])) {
-                return $this->homepage();
+                if ($_SESSION['user'] == 'admin') {
+                    return $this->homepage();
+                }
             }
             header('Location: ' .BASE_URL.'/login');
         }

@@ -6,10 +6,15 @@
         }
 
         public function index() {
-            if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['user']) && $_SESSION['user'] != "admin") {
                 return $this->homepage();
             }
-            else return $this->loginpage();
+            else {
+                if (isset($_SESSION['user']) && $_SESSION['user'] == "admin") {
+                    return $this->notfound();
+                }
+                else return $this->loginpage();
+            }
 
             // return $this->homepage();
         }

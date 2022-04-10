@@ -81,7 +81,20 @@
                 if (file_exists($filename)) {
                     include $filename;
                     if (class_exists($this->controllerName)) {
-                        $this->controller = new $this->controllerName();
+                        if ($this->controllerName == "admin") {
+                            if (isset($_SESSION['user']) && $_SESSION['user'] == "admin") {
+                                $this->controller = new $this->controllerName();
+                            }
+                            else header('Location: '.BASE_URL.'/index/notfound');
+                        }
+                        else {
+                            if (isset($_SESSION['user']) && $_SESSION['user'] == "admin" && $this->controllerName != "logout") {
+                                header('Location: '.BASE_URL.'/index/notfound');
+                            }
+                            else {
+                                $this->controller = new $this->controllerName();
+                            }
+                        }
                     }
                     else {
                         header('Location: '.BASE_URL.'/index/notfound');

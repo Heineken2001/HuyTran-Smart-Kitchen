@@ -48,7 +48,7 @@
             </div>
             <div class="col l-6 m-8 c-0">
                 <ul class="login__header__nav">
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/">Home</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>">Home</a></li>
                     <?php if (isset($_SESSION['user'])) {?>
                         <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/"><?php echo $_SESSION['user'] ?></a></li>
                         <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
