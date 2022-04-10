@@ -5,7 +5,7 @@
         }
 
         public function select($tbl, $fetchStyle = PDO::FETCH_ASSOC) {
-            $sql = "SELECT * FROM $tbl ORDER BY DevID DESC";
+            $sql = "SELECT * FROM $tbl ";
             $statement = $this->prepare($sql);
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
@@ -71,5 +71,15 @@
             $statement = $this->prepare($sql);
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
+        }
+
+        public function update($user_table, $id) {
+            
+        }
+
+        public function delete($user_table, $id) {
+            $sql = "DELETE FROM $user_table WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            return $statement->execute();
         }
     }
