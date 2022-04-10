@@ -28,7 +28,12 @@
                               <td><?php echo $value['EMAIL']?></td>
                               <td><?php echo $value['ADDRESS']?></td>
                               <td><?php echo $value['ContID']?></td>
-                              <td><?php echo $value['GASBOUND']?><a href="<?php echo BASE_URL?>/admin/editgasbound/<?php echo $value['ContID']?>" style="margin-left: 5px"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                              <td>
+                                <form action="<?php echo BASE_URL?>/admin/editgasbound/<?php echo $value['ContID']?>" method="post">
+                                    <input id="gasbound" name="gasbound" type="number" value="<?php echo $value['GASBOUND']?>">
+                                    <input type="submit" hidden />
+                                </form>
+                              </td>
                               <td><a href="<?php echo BASE_URL?>/admin/deleteuser/<?php echo $value['ContID']?>"><button  class="btn btn-log">Delete</button></a></td>
                             </tr>
                             <?php }?>

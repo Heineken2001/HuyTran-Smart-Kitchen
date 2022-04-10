@@ -73,8 +73,10 @@
             return $statement->fetchAll($fetchStyle);
         }
 
-        public function update($user_table, $id) {
-            
+        public function update($user_table, $id, $gasbound) {
+            $sql = "UPDATE $user_table SET GASBOUND = $gasbound WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            return $statement->execute();
         }
 
         public function delete($user_table, $id) {

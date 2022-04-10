@@ -3,7 +3,10 @@
     font-weight: bold;
     margin: 0 auto;
 }
-
+#gasbound {
+    color: black;
+    text-align: center;
+}
 
 table{
     width:100%;

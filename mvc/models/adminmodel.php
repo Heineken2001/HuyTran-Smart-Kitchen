@@ -16,8 +16,10 @@ class adminmodel extends Model {
         return $this->db->insert($tbl, $data);
     }
 
-    public function updategasbound($user_table, $id) {
-        return $this->db->update($user_table, $id);
+    public function updategasbound($user_table, $id, $gasbound) {
+        
+            return $this->db->update($user_table, $id, $gasbound);
+        
 
     }
 

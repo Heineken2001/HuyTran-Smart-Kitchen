@@ -31,8 +31,53 @@
 
         public function editgasbound($id) {
             $user_table = 'users';
+            if (isset($_POST)) {
+                $gasbound = $_POST['gasbound'];
+            }
             $admin_model = $this->load->model('adminmodel');
-            $admin_model->updategasbound($user_table, $id);
+            $admin_model->updategasbound($user_table, $id, $gasbound);
+            $datalight = 0;
+            if (isset($_POST)) {
+                if (!empty($_POST)) {
+                    $datalight = $_POST['light_switch1'];
+                }
+            }
+
+            //echo $datalight;
+            
+            $ch = curl_init();
+
+            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+            
+
+            $data_array = array(
+                
+                "value"=>$gasbound
+                
+            );
+
+            $data = http_build_query($data_array);
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+
+
+            $resp = curl_exec($ch);
+
+            if($e = curl_error($ch)) {
+                echo $e;
+            }
+            else {
+
+                $decode = json_decode($resp);
+            }
+
+            curl_close($ch);
+            header('Location: ' .BASE_URL.'/admin/usermanagement');
             
         }
 
