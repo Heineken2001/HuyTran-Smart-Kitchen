@@ -6,7 +6,10 @@
         }
 
         public function index() {
-            return $this->homepage();
+            if (isset($_SESSION['user'])) {
+                return $this->homepage();
+            }
+            header('Location: ' .BASE_URL.'/login');
         }
 
         public function homepage() {
