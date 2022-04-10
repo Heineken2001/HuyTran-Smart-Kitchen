@@ -41,7 +41,8 @@
                 $buzzer = array(
                     "DATAS" => $_POST['buzzer_status'],
                     "TIMES" => $_POST['buzzer_time'],
-                    "DevID" => 3
+                    "DevID" => 3,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 $res = $homemodel->insertdata($tbl_records, $buzzer);
             }
@@ -54,7 +55,8 @@
                 $humid = array(
                     "DATAS" => $_POST['humid_status'],
                     "TIMES" => $_POST['humid_time'],
-                    "DevID" => 4
+                    "DevID" => 4,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 $res = $homemodel->insertdata($tbl_records, $humid);
             }
@@ -67,7 +69,8 @@
                 $temperature = array(
                     "DATAS" => $_POST['temperature_status'],
                     "TIMES" => $_POST['temperature_time'],
-                    "DevID" => 5
+                    "DevID" => 5,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 $res = $homemodel->insertdata($tbl_records, $temperature);
             }
@@ -80,7 +83,8 @@
                 $infrared = array(
                     "DATAS" => $_POST['infrared_status'],
                     "TIMES" => $_POST['infrared_time'],
-                    "DevID" => 6
+                    "DevID" => 6,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 $res = $homemodel->insertdata($tbl_records, $infrared);
             }
@@ -93,13 +97,14 @@
                 $gas = array(
                     "DATAS" => $_POST['gas_status'],
                     "TIMES" => $_POST['gas_time'],
-                    "DevID" => 7
+                    "DevID" => 7,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 
                 $res = $homemodel->insertdata($tbl_records, $gas);
             }
 
-
+            
             $data['light_now'] = $recordmodel->getLightdata();
             foreach ($data['light_now'] as $key => $value) {
                 $light_now1 = $value['TIMES'];
@@ -108,7 +113,8 @@
                 $light = array(
                     "DATAS" => $_POST['light_status'],
                     "TIMES" => $_POST['light_time'],
-                    "DevID" => 2
+                    "DevID" => 2,
+                    "ContID" => (int)$_SESSION['userid']
                 );
                 $res = $homemodel->insertdata($tbl_records, $light);
             }
@@ -120,7 +126,8 @@
             $gas = array(
                 "DATAS" => $_POST['gas_status'],
                 "TIMES" => $_POST['gas_time'],
-                "DevID" => 7
+                "DevID" => 7,
+                "ContID" => (int)$_SESSION['userid']
             );
             
             $res = $homemodel->insertdata($tbl_records, $gas);
@@ -138,7 +145,8 @@
             $light = array(
                 "DATAS" => $_POST['light_status'],
                 "TIMES" => $_POST['light_time'],
-                "DevID" => 2
+                "DevID" => 2,
+                "ContID" => (int)$_SESSION['userid']
             );
             $res = $homemodel->insertdata($tbl_records, $light);
         }

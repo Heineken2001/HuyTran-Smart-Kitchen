@@ -9,10 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/app.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/grid.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/admin.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/usermng.css">
+    <!-- <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/errorReport.css"> -->
+    
     <title>Login</title>
     <style>
         /* @media (min-width: 1024px) and (max-width: 1239px) {
@@ -45,10 +48,14 @@
             </div>
             <div class="col l-6 m-8 c-0">
                 <ul class="login__header__nav">
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>">Home</a></li>
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Log In</a></li>
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register">Register</a></li>
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/">Home</a></li>
+                    <?php if (isset($_SESSION['user'])) {?>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/"><?php echo $_SESSION['user'] ?></a></li>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
+                    <?php } else {?>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Log In</a></li>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register">Register</a></li>
+                    <?php }?>
                 </ul>
             </div>
         </div>

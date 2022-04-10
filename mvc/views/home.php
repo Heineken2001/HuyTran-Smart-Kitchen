@@ -17,6 +17,7 @@
     foreach ($gas_now as $key => $value) {
         $gas_now1 = $value['DATAS'];
     }
+    // echo $_SESSION['userid'];
 ?>
 <div class="grid wide container">
     <div class="row room__status__body">
@@ -123,9 +124,9 @@
                     </form>
 
                 </div>
-                <div class="col l-12 m-12 c-12">
+                <!-- <div class="col l-12 m-12 c-12">
                         <a href="<?php echo BASE_URL?>/record/update"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Update</Button></a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

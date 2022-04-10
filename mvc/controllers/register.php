@@ -45,17 +45,18 @@ class register extends Controller {
                 $user = array (
                     "USRNAME" => $username,
                     "FNAME" => $fname,
-                    "PASS" => $password,
+                    "PASS" => md5($password),
                     "EMAIL" => $email,
+                    "GASBOUND" => 600
                 );
                 $res = $usermodel->insertdata($tbl_user, $user);
                 // $this->load->view('registersuccess', []);
-                header("location" . BASE_URL . "/login");
+                header('Location: ' .BASE_URL.'/login');
             }
         }
         else {
             $_SESSION['notice'] ="All field can not be empty!"; 
-            header("location:" . BASE_URL .  "/register");
+            header("Location: ".BASE_URL."/register");
         }
 
         $this->load->view('components/footer');
