@@ -13,7 +13,8 @@
                         <div class="account__info">Gas threshold limit:  <?php echo $user[0]['GASBOUND']?></div>
                     </div>
                 </div>
-                <a style="margin: 0 auto" href="<?php echo BASE_URL?>/user/changeinfo/<?php echo $user[0]['ContID']?>"><button class="btn5-hover btn5 change__info__btn">Change Infomation</button></a>
+                <a style="margin: 0 auto ; display: inline-block" href="<?php echo BASE_URL?>/user/changeinfo/<?php echo $user[0]['ContID']?>"><button class="btn5-hover btn5 change__info__btn">Change Infomation</button></a>
+                <a style="margin: 0 auto; display: inline-block" href="<?php echo BASE_URL?>/user/changepassword"><button class="btn5-hover btn5 change__info__btn">Change Password</button></a>
             </div>
         </div>
 

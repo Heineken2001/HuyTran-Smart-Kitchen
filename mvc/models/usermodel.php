@@ -24,12 +24,21 @@ class usermodel extends Model {
 
     public function updategasbound($user_table, $id, $gasbound) {
         
-        return $this->db->update($user_table, $id, $gasbound);
+        return $this->db->updategasbound($user_table, $id, $gasbound);
         
+    }
+
+    public function updatepassword($tbl_user, $id, $newpass) {
+        return $this->db->updatepassword($tbl_user, $id, $newpass);
+
     }
 
     public function getdatabyid($table, $id) {
         return $this->db->selectbyid($table, $id);
+    }
+
+    public function updatedata($tbl_user, $user, $id) {
+        return $this->db->update($tbl_user, $user, $id);
     }
 
 } 

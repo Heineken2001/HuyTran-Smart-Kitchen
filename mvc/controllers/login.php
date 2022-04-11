@@ -26,6 +26,7 @@ class login extends Controller {
                 $data = $usermodel->checkregis($username);
                 foreach($data as $key => $value) {
                     $_SESSION['userid'] = $value['ContID'];
+                    $_SESSION['pass'] = $value['PASS'];
                     $gasbound = $value['GASBOUND']; 
                 }
                 $ch = curl_init();

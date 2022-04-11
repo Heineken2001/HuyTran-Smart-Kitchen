@@ -90,7 +90,29 @@
             return $statement->fetchAll($fetchStyle);
         }
 
-        public function update($user_table, $id, $gasbound) {
+        public function update($tbl_user, $user, $id) {
+            $updatekeys = NULL;
+            foreach($user as $key => $value) {
+                $updatekeys .= "$key=:$key,";
+            }
+            $updatekeys = rtrim($updatekeys, ",");
+            $sql = "UPDATE $tbl_user SET $updatekeys WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            foreach ($user as $key => $value) {
+                $statement->bindValue(":$key",$value);
+            }
+
+            return $statement->execute();
+
+        }
+
+        public function updatepassword($tbl_user, $id, $newpass) {
+            $sql = "UPDATE $tbl_user SET PASS = '$newpass' WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            return $statement->execute();
+        }
+
+        public function updategasbound($user_table, $id, $gasbound) {
             $sql = "UPDATE $user_table SET GASBOUND = $gasbound WHERE ContID = $id";
             $statement = $this->prepare($sql);
             return $statement->execute();
