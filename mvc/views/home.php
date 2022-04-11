@@ -30,9 +30,7 @@
                         else echo "No human"?>
                     </h5>
                     <img id="humanonoff" src="https://cdn-icons-png.flaticon.com/512/2723/2723537.png" alt="human" style="height: 120px; width:120px; display: block; margin: auto; margin-top: 37%">
-                    <div class="charkbtn">
-                        <a href="#"><button class="btn5-hover btn5">Summary Report</Button></a>
-                    </div>
+                    
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Gas</div>
@@ -127,8 +125,14 @@
                 <!-- <div class="col l-12 m-12 c-12">
                         <a href="<?php echo BASE_URL?>/record/update"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Update</Button></a>
                 </div> -->
-            </div>
+                
+            </div>  
+            
         </div>
+        
+    </div>
+    <div class="charkbtn" style="display: block; margin: 150px auto; text-align:center; ">
+        <a href="summaryreport" style="margin-left: -28%"><button class="btn5-hover btn5">Summary Report</Button></a>
     </div>
 </div>
 
