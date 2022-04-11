@@ -61,7 +61,7 @@
                     </form>
                     
                     <div class="charkbtn">
-                        <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="gaschart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -74,7 +74,7 @@
 
 
                     <div class="charkbtn">
-                        <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="humiditychart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -108,7 +108,7 @@
 
 
                     <div class="charkbtn">
-                        <a href="#"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="tempchart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px; ">
