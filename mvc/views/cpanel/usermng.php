@@ -29,10 +29,7 @@
                               <td><?php echo $value['ADDRESS']?></td>
                               <td><?php echo $value['ContID']?></td>
                               <td>
-                                <form action="<?php echo BASE_URL?>/admin/editgasbound/<?php echo $value['ContID']?>" method="post">
-                                    <input id="gasbound" name="gasbound" type="number" value="<?php echo $value['GASBOUND']?>">
-                                    <input type="submit" hidden />
-                                </form>
+                                <?php echo $value['GASBOUND']?>
                               </td>
                               <td><a href="<?php echo BASE_URL?>/admin/deleteuser/<?php echo $value['ContID']?>"><button  class="btn btn-log">Delete</button></a></td>
                             </tr>

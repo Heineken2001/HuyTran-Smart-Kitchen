@@ -18,5 +18,28 @@ class usermodel extends Model {
         return $this->db->insert($tbl, $data);
     }
 
+    public function getdata($table) {
+        return $this->db->select($table);
+    }
+
+    public function updategasbound($user_table, $id, $gasbound) {
+        
+        return $this->db->updategasbound($user_table, $id, $gasbound);
+        
+    }
+
+    public function updatepassword($tbl_user, $id, $newpass) {
+        return $this->db->updatepassword($tbl_user, $id, $newpass);
+
+    }
+
+    public function getdatabyid($table, $id) {
+        return $this->db->selectbyid($table, $id);
+    }
+
+    public function updatedata($tbl_user, $user, $id) {
+        return $this->db->update($tbl_user, $user, $id);
+    }
+
 } 
 ?>
