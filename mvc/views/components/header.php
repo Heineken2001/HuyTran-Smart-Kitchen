@@ -50,7 +50,7 @@
                 <ul class="login__header__nav">
                     <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>">Home</a></li>
                     <?php if (isset($_SESSION['user'])) {?>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/"><?php echo $_SESSION['user'] ?></a></li>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/user/"><?php echo $_SESSION['user'] ?></a></li>
                         <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
                     <?php } else {?>
                         <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Log In</a></li>

@@ -101,4 +101,11 @@
             $statement = $this->prepare($sql);
             return $statement->execute();
         }
+
+        public function selectbyid($table, $id, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT * FROM $table WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
     }
