@@ -19,6 +19,66 @@
     }
     // echo $_SESSION['userid'];
 ?>
+<style>
+    .squaredcheck {
+    width: 210px;
+    position: relative;
+    margin: 20px auto;
+    }
+    .squaredcheck label {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: #66c0ff;
+    border-radius: 4px;
+    }
+    .squaredcheck label:after {
+    content: '';
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    transform: rotate(-45deg);
+    }
+    .squaredcheck label:hover::after {
+    opacity: 0.3;
+    }
+    .squaredcheck span {
+    position: absolute;
+    width: 300px;
+    left: 30px;
+    }
+    .squaredcheck input[type=checkbox] {
+    visibility: hidden;
+    }
+    .squaredcheck input[type=checkbox]:checked + label {
+    background: #0096ff;
+    }
+    .squaredcheck input[type=checkbox]:checked + label:after {
+    opacity: 1;
+    }
+    .squaredcheck input[type=checkbox].checkbox2 + label {
+    background: #67cead;
+    }
+    .squaredcheck input[type=checkbox].checkbox2:checked + label {
+    background: #329d7b;
+    }
+    .squaredcheck input[type=checkbox].checkbox3 + label {
+    background: #ecf;
+    }
+    .squaredcheck input[type=checkbox].checkbox3:checked + label {
+    background: #c6f;
+    }
+</style>
 <div class="grid wide container">
     <div class="row room__status__body">
         <div class="grid">
@@ -116,10 +176,23 @@
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-light-form'>
                         <label class="switch" style="display: block; margin: auto; margin-top: 10%">
                             <input id='checked_light' name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" >
-                            <span class="slider round"></span>
+                            <span id="supportlight" class="slider round" ></span>
                         </label>
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
                     </form>
+
+                    <!-- <div >
+                        <label class="switch" for="" style="display:block; margin:auto; margin-top: 10%">Auto
+                            <input id='checked_light' name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" >
+                            <span class="slider round"></span>
+                        </label>
+                        
+                    </div> -->
+                    <!-- <input type="radio" name="iCheck" checked> -->
+                    <div class="squaredcheck" style="margin-left: 25%">
+                        <input type="checkbox" value="None" id="squaredcheck" class="checkbox1" name="check" onclick="autocheck()" />
+                        <label for="squaredcheck"><span>Auto Mode</span></label>
+                    </div>
 
                 </div>
                 <!-- <div class="col l-12 m-12 c-12">
@@ -143,6 +216,36 @@
 <script src="<?php echo BASE_URL ?>/public/js/humid.js"></script>
 
 <script src="<?php echo BASE_URL ?>/public/js/temp.js"></script>
+
+<!-- <script>
+    $(document).ready(function(){
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_flat-red',
+        radioClass: 'iradio_flat-red'
+    });
+    });
+</script> -->
+
+<!-- <script>
+    var squaredcheck = document.getElementById('squaredcheck')
+        var supportlight = document.getElementById('supportlight')
+        var checklight = document.getElementById('checked_light')
+        
+        function autocheck(){
+            console.log("HIIIIII")
+            console.log(squaredcheck.checked)
+            if(squaredcheck.checked == true){
+                squaredcheck.checked = true
+                checklight.disabled = true
+                supportlight.hidden = true
+            }
+            else{
+                squaredcheck.checked = false
+                checklight.disabled = false
+                supportlight.hidden = false
+            }
+        }
+</script> -->
 
 <script>
     gasnow = document.getElementById('gas-now')
@@ -219,6 +322,34 @@
 
         var humanonoff = document.getElementById('humanonoff')
         var humantest = document.getElementById('humantest')
+
+        var squaredcheck = $('#squaredcheck')
+
+        var supportlight = document.getElementById('supportlight')
+        var checklight = document.getElementById('checked_light')
+
+        isSquaredcheck = squaredcheck.prop('checked')
+        if(isSquaredcheck){
+            squaredcheck.val('1')
+        }
+        else{
+            squaredcheck.val('0')
+        }
+        squaredcheck.change(function() {
+            if (squaredcheck.val() == '1') {
+                squaredcheck.val('0')
+                squaredcheck.checked = false
+                checklight.disabled = false
+                supportlight.hidden = false
+            }
+            else {
+                squaredcheck.val('1')
+                squaredcheck.checked = true
+                checklight.disabled = true
+                supportlight.hidden = true    
+            }
+        })
+        
 
         if(humantest.innerText == "Human in room"){
             humanonoff.src = "https://cdn-icons-png.flaticon.com/512/2723/2723537.png"

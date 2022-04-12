@@ -466,3 +466,8 @@ input:checked + .slider:before {
 .line-rotate {
     transform: rotate(30deg) !important;
 }
+
+/* CHECKBOX AUTO */
+
+
+
