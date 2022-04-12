@@ -2,7 +2,7 @@
     <div class="row margintopbig">
         <form class="col l-5 m-8 c-12" id="form-register" method="POST" action="<?php echo BASE_URL ?>/login/checklogin">
             <h1 class="margintopnormal">Login</h1>
-            <h4 class="margintopnormal">Don't have an account? <a href="<?php echo BASE_URL ?>/register">Sign Up</a></h4>
+            <h4 class="margintopnormal">Don't have an account yet? <a href="<?php echo BASE_URL ?>/register">Sign Up Now</a></h4>
             <div class="form__group field" style="margin-top: 50px;">
                 <input type="text" class="form__field" placeholder="Username" name="username" id='username' value=""/>
                 <label for="username" class="form__label">Username</label>

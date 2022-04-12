@@ -13,6 +13,11 @@ class usermodel extends Model {
         return $this->db->validate($user, $pass);
     }
 
+    public function checkforgot($user, $email)
+    {
+        return $this->db->validateforgot($user, $email);
+    }
+
     public function insertdata($tbl, $data)     
     {
         return $this->db->insert($tbl, $data);
