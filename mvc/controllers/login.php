@@ -11,33 +11,16 @@ class login extends Controller {
         $this->load->view('login');
         $this->load->view('components/footer');
     }
-    public function checklogin()
-    {
-        if (isset($_POST['username']) && isset($_POST['password']) && $_POST['username']!="" && $_POST['password']!="") {
-            $username = $_POST['username'];
-            $password = md5($_POST['password']);
-            // $tbl_user = 'users';
-            $usermodel = $this->load->model('usermodel');
-            $userlist = $usermodel->checklogin($username, $password);
-    
-            if (sizeof($userlist)!=0) {
-                $_SESSION['user'] = $username;
-                
-                $data = $usermodel->checkregis($username);
-                foreach($data as $key => $value) {
-                    $_SESSION['userid'] = $value['ContID'];
-                    $_SESSION['pass'] = $value['PASS'];
-                    $gasbound = $value['GASBOUND'];
-                    $lightmode = $value['LIGHTMODE']; 
-                }
-            $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+    public function pushdata($value, $url) {
+        $ch = curl_init();
+
+            //$url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
             
 
             $data_array = array(
                 
-                "value"=>$gasbound
+                "value"=>$value
                 
             );
 
@@ -62,6 +45,63 @@ class login extends Controller {
             }
 
             curl_close($ch);
+    }
+
+    public function checklogin()
+    {
+        if (isset($_POST['username']) && isset($_POST['password']) && $_POST['username']!="" && $_POST['password']!="") {
+            $username = $_POST['username'];
+            $password = md5($_POST['password']);
+            // $tbl_user = 'users';
+            $usermodel = $this->load->model('usermodel');
+            $userlist = $usermodel->checklogin($username, $password);
+    
+            if (sizeof($userlist)!=0) {
+                $_SESSION['user'] = $username;
+                
+                $data = $usermodel->checkregis($username);
+                foreach($data as $key => $value) {
+                    $_SESSION['userid'] = $value['ContID'];
+                    $_SESSION['pass'] = $value['PASS'];
+                    $gasbound = $value['GASBOUND'];
+                    $lightmode = $value['LIGHTMODE']; 
+                }
+                $urlgas = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+                $this->pushdata($gasbound, $urlgas);
+                $urllightmode = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
+                $this->pushdata($lightmode, $urllightmode);
+            // $ch = curl_init();
+
+            // $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+            
+
+            // $data_array = array(
+                
+            //     "value"=>$gasbound
+                
+            // );
+
+            // $data = http_build_query($data_array);
+
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+
+
+            // $resp = curl_exec($ch);
+
+            // if($e = curl_error($ch)) {
+            //     echo $e;
+            // }
+            // else {
+
+            //     $decode = json_decode($resp);
+            // }
+
+            // curl_close($ch);
 
             // $ch = curl_init();
 

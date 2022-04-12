@@ -176,11 +176,11 @@ $(document).ready(function() {
         
             },
             cache: false,
-            // success: function() {
-            //     $('#load').load(location.href+" #load>*","");
-            //     //location.reload();
-            //     //$("#divSettings").html(this);
-            // }
+            success: function() {
+                //$('#load').reload(location.href+" #load>*","");
+                location.reload();
+                //$("#divSettings").html(this);
+            }
             // success: function() {
             //     $('#load').load('http://localhost:8080/Doandanganh/');
             //     //location.reload();
