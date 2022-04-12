@@ -28,6 +28,14 @@
             return $statement->fetchAll($fetchStyle = PDO::FETCH_ASSOC);
         }
 
+        public function validateforgot($user, $email, $fetchStyle = PDO::FETCH_ASSOC)   
+        {
+            $sql = "SELECT * FROM users WHERE USRNAME='$user' AND EMAIL='$email'";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle = PDO::FETCH_ASSOC);
+        }
+
         public function insert($tbl, $data) {
             $keys = implode(",", array_keys($data));
             $values = ":".implode(", :", array_keys($data));
