@@ -63,38 +63,38 @@ class login extends Controller {
 
             curl_close($ch);
 
-            $ch = curl_init();
+            // $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
+            // $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
             
 
-            $data_array = array(
+            // $data_array = array(
                 
-                "value"=>$lightmode
+            //     "value"=>$lightmode
                 
-            );
+            // );
 
-            $data = http_build_query($data_array);
+            // $data = http_build_query($data_array);
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
 
 
-            $resp = curl_exec($ch);
+            // $resp = curl_exec($ch);
 
-            if($e = curl_error($ch)) {
-                echo $e;
-            }
-            else {
+            // if($e = curl_error($ch)) {
+            //     echo $e;
+            // }
+            // else {
 
-                $decode = json_decode($resp);
-            }
+            //     $decode = json_decode($resp);
+            // }
 
-            curl_close($ch);
+            // curl_close($ch);
 
             
 

@@ -75,7 +75,7 @@
 
         public function mode()
         {
-            $mode = 0;
+            //$mode = 0;
             if (isset($_POST)) {
                 if (!empty($_POST)) {
                     $mode = $_POST['mode'];
