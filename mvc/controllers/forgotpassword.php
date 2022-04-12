@@ -21,6 +21,7 @@
 
             if (isset($_POST['email'])) {
                 $email = $_POST['email'];
+                $_SESSION['email'] = $email;
             }
 
             $usersmodel = $this->load->model("usermodel");
@@ -51,7 +52,7 @@
             }
 
             $randstring = generateRandomString();
-            $_SESSION['temppassword'] = $randstring;
+            // $_SESSION['temppassword'] = $randstring;
 
             $usersmodel = $this->load->model("usermodel");
             $usersmodel->renewpassword($_SESSION['username'], md5($randstring));

@@ -16,7 +16,7 @@ try {
     $mail->Password = 'behfathpitjtczsv';  
 
     $mail->setFrom('huytrannhat.900@gmail.com', 'KenTinyhipooooooo');
-    $mail->addAddress('huy.tran02102001@hcmut.edu.vn', 'Trần Nhật Huy');
+    $mail->addAddress($_SESSION['email'], 'Trần Nhật Huy');
 
     $mail->isHTML(true);
     $mail->Subject = 'Password recovery';
