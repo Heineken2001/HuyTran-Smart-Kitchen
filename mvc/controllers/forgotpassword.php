@@ -16,6 +16,7 @@
 
             if (isset($_POST['username'])) {
                 $username = $_POST['username'];
+                $_SESSION['username'] = $username;
             }
 
             if (isset($_POST['email'])) {
@@ -38,6 +39,23 @@
         public function emailtoken()
         {
             $this->load->view('components/header');
+
+            function generateRandomString($length = 10) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
+            }
+
+            $randstring = generateRandomString();
+            $_SESSION['temppassword'] = $randstring;
+
+            $usersmodel = $this->load->model("usermodel");
+            $usersmodel->renewpassword($_SESSION['username'], md5($randstring));
+            include_once './mail/sendmail.php';
             $this->load->view('user/sendemailnotice');
             $this->load->view('components/footer');
         }
