@@ -18,7 +18,7 @@
             
             $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-buzzer/data";
+            $url = "https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-buzzer/data";
             
 
             $data_array = array(
@@ -34,7 +34,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_ibrL47ObKObxlbwZiWzQlPfRLzFw'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_BwMK11K1uLFCfd4L1D2TmSigjTOY'));
 
 
             $resp = curl_exec($ch);

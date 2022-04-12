@@ -1,7 +1,7 @@
 $(document).ready(function() {
     async function light() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-2-color-led/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-2-color-led/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -15,7 +15,7 @@ $(document).ready(function() {
     }
     async function buzzer() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-buzzer/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-buzzer/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -31,7 +31,7 @@ $(document).ready(function() {
     
     async function humid() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-humid/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-dht11-humid/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -46,7 +46,7 @@ $(document).ready(function() {
     
     async function temperature() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-dht11-temp/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-dht11-temp/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -62,7 +62,7 @@ $(document).ready(function() {
     
     async function infrared() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-infrared-sensor/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-infrared-sensor/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -78,7 +78,7 @@ $(document).ready(function() {
     
     async function gas() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-sensor/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-gas-sensor/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
@@ -94,7 +94,7 @@ $(document).ready(function() {
 
     async function lightmode() {
         var temp = []
-        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data");
+        $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-manual-led/data");
         // $response
         // .then(response => response.json())
         // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})

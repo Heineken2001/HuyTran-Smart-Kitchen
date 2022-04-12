@@ -31,7 +31,7 @@ class login extends Controller {
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_ibrL47ObKObxlbwZiWzQlPfRLzFw'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_BwMK11K1uLFCfd4L1D2TmSigjTOY'));
 
 
             $resp = curl_exec($ch);
@@ -66,9 +66,9 @@ class login extends Controller {
                     $gasbound = $value['GASBOUND'];
                     $lightmode = $value['LIGHTMODE']; 
                 }
-                $urlgas = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+                $urlgas = "https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-gas-threshold/data";
                 $this->pushdata($gasbound, $urlgas);
-                $urllightmode = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
+                $urllightmode = "https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-manual-led/data";
                 $this->pushdata($lightmode, $urllightmode);
             // $ch = curl_init();
 
