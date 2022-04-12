@@ -15,4 +15,10 @@ class homemodel extends Model {
     public function insertdata($tbl, $data) {
         return $this->db->insert($tbl, $data);
     }
+
+    public function updatelightmode($id, $lightmode) {
+        
+        return $this->db->updatelightmode($id, $lightmode);
+        
+    }
 }

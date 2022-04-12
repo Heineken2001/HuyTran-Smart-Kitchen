@@ -92,6 +92,22 @@ $(document).ready(function() {
         return temp
     }
 
+    async function lightmode() {
+        var temp = []
+        $response = await fetch("https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data");
+        // $response
+        // .then(response => response.json())
+        // .then(data => {(temp.push(data[0].value)); temp.push(data[0].created_at)})
+        // .catch(function(error)  {
+        //     console.log("Noooooo! Something error:");
+        //     console.log(error);
+        // });
+        // return temp
+        let data = await $response.json();
+        temp.push(data[0].value);
+        return temp
+    }
+
     // lightdata = light();
     // buzzerdata = buzzer();
     // humiddata = humid();
@@ -135,6 +151,7 @@ $(document).ready(function() {
     temperaturedata = await temperature();
     infrareddata = await infrared();
     gasdata = await gas();
+    mode = await lightmode();
     // console.log(lightdata[0])
     // console.log(humiddata[1])
 
@@ -154,6 +171,7 @@ $(document).ready(function() {
                 infrared_time: infrareddata[1],
                 gas_status: gasdata[0],
                 gas_time: gasdata[1],
+                light_mode: mode[0]
         
             },
             cache: false,
@@ -164,7 +182,7 @@ $(document).ready(function() {
         });
         // console.log(Math.random());
         // console.log(light())
-    },500);
+    },1000);
 
 
 

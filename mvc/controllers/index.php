@@ -123,6 +123,16 @@
                 );
                 $res = $homemodel->insertdata($tbl_records, $light);
             }
+
+            $data['light_mode'] = $recordmodel->getLightmode($_SESSION['userid']);
+            foreach ($data['light_mode'] as $key => $value) {
+                $light_mode = $value['LIGHTMODE'];
+            }
+            if (strcmp($light_mode,$_POST['light_mode']) != 0) {
+                $light = $_POST['light_mode'];
+             
+                $res = $homemodel->updatelightmode($_SESSION['userid'], $light);
+            }
         }
 
         public function addgasrecord() {
@@ -230,6 +240,9 @@
             $data['hooman_now'] = $recordmodel->getHoomandata();
 
             $data['temp_now'] = $recordmodel->getTempdata();
+
+            $data['light_mode'] = $recordmodel->getLightmode($_SESSION['userid']);
+
 
             $this->load->view('home', $data);
             

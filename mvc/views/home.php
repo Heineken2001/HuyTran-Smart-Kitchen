@@ -17,6 +17,9 @@
     foreach ($gas_now as $key => $value) {
         $gas_now1 = $value['DATAS'];
     }
+    foreach ($light_mode as $key => $value) {
+        $light_mode1 = $value['LIGHTMODE'];
+    }
     // echo $_SESSION['userid'];
 ?>
 <style>
@@ -190,7 +193,7 @@
                     </div> -->
                     <!-- <input type="radio" name="iCheck" checked> -->
                     <div class="squaredcheck" style="margin-left: 25%">
-                        <input type="checkbox" value="None" id="squaredcheck" class="checkbox1" name="check" onclick="autocheck()" />
+                        <input type="checkbox" value="None" id="squaredcheck" class="checkbox1" name="check" <?php if ($light_mode1 == 5) {echo 'checked';} ?> />
                         <label for="squaredcheck"><span>Auto Mode</span></label>
                     </div>
 
@@ -330,23 +333,39 @@
 
         isSquaredcheck = squaredcheck.prop('checked')
         if(isSquaredcheck){
-            squaredcheck.val('1')
+            squaredcheck.val('5')
         }
         else{
-            squaredcheck.val('0')
+            squaredcheck.val('4')
         }
         squaredcheck.change(function() {
-            if (squaredcheck.val() == '1') {
-                squaredcheck.val('0')
+            if (squaredcheck.val() == '5') {
+                squaredcheck.val('4')
                 squaredcheck.checked = false
                 checklight.disabled = false
                 supportlight.hidden = false
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/lightswitch/mode",
+                    data: {
+                        mode: 4,
+                    },
+                    cache: false,
+                });
             }
             else {
-                squaredcheck.val('1')
+                squaredcheck.val('5')
                 squaredcheck.checked = true
                 checklight.disabled = true
-                supportlight.hidden = true    
+                supportlight.hidden = true   
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo BASE_URL?>/lightswitch/mode",
+                    data: {
+                        mode: 5,
+                    },
+                    cache: false,
+                }); 
             }
         })
         

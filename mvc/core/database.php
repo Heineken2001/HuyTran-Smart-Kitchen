@@ -50,6 +50,13 @@
             return $statement->fetchAll($fetchStyle);
         }
 
+        public function getLightMode($id, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT LIGHTMODE FROM users WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
         public function getBuzzerNow($fetchStyle = PDO::FETCH_ASSOC)
         {
             $sql = "SELECT * FROM records WHERE DevID = 3 ORDER BY RecID DESC LIMIT 1";
@@ -108,6 +115,12 @@
 
         public function updatepassword($tbl_user, $id, $newpass) {
             $sql = "UPDATE $tbl_user SET PASS = '$newpass' WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            return $statement->execute();
+        }
+
+        public function updatelightmode($id, $lightmode) {
+            $sql = "UPDATE users SET LIGHTMODE = $lightmode WHERE ContID = $id";
             $statement = $this->prepare($sql);
             return $statement->execute();
         }
