@@ -1,6 +1,6 @@
 <div class="row account__manage__body">
             <div style="width: 100%; text-align:center; font-size: 30px; font-weight: 600; margin: 16px;">Change Infomation</div>
-            <div class="grid" style="display: flex; flex-direction: column; ">
+            <div class="grid wide" style="display: flex; flex-direction: column; ">
                 <div class="row">
                     <div class="col l-4 m-4 c-12 account__avatar">
                         <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png" alt="" class="account__image">
@@ -13,8 +13,14 @@
                         <div class="account__info">Gas threshold limit:  <?php echo $user[0]['GASBOUND']?></div>
                     </div>
                 </div>
-                <a style="margin: 0 auto ; display: inline-block" href="<?php echo BASE_URL?>/user/changeinfo/<?php echo $user[0]['ContID']?>"><button class="btn5-hover btn5 change__info__btn">Change Infomation</button></a>
-                <a style="margin: 0 auto; display: inline-block" href="<?php echo BASE_URL?>/user/changepassword"><button class="btn5-hover btn5 change__info__btn">Change Password</button></a>
+                <div class="row" style="margin-top: 32px;">
+                    <div class="col l-3 l-o-3">
+                        <a style="margin: 0 auto ; display: inline-block" href="<?php echo BASE_URL?>/user/changeinfo/<?php echo $user[0]['ContID']?>"><button class="btn5-hover btn5 change__info__btn">Change Infomation</button></a>
+                    </div>
+                    <div class="col l-3">
+                        <a style="margin: 0 auto; display: inline-block" href="<?php echo BASE_URL?>/user/changepassword"><button class="btn5-hover btn5 change__info__btn">Change Password</button></a>
+                    </div>
+                </div>
             </div>
         </div>
 

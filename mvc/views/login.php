@@ -19,6 +19,7 @@
                     }
                 ?>
             </p>
+            <h5 class="margintopbig"><a href="<?php echo BASE_URL ?>/forgotpassword">Forgot Your Password</a></h5>
             <a href="#"><button type="submit" class="btn5-hover btn5">Sign In</Button></a>
         </form>
     </div>
