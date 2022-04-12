@@ -78,7 +78,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_VEMQ57iBBombrYGmGBrFGuaa3Igr'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_qkpY124VuXwSJ2ioWW2C4S9li8tP'));
 
 
             $resp = curl_exec($ch);
@@ -151,7 +151,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_VEMQ57iBBombrYGmGBrFGuaa3Igr'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_qkpY124VuXwSJ2ioWW2C4S9li8tP'));
 
 
             $resp = curl_exec($ch);
