@@ -30,7 +30,7 @@ class login extends Controller {
                     $gasbound = $value['GASBOUND'];
                     $lightmode = $value['LIGHTMODE']; 
                 }
-                $ch = curl_init();
+            $ch = curl_init();
 
             $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
             
