@@ -29,16 +29,11 @@
         public function addrecord() {
             $tbl_records = 'records';
             $homemodel = $this->load->model('homemodel');
-            // $light = array(
-            //     "DATAS" => $_POST['light_status'],
-            //     "TIMES" => $_POST['light_time'],
-            //     "DevID" => 2
-            // );
-            // $res = $homemodel->insertdata($tbl_records, $light);
 
             $recordmodel = $this->load->model('recordnowmodel');
 
             $data['buzzer_now'] = $recordmodel->getBuzzerdata();
+    
             foreach ($data['buzzer_now'] as $key => $value) {
                 $buzzer_now1 = $value['TIMES'];
             }
@@ -128,8 +123,8 @@
             foreach ($data['light_mode'] as $key => $value) {
                 $light_mode = $value['LIGHTMODE'];
             }
-            if (strcmp($light_mode,$_POST['light_mode']) != 0) {
-                $light = $_POST['light_mode'];
+            if ($light_mode != (int)($_POST['light_mode'])) {
+                $light = (int)($_POST['light_mode']);
              
                 $res = $homemodel->updatelightmode($_SESSION['userid'], $light);
             }

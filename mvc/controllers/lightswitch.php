@@ -34,7 +34,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_ibrL47ObKObxlbwZiWzQlPfRLzFw'));
 
 
             $resp = curl_exec($ch);
@@ -75,7 +75,7 @@
 
         public function mode()
         {
-            $mode = 0;
+            //$mode = 0;
             if (isset($_POST)) {
                 if (!empty($_POST)) {
                     $mode = $_POST['mode'];
@@ -102,7 +102,7 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_ibrL47ObKObxlbwZiWzQlPfRLzFw'));
 
 
             $resp = curl_exec($ch);

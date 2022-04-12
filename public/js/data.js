@@ -104,6 +104,7 @@ $(document).ready(function() {
         // });
         // return temp
         let data = await $response.json();
+        //console.log(data[0].value)
         temp.push(data[0].value);
         return temp
     }
@@ -146,15 +147,15 @@ $(document).ready(function() {
     
     setInterval( async function() {
         lightdata = await light();
-    buzzerdata =  await buzzer();
-    humiddata = await humid();
-    temperaturedata = await temperature();
-    infrareddata = await infrared();
-    gasdata = await gas();
-    mode = await lightmode();
-    // console.log(lightdata[0])
+        buzzerdata =  await buzzer();
+        humiddata = await humid();
+        temperaturedata = await temperature();
+        infrareddata = await infrared();
+        gasdata = await gas();
+        mode = await lightmode();
+    //console.log(mode[0])
     // console.log(humiddata[1])
-
+    
         $.ajax({
             type: "POST",
             url: "http://localhost/project/Doandanganh/index/addrecord",
@@ -176,13 +177,20 @@ $(document).ready(function() {
             },
             cache: false,
             success: function() {
+                //$('#load').reload(location.href+" #load>*","");
                 location.reload();
                 //$("#divSettings").html(this);
             }
+            // success: function() {
+            //     $('#load').load('http://localhost:8080/Doandanganh/');
+            //     //location.reload();
+            //     //$("#divSettings").html(this);
+            // }
         });
         // console.log(Math.random());
-        // console.log(light())
-    },1000);
+        //console.log(typeof(mode[0]))
+        
+    },500);
 
 
 

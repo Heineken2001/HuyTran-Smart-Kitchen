@@ -20,7 +20,8 @@
     foreach ($light_mode as $key => $value) {
         $light_mode1 = $value['LIGHTMODE'];
     }
-    // echo $_SESSION['userid'];
+    //echo gettype($light_mode1);
+    //echo $_SESSION['userid'];
 ?>
 <style>
     .squaredcheck {
@@ -82,7 +83,7 @@
     background: #c6f;
     }
 </style>
-<div class="grid wide container">
+<div class="grid wide container" id="load">
     <div class="row room__status__body">
         <div class="grid">
             <div class="row">
@@ -179,7 +180,7 @@
                     <form action="<?php echo BASE_URL?>/lightswitch/switch" method="POST" id='my-light-form'>
                         <label class="switch" style="display: block; margin: auto; margin-top: 10%">
                             <input id='checked_light' name='light_switch1' value="" <?php if ($light_now1 == 1) {echo 'checked';} ?> type="checkbox" >
-                            <span id="supportlight" class="slider round" ></span>
+                            <span id="supportlight" class="slider round" <?php if ($light_mode1 == 5) {echo 'hidden';}?>></span>
                         </label>
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
                     </form>
@@ -334,11 +335,14 @@
         isSquaredcheck = squaredcheck.prop('checked')
         if(isSquaredcheck){
             squaredcheck.val('5')
+            //squaredcheck.checked = true
         }
         else{
             squaredcheck.val('4')
+            //squaredcheck.checked = false
         }
         squaredcheck.change(function() {
+            //console.log("OKOK")
             if (squaredcheck.val() == '5') {
                 squaredcheck.val('4')
                 squaredcheck.checked = false
@@ -453,6 +457,7 @@
         }
         checkedLight.change(function() {
             if (checkedLight.val() == '1') {
+                //console.log('OK')
                 checkedLight.val('0')
                 lightonoff.src = "https://cdn-icons-png.flaticon.com/512/3176/3176276.png"
                 // "https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade"

@@ -11,6 +11,42 @@ class login extends Controller {
         $this->load->view('login');
         $this->load->view('components/footer');
     }
+
+    public function pushdata($value, $url) {
+        $ch = curl_init();
+
+            //$url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+            
+
+            $data_array = array(
+                
+                "value"=>$value
+                
+            );
+
+            $data = http_build_query($data_array);
+
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_ibrL47ObKObxlbwZiWzQlPfRLzFw'));
+
+
+            $resp = curl_exec($ch);
+
+            if($e = curl_error($ch)) {
+                echo $e;
+            }
+            else {
+
+                $decode = json_decode($resp);
+            }
+
+            curl_close($ch);
+    }
+
     public function checklogin()
     {
         if (isset($_POST['username']) && isset($_POST['password']) && $_POST['username']!="" && $_POST['password']!="") {
@@ -30,71 +66,75 @@ class login extends Controller {
                     $gasbound = $value['GASBOUND'];
                     $lightmode = $value['LIGHTMODE']; 
                 }
-            $ch = curl_init();
+                $urlgas = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+                $this->pushdata($gasbound, $urlgas);
+                $urllightmode = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
+                $this->pushdata($lightmode, $urllightmode);
+            // $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
+            // $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-gas-threshold/data";
             
 
-            $data_array = array(
+            // $data_array = array(
                 
-                "value"=>$gasbound
+            //     "value"=>$gasbound
                 
-            );
+            // );
 
-            $data = http_build_query($data_array);
+            // $data = http_build_query($data_array);
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
 
 
-            $resp = curl_exec($ch);
+            // $resp = curl_exec($ch);
 
-            if($e = curl_error($ch)) {
-                echo $e;
-            }
-            else {
+            // if($e = curl_error($ch)) {
+            //     echo $e;
+            // }
+            // else {
 
-                $decode = json_decode($resp);
-            }
+            //     $decode = json_decode($resp);
+            // }
 
-            curl_close($ch);
+            // curl_close($ch);
 
-            $ch = curl_init();
+            // $ch = curl_init();
 
-            $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
+            // $url = "https://io.adafruit.com/api/v2/taulabe/feeds/do-an-da-nganh.co3109-manual-led/data";
             
 
-            $data_array = array(
+            // $data_array = array(
                 
-                "value"=>$lightmode
+            //     "value"=>$lightmode
                 
-            );
+            // );
 
-            $data = http_build_query($data_array);
+            // $data = http_build_query($data_array);
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_Qaax13lEi6yxUNNWPypTfBQHv3L4'));
 
 
-            $resp = curl_exec($ch);
+            // $resp = curl_exec($ch);
 
-            if($e = curl_error($ch)) {
-                echo $e;
-            }
-            else {
+            // if($e = curl_error($ch)) {
+            //     echo $e;
+            // }
+            // else {
 
-                $decode = json_decode($resp);
-            }
+            //     $decode = json_decode($resp);
+            // }
 
-            curl_close($ch);
+            // curl_close($ch);
 
             
 
