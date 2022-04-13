@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
 
                     <div class="charkbtn">
@@ -203,14 +203,16 @@
                         <a href="<?php echo BASE_URL?>/record/update"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Update</Button></a>
                 </div> -->
                 
+                <div class="col l-12 m-12 c-12">
+                    <a href="summaryreport"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
+                </div>
+
             </div>  
             
         </div>
         
     </div>
-    <div class="charkbtn" style="display: block; margin: 150px auto; text-align:center; ">
-        <a href="summaryreport" style="margin-left: -28%"><button class="btn5-hover btn5">Summary Report</Button></a>
-    </div>
+    
 </div>
 
 <script src="<?php echo BASE_URL?>/public/js/data.js"></script>
