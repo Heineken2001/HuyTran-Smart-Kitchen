@@ -2,12 +2,12 @@
     .btn5-hover.btn5.active{
         background-image: linear-gradient(
         to right,
-        #b4bcc0,
-        #b4bcc9,
-        #b4bcc8,
-        #b4bcc5
+        #918A8A,
+        #E0E0E0,
+        #9C9C9C,
+        #ffffff
         );
-        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        box-shadow: 0 4px 15px 0 grey;
     }
 </style>
 
