@@ -213,7 +213,7 @@
                 </div> -->
                 
                 <div class="col l-12 m-12 c-12">
-                    <a href="summaryreport"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
+                    <a href="summaryreport" style="text-decoration:none"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
                 </div>
 
             </div>  
