@@ -36,6 +36,14 @@
             return $statement->fetchAll($fetchStyle = PDO::FETCH_ASSOC);
         }
 
+        public function renewpassword($user,$password, $fetchStyle = PDO::FETCH_ASSOC)
+        {
+            $sql = "UPDATE users SET PASS='$password' WHERE USRNAME='$user'";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle = PDO::FETCH_ASSOC);
+        }
+
         public function insert($tbl, $data) {
             $keys = implode(",", array_keys($data));
             $values = ":".implode(", :", array_keys($data));

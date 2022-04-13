@@ -18,6 +18,11 @@ class usermodel extends Model {
         return $this->db->validateforgot($user, $email);
     }
 
+    public function renewpassword($user, $pass) 
+    {
+        return $this->db->renewpassword($user, $pass);
+    }
+
     public function insertdata($tbl, $data)     
     {
         return $this->db->insert($tbl, $data);
