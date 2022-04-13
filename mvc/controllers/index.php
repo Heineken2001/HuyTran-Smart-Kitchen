@@ -238,6 +238,13 @@
 
             $data['light_mode'] = $recordmodel->getLightmode($_SESSION['userid']);
 
+            foreach($data['gas_now'] as $key => $value) {
+                $gas_now = $value['DATAS'];
+            }       
+
+            if ($gas_now > $_SESSION['gasbound']) {
+                include_once './mail/sendgasnotice.php';
+            }
 
             $this->load->view('home', $data);
             

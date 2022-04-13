@@ -22,7 +22,7 @@ try {
     $mail->Port = 587; // TCP port to connect to
     //Recipients
     $mail->setFrom('huytrannhat.900@gmail.com', 'KenTinyhippooooo');
-    $mail->addAddress($_SESSION['email'], $_SESSION['username']); // Add a recipient
+    $mail->addAddress($_SESSION['email'], $_SESSION['user']); // Add a recipient
     // $mail->addAddress('ellen@example.com'); // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -33,8 +33,8 @@ try {
     // Content
 
     $mail->isHTML(true);   // Set email format to HTML
-    $mail->Subject = 'Password Recovery';
-    $mail->Body = 'Your password nèeeeeeeeeeeeeee:  ' . $randstring ;
+    $mail->Subject = 'Danger warning !';
+    $mail->Body = 'The concentration of gas exceeds the permissible limit:  ' . $gas_now ;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
     echo 'Message has been sent';

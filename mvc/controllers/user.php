@@ -60,6 +60,7 @@
                 "PNUMBER" => $_POST['pnumber'],
                 "GASBOUND" => $_POST['gasbound']
             );
+            $_SESSION['gasbound'] = $_POST['gasbound'];
             $ch = curl_init();
 
             $url = "https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-gas-threshold/data";
