@@ -113,15 +113,15 @@
                     <!-- <h5>Buzzer:</h5> -->
                     <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px;float: right;margin-right: 25%;">
                     <form action="<?php echo BASE_URL?>/buzzerswitch/switch" method="POST" id='my-buzzer-form' style="height:60px; width: 150px">
-                        <label class="switch" style="float: right;">
+                        <label class="switch" style="float: right;" >
                             <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" onclick="">
                             <!-- <?php if ($buzzer_now1 == 3) {echo 'disabled';} ?> -->
-                            <span class="slider round"></span>
+                            <span class="slider round" <?php if ($buzzer_now1 == 3) {echo 'hidden';}?>></span>
                         </label>
                         
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
                     </form>
-                    
+                    <!-- <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px; margin: 0 auto; margin-top: 50px"> -->
                     <div class="charkbtn">
                         <a href="gaschart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
