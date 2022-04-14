@@ -51,5 +51,6 @@ class usermodel extends Model {
         return $this->db->update($tbl_user, $user, $id);
     }
 
+    
 } 
 ?>

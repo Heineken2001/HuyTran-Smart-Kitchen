@@ -1,9 +1,10 @@
 .report__body {
     width: 100%;
     margin-top: 70px;
+    flex-direction: column;
 }
 
-.error__title {
+.error__title1 {
     margin: 0 auto;
     font-size: 2rem;
     font-weight: bold;
@@ -13,13 +14,29 @@
 		0px 24px 2px rgba(0, 0, 0, 0.1), 0px 24px 30px rgba(0, 0, 0, 0.1);
 }
 
-.error__content {
+.ck-editor {
     width: 100%;
-    min-height: 400px;
+    min-height: 600px;
     color: black;
-    font-family: 'Oswald', sans-serif;
-    margin: 20px 20px 20px 20px;
+    /* font-family: 'Oswald', sans-serif; */
+    /* margin: 20px 20px 20px 20px; */
     font-size: 1.2rem;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+    height: 500px;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-focused {
+    height: 500px;
+}
+
+p[data-placeholder] {
+    color: black;
+}
+
+p[data-placeholder] > * {
+    color: black;
 }
 
 .charkbtn {
