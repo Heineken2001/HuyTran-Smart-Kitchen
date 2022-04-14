@@ -28,6 +28,7 @@
 
         public function addrecord() {
             $tbl_records = 'records';
+            $tbl_users = 'users';
             $homemodel = $this->load->model('homemodel');
 
             $recordmodel = $this->load->model('recordnowmodel');
@@ -100,7 +101,7 @@
                     "DevID" => 7,
                     "ContID" => (int)$_SESSION['userid']
                 );
-                
+                $_SESSION['sent'] = 0;
                 $res = $homemodel->insertdata($tbl_records, $gas);
             }
 
@@ -128,6 +129,17 @@
              
                 $res = $homemodel->updatelightmode($_SESSION['userid'], $light);
             }
+
+            // $data['gas_bound'] = $recordmodel->getGasbound($_SESSION['userid']);
+            // foreach ($data['gas_bound'] as $key => $value) {
+            //     $gasbound = $value['GASBOUND'];
+            // }
+            // if ($gasbound != (int)($_POST['gas_bound'])) {
+            //     $gasbound = (int)($_POST['gas_bound']);
+            //     $_SESSION['sent'] = 0;
+             
+            //     $res = $homemodel->updategasbound($tbl_users, $_SESSION['userid'], $gasbound);
+            // }
         }
 
         public function addgasrecord() {

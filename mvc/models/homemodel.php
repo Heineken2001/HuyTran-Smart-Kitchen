@@ -21,4 +21,10 @@ class homemodel extends Model {
         return $this->db->updatelightmode($id, $lightmode);
         
     }
+
+    public function updategasbound($tbl, $id, $gasbound) {
+        
+        return $this->db->updategasbound($tbl, $id, $gasbound);
+        
+    }
 }

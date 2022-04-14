@@ -42,6 +42,11 @@ class recordnowmodel extends Model {
         return $this->db->getLightMode($id);
     }
 
+    public function getGasbound($id)
+    {
+        return $this->db->getGasbound($id);
+    }
+
     public function insertdata($tbl, $data) {
         return $this->db->insert($tbl, $data);
     }

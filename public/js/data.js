@@ -109,6 +109,15 @@ $(document).ready(function() {
         return temp
     }
 
+    // async function gaslimit() {
+    //     var temp = []
+    //     $response = await fetch("https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-gas-threshold/data");
+        
+    //     let data = await $response.json();
+    //     temp.push(data[0].value); 
+    //     return temp
+    // }
+
     // lightdata = light();
     // buzzerdata = buzzer();
     // humiddata = humid();
@@ -153,12 +162,14 @@ $(document).ready(function() {
         infrareddata = await infrared();
         gasdata = await gas();
         mode = await lightmode();
+        //bound = await gaslimit();
+
     //console.log(mode[0])
     // console.log(humiddata[1])
     
         $.ajax({
             type: "POST",
-            url: "http://localhost/project/Doandanganh/index/addrecord",
+            url: "http://localhost:8080/Doandanganh/index/addrecord",
             data: {
                 light_status: lightdata[0],
                 light_time: lightdata[1],
@@ -172,7 +183,8 @@ $(document).ready(function() {
                 infrared_time: infrareddata[1],
                 gas_status: gasdata[0],
                 gas_time: gasdata[1],
-                light_mode: mode[0]
+                light_mode: mode[0],
+                //gas_bound: bound[0]
         
             },
             cache: false,

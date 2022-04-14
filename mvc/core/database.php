@@ -73,6 +73,13 @@
             return $statement->fetchAll($fetchStyle);
         }
 
+        public function getGasbound($id, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT GASBOUND FROM users WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
         public function getBuzzerNow($fetchStyle = PDO::FETCH_ASSOC)
         {
             $sql = "SELECT * FROM records WHERE DevID = 3 ORDER BY RecID DESC LIMIT 1";
