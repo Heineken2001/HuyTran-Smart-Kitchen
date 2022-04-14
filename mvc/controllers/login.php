@@ -66,7 +66,8 @@ class login extends Controller {
                     $gasbound = $value['GASBOUND'];
                     $lightmode = $value['LIGHTMODE'];
                     $_SESSION['gasbound'] = $gasbound;
-                    $_SESSION['email'] = $value['EMAIL'];;  
+                    $_SESSION['email'] = $value['EMAIL'];
+                    $_SESSION['sent'] = 0;
                 }
                 $urlgas = "https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-gas-threshold/data";
                 $this->pushdata($gasbound, $urlgas);

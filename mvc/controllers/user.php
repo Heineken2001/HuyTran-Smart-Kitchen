@@ -60,6 +60,9 @@
                 "PNUMBER" => $_POST['pnumber'],
                 "GASBOUND" => $_POST['gasbound']
             );
+            if ($_POST['gasbound'] > $_SESSION['gasbound']) {
+                $_SESSION['sent'] = 0;
+            }
             $_SESSION['gasbound'] = $_POST['gasbound'];
             $ch = curl_init();
 

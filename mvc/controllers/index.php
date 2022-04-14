@@ -240,13 +240,15 @@
 
             foreach($data['gas_now'] as $key => $value) {
                 $gas_now = $value['DATAS'];
-            }       
+            }   
+            
+            $this->load->view('home', $data);
 
-            if ($gas_now > $_SESSION['gasbound']) {
+            if ($gas_now > $_SESSION['gasbound'] && $_SESSION['sent'] == 0) {
+                $_SESSION['sent'] = 1;
                 include_once './mail/sendgasnotice.php';
             }
 
-            $this->load->view('home', $data);
             
             $this->load->view('components/footer');
         }
