@@ -10,3 +10,12 @@ $(document).ready(function() {
 		$(".line").removeClass("line-rotate");
 	});
 });
+
+
+
+
+
+
+// -------------------NEW------------------
+
+

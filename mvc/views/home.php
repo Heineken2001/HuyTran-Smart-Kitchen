@@ -82,6 +82,8 @@
     .squaredcheck input[type=checkbox].checkbox3:checked + label {
     background: #c6f;
     }
+
+    
 </style>
 <div class="grid wide container" id="load">
     <div class="row room__status__body">
@@ -143,7 +145,7 @@
                     <div class="room__status__body__list__title">Temperature</div>
                     <h5 style="text-align:center; margin: 5px auto; color:black">Nhiệt độ hiện tại: <?php echo $temp_now1;?>°C</h5>
 
-                    <div class="body_temp">
+                    <!-- <div class="body_temp">
                         <div class="container_temp">
                             <div class="outer-circle">
                                 <div class="middle-circle">
@@ -158,7 +160,7 @@
                                             <?php echo ($temp_now1); ?>
                                         </span>
                                         <span class="bottom">
-                                            <!-- Kitchen                                       </span> -->
+                                            Kitchen
                                         <div class="line">
 
                                         </div>
@@ -166,13 +168,20 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div> -->
 
+                    <div class="wrapper_temp" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%">
+                        <div class="container_temp chart_temp" data-size="200" data-value="<?php echo ($temp_now1); ?>" data-arrow="up"></div>
+                    </div>
 
+                    <script src="<?php echo BASE_URL ?>/public/js/temp_alert.js"></script>
+                    
                     <div class="charkbtn">
                         <a href="tempchart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
+
                 </div>
+
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px; ">
                     <div class="room__status__body__list__title">Light</div>
                     <!-- <img id="lightonoff" src="https://cdn-icons.flaticon.com/png/512/3351/premium/3351798.png?token=exp=1648614110~hmac=f7d46da26a8cf81c51fee5d0283acade" alt="light_off" style="height: 100px; width:100px; display: block; margin: auto; margin-top: 30%"> -->
@@ -203,14 +212,16 @@
                         <a href="<?php echo BASE_URL?>/record/update"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Update</Button></a>
                 </div> -->
                 
+                <div class="col l-12 m-12 c-12">
+                    <a href="summaryreport" style="text-decoration:none"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
+                </div>
+
             </div>  
             
         </div>
         
     </div>
-    <div class="charkbtn" style="display: block; margin: 150px auto; text-align:center; ">
-        <a href="summaryreport" style="margin-left: -28%"><button class="btn5-hover btn5">Summary Report</Button></a>
-    </div>
+    
 </div>
 
 <script src="<?php echo BASE_URL?>/public/js/data.js"></script>

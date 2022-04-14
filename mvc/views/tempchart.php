@@ -2,12 +2,12 @@
     .btn5-hover.btn5.active{
         background-image: linear-gradient(
         to right,
-        #b4bcc0,
-        #b4bcc9,
-        #b4bcc8,
-        #b4bcc5
+        #918A8A,
+        #E0E0E0,
+        #9C9C9C,
+        #ffffff
         );
-        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+        box-shadow: 0 4px 15px 0 grey;
     }
 </style>
 
@@ -38,15 +38,15 @@
                         </ul>
                     </div> -->
                     <div style="margin-top: 0px; text-align: center">
-                        <a id="dategas" href="#"><button class="btn5-hover btn5 active">Date</Button></a>
-                        <a id="monthgas" href="#"><button class="btn5-hover btn5">Month</Button></a>
-                        <a id="yeargas" href="#"><button class="btn5-hover btn5">Year</Button></a>
+                        <a id="dategas" href="#"><button class="btn5-hover btn5 active" onclick="swap()">Date</Button></a>
+                        <a id="monthgas" href="#"><button class="btn5-hover btn5" onclick="swap()">Week</Button></a>
+                        <a id="yeargas" href="#"><button class="btn5-hover btn5" onclick="swap()">Month</Button></a>
                     </div>
                     <div>
                         
                     <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nhiệt độ trong ngày:...</h5>
                     <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong tháng:...</h5>
-                    <h5 id="gasdyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong năm:...</h5>
+                    <h5 id="gasyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong năm:...</h5>
 
                     </div>
                 </div>
@@ -68,5 +68,18 @@
 
 
 <script>
+    var dategas = document.getElementById("dategas")
+    var monthgas = document.getElementById("monthgas")
+    var yeargas = document.getElementById("yeargas")
+
+    var gasdate = document.getElementById("gasdate")
+    var gasmonth = document.getElementById("gasmonth")
+    var gasyear = document.getElementById("gasyear")
+
+    console.log(dategas)
+
+    if(dategas.active == true){
+
+    }
 
 </script>

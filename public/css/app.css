@@ -468,6 +468,30 @@ input:checked + .slider:before {
     transform: rotate(30deg) !important;
 }
 
+
+/* TEMPERATURE NEW */
+
+.wrapper_temp {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .container_temp {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+
+
+
 /* CHECKBOX AUTO */
 
 
