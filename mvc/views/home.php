@@ -86,8 +86,10 @@
     
 </style>
 <div class="grid wide container" id="load">
-    <div style="text-align:center; margin-top: 0">  
-        <h1 style="margin-top: 100px; font-size: 38px">Kitchen Overview</h1>
+    <div class="row" style="">  
+        <div class="col l-12">
+            <h1 style="margin-top: 100px; font-size: 38px; text-align: center;">Kitchen Overview</h1>
+        </div>
     </div>
     <div class="row room__status__body" style="margin-top: 20px">
         <div class="grid">
