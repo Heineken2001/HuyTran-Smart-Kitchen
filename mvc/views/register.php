@@ -49,7 +49,7 @@
                         }
                     ?>
                 </p>
-                <button type="submit" class="btn5-hover btn5">Sign In</Button>
+                <button type="submit" class="btn5-hover btn5">Sign Up</Button>
             </form>
         </div>
     </div>

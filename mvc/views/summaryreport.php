@@ -25,11 +25,11 @@
         
             <div class="row">
 
-                <div class="col l-12 m-12 c-12 room__status__body__list" style="border-radius: 20px;">
+                <div class="col l-12 m-12 c-12 room__status__body__list" style="border-radius: 20px">
                     <div class="room__status__body__list__title" style="text-align: center;">
                         <input type="text" id="basicDate" placeholder="Please select Date Time" data-input>
                     </div>
-                    <div style="text-align: left; margin-top: 10px; margin-left: 30px; height: 55%; width: 55%; float:left">
+                    <div style="text-align: left; margin-top: 10px; margin-left: 30px; height: 50%; width: 50%; float:left">
                         <h5 style="color: black; margin: 10px auto">Thời gian sử dụng bếp trong ngày:...</h5>
                         <br>
                         <h5 style="color: black; margin: 10px auto">Nồng độ Gas trung bình trong ngày:...</h5>
@@ -40,9 +40,9 @@
                         <br>
                         <h5 style="color: black; margin: 10px auto">Thời gian sử dụng đèn trong ngày:...</h5>
                         <br>
-                        <h5 style="color: black; margin: 10px auto">Số lần nồng độ Gas vượt ngưỡng trong ngày:...</h5>
+                        <h5 style="color: black; margin: 10px auto; margin-bottom: 20px">Số lần nồng độ Gas vượt ngưỡng trong ngày:...</h5>
                     </div>
-                    <div class="" style="float: right; margin-top: 8%; margin-right: 10%">
+                    <div class="" style="float: right; margin-top: 8%; margin-right: 9%">
                         <h1 class="login__header__brand">SmartKitchen by CoderCodon</h1>
                     </div>
                     
