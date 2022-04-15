@@ -14,7 +14,7 @@
                     <div class="col l-6 m-6 c-12 room__status__body__list" style="border-radius: 20px; overflow: hidden">
                         <div class="room__status__body__list__title">User Management</div>
                        
-                    <div class="tbl-header" style="margin-left: 10px; margin-right: 10px">
+                    <div class="tbl-header" style="margin-left: 15px; margin-right: 15px">
                         <table cellpadding="0" cellspacing="0" style="width: 100%">
                           <thead>
                             <tr>
@@ -25,7 +25,7 @@
                           </thead>
                         </table>
                     </div>
-                      <div class="tbl-content" style="margin-left: 10px; margin-right: 10px; border: none">
+                      <div class="tbl-content" style="border: none; height: 400px">
                         <table cellpadding="0" cellspacing="0">
                           <tbody>
                             <?php foreach ($users as $key => $value) {?>
