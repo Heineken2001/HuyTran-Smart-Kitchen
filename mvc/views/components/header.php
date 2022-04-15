@@ -34,10 +34,10 @@
 
         @media (max-width:739px) {
             .login__header__nav {
-                display: none;
+                float:left;
             }
             .login__header__brand {
-                width: 100%;
+                width: 10%;
                 text-align: center;
             }
         }
@@ -52,7 +52,7 @@
             <!-- <i class="fa-solid fa-bars" style="font-size: 30px; margin: auto 0;"></i>
             <input type="checkbox" name="navmobile" id="navmobile">
             <label for="navmobile">Ken</label> -->
-            <div class="col l-6 m-6 c-12 login__header" >
+            <div class="col l-3 m-3 c-12 login__header" >
                <a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none"><img src="<?php echo BASE_URL?>/public/images/logokitchen.png" alt="" class="logokitchen"></a> 
             </div>
            
@@ -163,7 +163,7 @@
                 </div>
             </div>
         <?php } ?>
-        <div class="col l-4 m-5 c-0" style="margin-top: -15px">
+        <div class="col l-9 m-9 c-0" style="margin-top: -15px">
                 <ul class="login__header__nav" >
                     <!-- <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none">Home</a></li> -->
                     <?php if (isset($_SESSION['user'])) {?>
