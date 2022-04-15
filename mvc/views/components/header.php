@@ -53,7 +53,9 @@
             <input type="checkbox" name="navmobile" id="navmobile">
             <label for="navmobile">Ken</label> -->
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div class="col l-3 m-3 c-12 login__header" >
+            <div class="col l-6 m-6 c-12 login__header" >
 =======
             <div class="col l-6 m-6 c-12 login__header" >
 >>>>>>> parent of 0195c53 (fix header)
@@ -168,7 +170,11 @@
             </div>
         <?php } ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div class="col l-9 m-9 c-0" style="margin-top: -15px">
+=======
+        <div class="col l-4 m-5 c-0" style="margin-top: -15px">
+>>>>>>> parent of 0195c53 (fix header)
 =======
         <div class="col l-4 m-5 c-0" style="margin-top: -15px">
 >>>>>>> parent of 0195c53 (fix header)
