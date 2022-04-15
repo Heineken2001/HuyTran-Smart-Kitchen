@@ -86,7 +86,10 @@
     
 </style>
 <div class="grid wide container" id="load">
-    <div class="row room__status__body">
+    <div style="text-align:center; margin-top: 0">  
+        <h1 style="margin-top: 100px; font-size: 38px">Kitchen Overview</h1>
+    </div>
+    <div class="row room__status__body" style="margin-top: 20px">
         <div class="grid">
             <div class="row">
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
