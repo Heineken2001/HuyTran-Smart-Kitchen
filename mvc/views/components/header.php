@@ -53,7 +53,7 @@
             <input type="checkbox" name="navmobile" id="navmobile">
             <label for="navmobile">Ken</label> -->
             <div class="col l-3 m-3 c-12 login__header" style="margin-top: 5px">
-               <a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none"><h1 class="login__header__brand">SmartKitchen</h1></a> 
+               <a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none"><img src="<?php echo BASE_URL?>/public/images/logokitchen.png" alt="" class="logokitchen"></a> 
             </div>
             <div class="col l-9 m-9 c-0" style="margin-top: 5px">
                 <ul class="login__header__nav" style="float: right">
