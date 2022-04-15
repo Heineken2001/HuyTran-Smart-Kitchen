@@ -173,6 +173,26 @@
         
         }
 
+        public function reporterror() {
+            $this->load->view('components/header');
+            $this->load->view('user/report');
+            $this->load->view('components/footer');
+
+        }
+
+        public function reportsent() {
+            $tbl = 'reports';
+            $content = strip_tags($_POST['reportcontent']);
+            $user_model = $this->load->model('usermodel');
+            $data = array(
+                "CONTENT" => $content,
+                "ContID" => (int)$_SESSION['userid']
+            );
+            $action = $user_model->insertdata($tbl, $data);
+            $message['msg'] = 'Thanks for your report';
+            header('Location: ' .BASE_URL.'/user/reporterror?msg='.urlencode(serialize($message)));
+        }
+
         public function editgasbound($id) {
             $user_table = 'users';
             if (isset($_POST)) {

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/grid.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/admin.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/usermng.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/errorReport.css">
     <!-- <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/errorReport.css"> -->
     
     <title>Login</title>
