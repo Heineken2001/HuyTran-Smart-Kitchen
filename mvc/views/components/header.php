@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/noti.css">
     <!-- <link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/errorReport.css"> -->
     
-    <title>Login</title>
+    <title>SmartKitchen by CoderCodon</title>
     <style>
         /* @media (min-width: 1024px) and (max-width: 1239px) {
             .login__header {
@@ -45,10 +45,8 @@
     </style>
 </head>
 <body>
-    <div class="background">
-    </div>
     
-    <div style="">
+    <div>
         <div class="grid wide container">
             <div class="row" style="display:flex; justify-content:space-between; align-items:center;">
                 <!-- <i class="fa-solid fa-bars" style="font-size: 30px; margin: auto 0;"></i>
