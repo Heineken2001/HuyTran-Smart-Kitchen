@@ -53,16 +53,44 @@
         
         public function updateinfo($id) {
             $tbl_user = 'users';
+
+            $file = $_FILES['image'];
+            echo "<pre>";
+            print_r($file);
+            echo "</pre>";
+
+            $img_name = $file['name'];
+            $img_size = $file['size'];
+            $tmp_name = $file['tmp_name'];
+            $error = $file['error'];
+            
+            if ($error === 0) {
+                $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);   //jpeg
+                $img_ex_lc = strtolower($img_ex);
+                
+                $allowed_exs = array("jpg", "png", "jpeg");
+                if (in_array($img_ex, $allowed_exs)) {
+                    $new_img_name = uniqid($_SESSION['user'], true). '.' . $img_ex_lc;
+                    $img_upload_path = 'public/images/uploads/' . $new_img_name;
+                    move_uploaded_file($tmp_name, $img_upload_path); 
+                }
+            }
+            if ($new_img_name == "") $new_img_name = $_SESSION['image'];
+            
+            $_SESSION['image'] = $new_img_name;
+
             $user = array (
                 "EMAIL" => $_POST['email'],
                 "FNAME" => $_POST['fname'],
                 "ADDRESS" => $_POST['address'],
                 "PNUMBER" => $_POST['pnumber'],
-                "GASBOUND" => $_POST['gasbound']
+                "GASBOUND" => $_POST['gasbound'],
+                "IMAGE" => $new_img_name
             );
             if ($_POST['gasbound'] > $_SESSION['gasbound']) {
                 $_SESSION['sent'] = 0;
             }
+
             $_SESSION['gasbound'] = $_POST['gasbound'];
             $ch = curl_init();
 
@@ -99,6 +127,30 @@
             $usermodel = $this->load->model('usermodel');
             $res = $usermodel->updatedata($tbl_user, $user, $id);
             // $this->load->view('registersuccess', []);
+
+            
+
+
+            // $file = $_FILES["image"];
+ 
+            // // Uploading in "uplaods" folder
+            // move_uploaded_file($file["tmp_name"], "public/images/uploads/" . $file["name"]);
+
+            // print_r($_FILES['image']);
+
+            // if ($error === 0) {
+            //     $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+            //     $img_ex_lc = strtolower($img_ex);
+
+            //     $allowed_exs = array("jpg", "png", "jpeg");
+
+            //     if (in_array($img_ex_lc, $allowed_exs)) {
+            //         $new_img_name = uniqid("IMG-", true).'.'. $img_ex_lc;
+            //         $img_upload_path = BASE_URL . "/public/images/avt/" . $new_img_name;
+            //         move_uploaded_file($tmp_name, $img_upload_path);
+            //     }
+            // }
+
             header('Location: ' .BASE_URL.'/user');
         
         }

@@ -3,7 +3,7 @@
             <div class="grid wide" style="display: flex; flex-direction: column; ">
                 <div class="row">
                     <div class="col l-4 m-4 c-12 account__avatar">
-                        <img src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png" alt="" class="account__image">
+                        <img src="<?php echo BASE_URL . "/public/images/uploads/" . $_SESSION['image']; ?>" alt="" class="account__image">
                     </div>
                     <div class="col l-8 m-8 c-12" style="background-color:rgba(201,208,215,0.6); background-clip:content-box; padding:0 32px 0 32px;">
                         <div class="account__info">Name:  <?php echo $user[0]['FNAME']?></div>
