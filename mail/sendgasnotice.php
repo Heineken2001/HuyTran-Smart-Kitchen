@@ -21,7 +21,7 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port = 587; // TCP port to connect to
     //Recipients
-    $mail->setFrom('huytrannhat.900@gmail.com', 'Gas Warning by SmartKitchen System');
+    $mail->setFrom('huytrannhat.900@gmail.com', 'Gas Warning by SmartKitchen System of CoderCodon');
     $mail->addAddress($_SESSION['email'], $_SESSION['user']); // Add a recipient
     // $mail->addAddress('ellen@example.com'); // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
