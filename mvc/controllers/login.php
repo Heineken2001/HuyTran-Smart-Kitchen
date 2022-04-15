@@ -63,6 +63,7 @@ class login extends Controller {
                 foreach($data as $key => $value) {
                     $_SESSION['userid'] = $value['ContID'];
                     $_SESSION['pass'] = $value['PASS'];
+                    $_SESSION['image'] = $value['IMAGE'];
                     $gasbound = $value['GASBOUND'];
                     $lightmode = $value['LIGHTMODE'];
                     $_SESSION['gasbound'] = $gasbound;
