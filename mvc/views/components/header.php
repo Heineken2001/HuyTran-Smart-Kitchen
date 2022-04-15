@@ -53,13 +53,13 @@
             </div>
             <div class="col l-6 m-8 c-0">
                 <ul class="login__header__nav">
-                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>">Home</a></li>
+                    <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none">Home</a></li>
                     <?php if (isset($_SESSION['user'])) {?>
-                        <?php if($_SESSION['user']!="admin") {?><li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/user/"><?php echo $_SESSION['user'] ?></a></li><?php }?>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout">Log Out</a></li>
+                        <?php if($_SESSION['user']!="admin") {?><li class="login__header__nav__list" ><a href="<?php echo BASE_URL?>/user/" style="text-decoration:none"><?php echo $_SESSION['user'] ?></a></li><?php }?>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout" style="text-decoration:none">Log Out</a></li>
                     <?php } else {?>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login">Log In</a></li>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register">Register</a></li>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login" style="text-decoration:none">Log In</a></li>
+                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register" style="text-decoration:none">Register</a></li>
                     <?php }?>
                 </ul>
             </div>
