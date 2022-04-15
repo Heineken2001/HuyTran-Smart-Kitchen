@@ -21,8 +21,8 @@ body {
 }
 
 .logokitchen {
-    width: 200px;
-    margin-left: 20px;
+    width: 80%;
+    margin-left: auto;
 }
 
 .login__header__brand {
@@ -43,6 +43,7 @@ body {
     margin-left: 30px;
     height: 100%;
     font-size: 1.2rem;
+    float:right;
 }
 
 .login__header__nav__list + .login__header__nav__list {

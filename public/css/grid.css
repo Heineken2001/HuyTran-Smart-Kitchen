@@ -597,7 +597,7 @@
 
 @media (max-width: 739px) {
     body {
-        margin: 0 32px 0 32px;
+        /* margin: 0 32px 0 32px; */
     }
 }
 

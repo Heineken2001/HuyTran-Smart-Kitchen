@@ -34,10 +34,10 @@
 
         @media (max-width:739px) {
             .login__header__nav {
-                display: none;
+                float:left;
             }
             .login__header__brand {
-                width: 100%;
+                width: 10%;
                 text-align: center;
             }
         }
