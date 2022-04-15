@@ -1,3 +1,5 @@
+
+
 <div class="row report__body">
                 
                     <div class="mng__title">
@@ -28,7 +30,7 @@
                               <td><?php echo $value['EMAIL']?></td>
                               <td><?php echo $value['ADDRESS']?></td>
                               <td><?php echo $value['ContID']?></td>
-                              <td>
+                              <td style="color: red; text-align: center;">
                                 <?php echo $value['GASBOUND']?>
                               </td>
                               <td><a href="<?php echo BASE_URL?>/admin/deleteuser/<?php echo $value['ContID']?>"><button  class="btn btn-log">Delete</button></a></td>
