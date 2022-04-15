@@ -104,9 +104,7 @@
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Gas</div>
                         <h1 id="gas-now">
-                            <h5 style="text-align:center; margin: 5px auto; color:black">Nồng độ Gas hiện tại: <?php echo $gas_now1;?>
-                            </h5>
-                            
+                            <h5 style="text-align:center; margin: 5px auto; color:black">Nồng độ Gas hiện tại: <?php echo $gas_now1;?>ppm</h5>
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
                             <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>"  data-arrow="up">
@@ -128,7 +126,7 @@
                     </form>
                     <!-- <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px; margin: 0 auto; margin-top: 50px"> -->
                     <div class="charkbtn">
-                        <a href="gaschart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/gaschart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -141,7 +139,7 @@
 
 
                     <div class="charkbtn">
-                        <a href="humiditychart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/humiditychart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -180,7 +178,7 @@
                     <script src="<?php echo BASE_URL ?>/public/js/temp_alert.js"></script>
                     
                     <div class="charkbtn">
-                        <a href="tempchart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/tempchart"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
 
                 </div>
@@ -216,7 +214,7 @@
                 </div> -->
                 
                 <div class="col l-12 m-12 c-12">
-                    <a href="summaryreport" style="text-decoration:none"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
+                    <a href="<?php echo BASE_URL ?>/summaryreport" style="text-decoration:none"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
                 </div>
 
             </div>  

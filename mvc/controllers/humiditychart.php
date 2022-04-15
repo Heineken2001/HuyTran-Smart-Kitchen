@@ -6,7 +6,7 @@
         }
         public function index(){
             $this->load->view('components/header');
-            $this->load->view('humiditychart');
+            $this->load->view('chart/humiditychart');
             $this->load->view('components/footer');
         }
 
