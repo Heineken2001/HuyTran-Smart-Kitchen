@@ -133,8 +133,10 @@
             $content = strip_tags($_POST['reportcontent']);
             $user_model = $this->load->model('usermodel');
             $data = array(
+                "TITLE" => $_POST['title'],
                 "CONTENT" => $content,
-                "ContID" => (int)$_SESSION['userid']
+                "ContID" => (int)$_SESSION['userid'],
+                "SOLVED" => 0
             );
             $action = $user_model->insertdata($tbl, $data);
             $message['msg'] = 'Thanks for your report';
