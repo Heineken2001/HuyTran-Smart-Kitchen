@@ -48,11 +48,11 @@
     <div class="background">
     </div>
     <div class="grid wide container">
-        <div class="row">
+        <div class="row" style="display:flex; align-items:center; justify-content:space-between;">
             <!-- <i class="fa-solid fa-bars" style="font-size: 30px; margin: auto 0;"></i>
             <input type="checkbox" name="navmobile" id="navmobile">
             <label for="navmobile">Ken</label> -->
-            <div class="col l-3 m-3 c-12 login__header" >
+            <div class="login__header" >
                <a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none"><img src="<?php echo BASE_URL?>/public/images/logokitchen.png" alt="" class="logokitchen"></a> 
             </div>
            
@@ -162,18 +162,19 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
-        <div class="col l-9 m-9 c-0" style="margin-top: -15px">
-                <ul class="login__header__nav" >
-                    <!-- <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none">Home</a></li> -->
-                    <?php if (isset($_SESSION['user'])) {?>
-                        <?php if($_SESSION['user']!="admin") {?><li class="login__header__nav__list" ><a href="<?php echo BASE_URL?>/user/" style="text-decoration:none"><?php echo $_SESSION['user'] ?></a></li><?php }?>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout" style="text-decoration:none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
-                    <?php } else {?>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login" style="text-decoration:none">Log In</a></li>
-                        <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register" style="text-decoration:none">Register</a></li>
-                    <?php }?>
-                </ul>
+            <?php } ?>
+            <div class="" style="margin-top: -15px">
+                    <ul class="login__header__nav" >
+                        <!-- <li class="login__header__nav__list"><a href="<?php echo BASE_URL ?>/<?php if (isset($_SESSION['user']) && $_SESSION['user']=="admin") echo "admin"?>" style="text-decoration:none">Home</a></li> -->
+                        <?php if (isset($_SESSION['user'])) {?>
+                            <?php if($_SESSION['user']!="admin") {?><li class="login__header__nav__list" ><a href="<?php echo BASE_URL?>/user/" style="text-decoration:none"><?php echo $_SESSION['user'] ?></a></li><?php }?>
+                            <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/logout" style="text-decoration:none"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+                        <?php } else {?>
+                            <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/login" style="text-decoration:none">Log In</a></li>
+                            <li class="login__header__nav__list"><a href="<?php echo BASE_URL?>/register" style="text-decoration:none">Register</a></li>
+                        <?php }?>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

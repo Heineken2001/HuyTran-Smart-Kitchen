@@ -85,9 +85,9 @@
 
     
 </style>
-<div class="grid wide container" id="load" style="margin-top:-50px">
+<div class="grid wide container" id="load" style="margin-top:0px">
     <div class="row" >  
-        <div class="col l-12">
+        <div class="col l-12 c-12 m-12">
             <h1 style="margin-top: 100px; font-size: 38px; text-align: center;">Kitchen Overview</h1>
         </div>
     </div>

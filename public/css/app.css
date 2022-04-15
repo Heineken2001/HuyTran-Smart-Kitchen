@@ -43,7 +43,7 @@ body {
     margin-left: 30px;
     height: 100%;
     font-size: 1.2rem;
-    float:right;
+    /* float:right; */
 }
 
 .login__header__nav__list + .login__header__nav__list {
