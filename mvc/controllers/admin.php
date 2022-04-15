@@ -15,10 +15,12 @@
         }
 
         public function homepage() {
-
+            $user_table = 'users';
+            $admin_model = $this->load->model('adminmodel');
+            $data['users'] = $admin_model->getdata($user_table);
             $this->load->view('components/header');
 
-            $this->load->view('cpanel/admin');
+            $this->load->view('cpanel/admin',$data);
             
             $this->load->view('components/footer');
         }
