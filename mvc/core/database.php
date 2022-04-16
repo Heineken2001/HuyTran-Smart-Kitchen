@@ -167,5 +167,10 @@
             return $statement->fetchAll($fetchStyle);
         }
 
-        
+        public function getreportunsolved($fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT * FROM reports WHERE SOLVED = 0";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
     }
