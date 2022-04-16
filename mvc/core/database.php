@@ -173,4 +173,25 @@
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
         }
+
+        public function getreportdetails($id, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT * FROM reports, users WHERE RepID = $id AND reports.ContID = users.ContID";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
+
+        public function updatereport($id) {
+            $sql = "UPDATE reports SET SOLVED = 1 WHERE RepID = $id";
+            $statement = $this->prepare($sql);
+
+            return $statement->execute();
+        }
+
+        public function getallreport($fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT * FROM reports, users WHERE reports.ContID = users.ContID";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
     }

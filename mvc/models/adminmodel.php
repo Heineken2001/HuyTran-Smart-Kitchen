@@ -16,6 +16,14 @@ class adminmodel extends Model {
         return $this->db->getreportunsolved();
     }
 
+    public function getallreport() {
+        return $this->db->getallreport();
+    }
+
+    public function getdreportdetails($id) {
+        return $this->db->getreportdetails($id);
+    }
+
     public function insertdata($tbl, $data) {
         return $this->db->insert($tbl, $data);
     }
@@ -27,8 +35,14 @@ class adminmodel extends Model {
 
     }
 
+    public function updatereport($id) {
+        return $this->db->updatereport($id);
+    }
+
     public function deleteuser($user_table, $id) {
         return $this->db->delete($user_table, $id);
 
     }
+
+    
 }

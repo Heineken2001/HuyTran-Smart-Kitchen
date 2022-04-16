@@ -61,7 +61,7 @@
                     <!-- <h1 style="float: right;">HI</h1> -->
                 <div class = "icons">
                     <div class = "notification">
-                        <a href = "#">
+                        <a href = "<?php echo BASE_URL ?>/admin/notifications">
                             <div class = "notBtn" href = "#">
                             <!--Number supports double digets and automaticly hides itself when there is nothing between divs -->
                                 <div class = "number"><?php echo count($reports)?></div>
@@ -77,7 +77,7 @@
                                             <?php foreach($users as $key1 => $user) {
                                                 if($user['ContID'] == $value['ContID']) {?>
                                             <div class = "sec new">
-                                                <a href = "https://codepen.io/Golez/">
+                                                <a href = "<?php echo BASE_URL.'/admin/details/'.$value['RepID']?>">
                                                     <div class = "profCont">
                                                         <img class = "profile" src = "<?php echo BASE_URL.'/public/images/uploads/'.$user['IMAGE']?>">
                                                     </div>

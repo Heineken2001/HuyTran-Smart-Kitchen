@@ -27,7 +27,7 @@
                             <?php foreach ($users as $key => $value) {?>
                             <tr>
                               <td><?php echo $key + 1?></td>
-                              <td><?php echo $value['FNAME']?></td>
+                              <td><a href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
                               <td><?php echo $value['EMAIL']?></td>
                               <td><?php echo $value['ADDRESS']?></td>
                               <td><?php echo $value['ContID']?></td>

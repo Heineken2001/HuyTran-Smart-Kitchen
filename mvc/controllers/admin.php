@@ -30,9 +30,58 @@
             $user_table = 'users';
             $admin_model = $this->load->model('adminmodel');
             $data['users'] = $admin_model->getdata($user_table);
-            $this->load->view('components/header');
+            $data['reports'] = $admin_model->getreportunsolved();
+            $this->load->view('components/header', $data);
 
             $this->load->view('cpanel/usermng',$data);
+            
+            $this->load->view('components/footer');
+        }
+
+
+        public function notifications() {
+            $user_table = 'users';
+            $admin_model = $this->load->model('adminmodel');
+            $data['users'] = $admin_model->getdata($user_table);
+            $data['reports'] = $admin_model->getreportunsolved();
+            $data['all'] = $admin_model->getallreport();
+            $this->load->view('components/header', $data);
+
+            $this->load->view('cpanel/userreports',$data);
+            
+            $this->load->view('components/footer');
+        }
+
+        public function details($id) {
+            $user_table = 'users';
+            $admin_model = $this->load->model('adminmodel');
+            $data['users'] = $admin_model->getdata($user_table);
+            $data['reports'] = $admin_model->getreportunsolved();
+            $data['details'] = $admin_model->getdreportdetails($id);
+            $this->load->view('components/header', $data);
+
+            $this->load->view('cpanel/reportdetail',$data);
+            
+            $this->load->view('components/footer');
+        }
+
+        public function solved($id) {
+            $admin_model = $this->load->model('adminmodel');
+            $admin_model->updatereport($id);
+            header('Location: ' .BASE_URL.'/admin/notifications');
+        }
+
+        public function userinfo($id) {
+            $user_table = 'users';
+            $admin_model = $this->load->model('adminmodel');
+            $data['users'] = $admin_model->getdata($user_table);
+            $data['reports'] = $admin_model->getreportunsolved();
+            $user_model = $this->load->model('usermodel');
+            $user_id = $id;
+            $data['user'] = $user_model->getdatabyid($user_table, $user_id);
+            $this->load->view('components/header', $data);
+
+            $this->load->view('cpanel/userinfo', $data);
             
             $this->load->view('components/footer');
         }

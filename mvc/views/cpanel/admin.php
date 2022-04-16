@@ -31,7 +31,7 @@
                             <?php foreach ($users as $key => $value) {?>
                             <tr>
                               <td style="width: 15%;"><?php echo $key + 1?></td>
-                              <td style="width: 25%;"><?php echo $value['FNAME']?></td>
+                              <td style="width: 25%;"><a href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
                               <td style="width: 60%;"><?php echo $value['EMAIL']?></td>
                             </tr>
                             <?php }?>
