@@ -211,7 +211,8 @@ body {
 
 .account__image {
     border-radius: 500px;
-    width: 60%;
+    width: 40vh;
+    height: 40vh;
 }
 
 .account__info {
