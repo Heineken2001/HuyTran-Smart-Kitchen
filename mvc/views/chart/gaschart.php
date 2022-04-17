@@ -46,15 +46,15 @@
                         </ul>
                     </div> -->
                     <div style="margin-top: 0px; text-align: center">
-                        <a id="dategas" href="#"><button class="btn5-hover btn5 active">Date</Button></a>
-                        <a id="monthgas" href="#"><button class="btn5-hover btn5">Week</Button></a>
-                        <a id="yeargas" href="#"><button class="btn5-hover btn5">Month</Button></a>
+                        <a  href="#"><button id="dategas" class="btn5-hover btn5 active" onclick="clickfunc1()">Date</Button></a>
+                        <a  href="#"><button id="weekgas" class="btn5-hover btn5" onclick="clickfunc2()">Week</Button></a>
+                        <a  href="#"><button id="monthgas" class="btn5-hover btn5" onclick="clickfunc3()">Month</Button></a>
                     </div>
                     <div>
                         
                     <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong ngày:...</h5>
+                    <h5 id="gasweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tuần:...</h5>
                     <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng:...</h5>
-                    <h5 id="gasyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong năm:...</h5>
 
                     </div>
                 </div>
@@ -76,5 +76,61 @@
 
 
 <script>
+    var dategas = document.getElementById("dategas");
+    var weekgas = document.getElementById("weekgas");
+    var monthgas = document.getElementById("monthgas");
+
+    var gasdate = document.getElementById("gasdate");
+    var gasweek = document.getElementById("gasweek");
+    var gasmonth = document.getElementById("gasmonth");
+
+    // console.log(gasdate.hidden);
+    // console.log(dategas.classList[2]);
+
+    function clickfunc1(){
+        if(dategas.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            monthgas.className = "btn5-hover btn5";
+            dategas.className = "btn5-hover btn5 active";
+            weekgas.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(gasdate.hidden == true){
+            gasdate.hidden = false;
+            gasmonth.hidden = true;
+            gasweek.hidden = true;
+        }
+    }
+    function clickfunc2(){
+        if(weekgas.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weekgas.className = "btn5-hover btn5 active";
+            dategas.className = "btn5-hover btn5";
+            monthgas.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(gasweek.hidden == true){
+            gasdate.hidden = true;
+            gasweek.hidden = false;
+            gasmonth.hidden = true;
+        }
+    }
+    function clickfunc3(){
+        if(monthgas.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weekgas.className = "btn5-hover btn5";
+            dategas.className = "btn5-hover btn5";
+            monthgas.className = "btn5-hover btn5 active";
+            // console.log('HI');
+        }
+        if(gasmonth.hidden == true){
+            gasdate.hidden = true;
+            gasweek.hidden = true;
+            gasmonth.hidden = false;
+        }
+    }
+    // console.log(dategas.classList[2]);
+    // console.log(dategas.classList);
+    // console.log(dategas.className);
 
 </script>

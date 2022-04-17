@@ -38,15 +38,15 @@
                         </ul>
                     </div> -->
                     <div style="margin-top: 0px; text-align: center">
-                        <a id="dategas" href="#"><button class="btn5-hover btn5 active">Date</Button></a>
-                        <a id="monthgas" href="#"><button class="btn5-hover btn5">Week</Button></a>
-                        <a id="yeargas" href="#"><button class="btn5-hover btn5">Month</Button></a>
+                        <a  href="#"><button id="datehumidity" class="btn5-hover btn5 active" onclick="clickfunc1()">Date</Button></a>
+                        <a  href="#"><button id="weekhumidity" class="btn5-hover btn5" onclick="clickfunc2()">Week</Button></a>
+                        <a  href="#"><button id="monthhumidity" class="btn5-hover btn5" onclick="clickfunc3()">Month</Button></a>
                     </div>
                     <div>
                         
-                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Độ ẩm trong ngày:...</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Độ ẩm trong tháng:...</h5>
-                    <h5 id="gasyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Độ ẩm trong năm:...</h5>
+                    <h5 id="humiditydate" style="text-align:center ;color: black; margin: 20px auto">Độ ẩm trong ngày:...</h5>
+                    <h5 id="humidityweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Độ ẩm trong tuần:...</h5>
+                    <h5 id="humiditymonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Độ ẩm trong tháng:...</h5>
 
                     </div>
                 </div>
@@ -68,5 +68,61 @@
 
 
 <script>
+    var datehumidity = document.getElementById("datehumidity");
+    var weekhumidity = document.getElementById("weekhumidity");
+    var monthhumidity = document.getElementById("monthhumidity");
+
+    var humiditydate = document.getElementById("humiditydate");
+    var humidityweek = document.getElementById("humidityweek");
+    var humiditymonth = document.getElementById("humiditymonth");
+
+    // console.log(gasdate.hidden);
+    // console.log(dategas.classList[2]);
+
+    function clickfunc1(){
+        if(datehumidity.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            monthhumidity.className = "btn5-hover btn5";
+            datehumidity.className = "btn5-hover btn5 active";
+            weekhumidity.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(humiditydate.hidden == true){
+            humiditydate.hidden = false;
+            humidityweek.hidden = true;
+            humiditymonth.hidden = true;
+        }
+    }
+    function clickfunc2(){
+        if(weekhumidity.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weekhumidity.className = "btn5-hover btn5 active";
+            datehumidity.className = "btn5-hover btn5";
+            monthhumidity.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(humidityweek.hidden == true){
+            humiditydate.hidden = true;
+            humidityweek.hidden = false;
+            humiditymonth.hidden = true;
+        }
+    }
+    function clickfunc3(){
+        if(monthhumidity.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weekhumidity.className = "btn5-hover btn5";
+            datehumidity.className = "btn5-hover btn5";
+            monthhumidity.className = "btn5-hover btn5 active";
+            // console.log('HI');
+        }
+        if(humiditymonth.hidden == true){
+            humiditydate.hidden = true;
+            humidityweek.hidden = true;
+            humiditymonth.hidden = false;
+        }
+    }
+    // console.log(dategas.classList[2]);
+    // console.log(dategas.classList);
+    // console.log(dategas.className);
 
 </script>
