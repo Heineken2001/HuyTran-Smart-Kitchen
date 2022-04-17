@@ -10,7 +10,7 @@
                     <div class="col l-4 m-4 c-12 account__avatar" style="margin-top: 50px">
                         <img src="<?php echo BASE_URL . "/public/images/uploads/" .$user[0]['IMAGE']; ?>" alt="" class="account__image">
                     </div>
-                    <div class="col l-8 m-8 c-12" style="width: 50%;background-color:rgba(255,255,255,0.4); background-clip:content-box; padding:0 32px 0 32px; border-radius: 20px; margin-top: 50px">
+                    <div class="col l-8 m-8 c-12" style="background-color:rgba(255,255,255,0.4); padding:0 32px 0 32px; border-radius: 20px; margin-top: 50px">
                         <div class="account__info" style="color: black;">Name:  <?php echo $user[0]['FNAME']?></div>
                         <div class="account__info" style="color: black;">Account Name:  <?php echo $user[0]['USRNAME']?></div>
                         <div class="account__info" style="color: black;">Email:  <?php echo $user[0]['EMAIL']?></div>
