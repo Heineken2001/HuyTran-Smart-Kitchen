@@ -194,4 +194,10 @@
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
         }
+        public function getDateGas($fetchStyle = PDO::FETCH_ASSOC){
+            $sql = "SELECT * FROM records WHERE (DevID = 7 AND TIMES = 2022-04-15) ORDER BY RecID DESC";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
     }
