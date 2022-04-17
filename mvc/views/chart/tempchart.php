@@ -38,15 +38,15 @@
                         </ul>
                     </div> -->
                     <div style="margin-top: 0px; text-align: center">
-                        <a id="dategas" href="#"><button class="btn5-hover btn5 active" onclick="swap()">Date</Button></a>
-                        <a id="monthgas" href="#"><button class="btn5-hover btn5" onclick="swap()">Week</Button></a>
-                        <a id="yeargas" href="#"><button class="btn5-hover btn5" onclick="swap()">Month</Button></a>
+                        <a  href="#"><button id="datetemp" class="btn5-hover btn5 active" onclick="clickfunc1()">Date</Button></a>
+                        <a  href="#"><button id="weektemp" class="btn5-hover btn5" onclick="clickfunc2()">Week</Button></a>
+                        <a  href="#"><button id="monthtemp" class="btn5-hover btn5" onclick="clickfunc3()">Month</Button></a>
                     </div>
                     <div>
                         
-                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nhiệt độ trong ngày:...</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong tháng:...</h5>
-                    <h5 id="gasyear" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong năm:...</h5>
+                    <h5 id="tempdate" style="text-align:center ;color: black; margin: 20px auto">Nhiệt độ trong ngày:...</h5>
+                    <h5 id="tempweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong tuần:...</h5>
+                    <h5 id="tempmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong tháng:...</h5>
 
                     </div>
                 </div>
@@ -68,18 +68,61 @@
 
 
 <script>
-    var dategas = document.getElementById("dategas")
-    var monthgas = document.getElementById("monthgas")
-    var yeargas = document.getElementById("yeargas")
+    var datetemp = document.getElementById("datetemp");
+    var weektemp = document.getElementById("weektemp");
+    var monthtemp = document.getElementById("monthtemp");
 
-    var gasdate = document.getElementById("gasdate")
-    var gasmonth = document.getElementById("gasmonth")
-    var gasyear = document.getElementById("gasyear")
+    var tempdate = document.getElementById("tempdate");
+    var tempweek = document.getElementById("tempweek");
+    var tempmonth = document.getElementById("tempmonth");
 
-    console.log(dategas)
+    // console.log(gasdate.hidden);
+    // console.log(dategas.classList[2]);
 
-    if(dategas.active == true){
-
+    function clickfunc1(){
+        if(datetemp.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            monthtemp.className = "btn5-hover btn5";
+            datetemp.className = "btn5-hover btn5 active";
+            weektemp.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(tempdate.hidden == true){
+            tempdate.hidden = false;
+            tempweek.hidden = true;
+            tempmonth.hidden = true;
+        }
     }
+    function clickfunc2(){
+        if(weektemp.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weektemp.className = "btn5-hover btn5 active";
+            datetemp.className = "btn5-hover btn5";
+            monthtemp.className = "btn5-hover btn5";
+            // console.log('HI');
+        }
+        if(tempweek.hidden == true){
+            tempdate.hidden = true;
+            tempweek.hidden = false;
+            tempmonth.hidden = true;
+        }
+    }
+    function clickfunc3(){
+        if(monthtemp.classList[2] != 'active'){
+            // dategas.classList[2] = ' ';
+            weektemp.className = "btn5-hover btn5";
+            datetemp.className = "btn5-hover btn5";
+            monthtemp.className = "btn5-hover btn5 active";
+            // console.log('HI');
+        }
+        if(tempmonth.hidden == true){
+            tempdate.hidden = true;
+            tempweek.hidden = true;
+            tempmonth.hidden = false;
+        }
+    }
+    // console.log(dategas.classList[2]);
+    // console.log(dategas.classList);
+    // console.log(dategas.className);
 
 </script>
