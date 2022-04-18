@@ -4,8 +4,8 @@
         {
             parent::__construct();
         }
-        public function getGasdate(){
-            return $this->db->getDateGas();
+        public function getrecord($id, $devid){
+            return $this->db->getrecord($id, $devid);
         }
     }
 ?>
