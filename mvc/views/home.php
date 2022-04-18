@@ -128,7 +128,7 @@
                     </form>
                     <!-- <img id="buzzeronoff" src="https://cdn-icons-png.flaticon.com/512/5936/5936468.png" alt="buzzer" style="height: 34px;width: 34px; margin: 0 auto; margin-top: 50px"> -->
                     <div class="charkbtn">
-                        <a href="<?php echo BASE_URL ?>/gaschart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/chart/gas"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -141,7 +141,7 @@
 
 
                     <div class="charkbtn">
-                        <a href="<?php echo BASE_URL ?>/humiditychart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/chart/humid"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
@@ -180,7 +180,7 @@
                     <script src="<?php echo BASE_URL ?>/public/js/temp_alert.js"></script>
                     
                     <div class="charkbtn">
-                        <a href="<?php echo BASE_URL ?>/tempchart"><button class="btn5-hover btn5">Chart</Button></a>
+                        <a href="<?php echo BASE_URL ?>/chart/temp"><button class="btn5-hover btn5">Chart</Button></a>
                     </div>
 
                 </div>
