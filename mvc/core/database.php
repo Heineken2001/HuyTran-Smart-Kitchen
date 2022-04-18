@@ -195,8 +195,8 @@
             return $statement->fetchAll($fetchStyle);
         }
         
-        public function getrecord($id, $fetchStyle = PDO::FETCH_ASSOC) {
-            $sql = "SELECT DATAS, TIMES FROM records WHERE reports.ContID = users.ContID";
+        public function getrecord($id, $devid, $fetchStyle = PDO::FETCH_ASSOC) {
+            $sql = "SELECT DATAS, TIMES FROM records WHERE ContID = $id AND DevID = $devid";
             $statement = $this->prepare($sql);
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
