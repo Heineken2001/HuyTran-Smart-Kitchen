@@ -27,7 +27,7 @@
         // continue;
         // $times = strtotime($time_data);
 
-        
+
         // echo $value['TIMES'].", ";
         // echo $value['DATAS'].", ";
         // echo "<br>";
@@ -183,15 +183,15 @@
                     </div>
                     <div>
                         
-                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $gas_data_all ?>ppm.</h5>
-                    <h5 id="gasweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trung bình trong tuần <?php
+                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 70px auto">Nồng độ gas trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $gas_data_all ?>ppm.</h5>
+                    <h5 id="gasweek" style="text-align:center ;color: black; margin: 70px auto" hidden>Nồng độ gas trung bình trong tuần <?php
                     if((int)(date("d", time()+5*60*60)) >= 1 &&(int)(date("d", time()+5*60*60)) <= 7) echo "thứ nhất (ngày 1-7) của tháng ".date("m-Y", time()+5*60*60);
                     elseif((int)(date("d", time()+5*60*60)) >= 8 &&(int)(date("d", time()+5*60*60)) <= 14) echo "thứ hai (ngày 8-14) của tháng ".date("m-Y", time()+5*60*60);
                     elseif((int)(date("d", time()+5*60*60)) >= 15 &&(int)(date("d", time()+5*60*60)) <= 21) echo "thứ ba (ngày 15-21) của tháng ".date("m-Y", time()+5*60*60);
                     elseif((int)(date("d", time()+5*60*60)) >= 22 &&(int)(date("d", time()+5*60*60)) <= 28) echo "thứ tư (ngày 22-28) của tháng ".date("m-Y", time()+5*60*60);
                     else echo "cuối cùng của tháng ".date("m-Y", time()+5*60*60);
                     ?> là: <?php echo $gas_data_all_week ?>ppm.</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $gas_data_all_month ?>ppm.</h5>
+                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 70px auto" hidden>Nồng độ gas trung bình trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $gas_data_all_month ?>ppm.</h5>
 
                     </div>
                 </div>
