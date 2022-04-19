@@ -6,6 +6,7 @@
     
     $gas_data_week = 0;
     $count_week = 0;
+
     $gas_data_month = 0;
     $count_month = 0;
 
@@ -99,13 +100,30 @@
             }
         }
 
+
+        $time_month = date("Y-m", time()+5*60*60);
+        $times8 = date("Y-m",strtotime($times5)+5*60*60);
+
+        if ($times8 == $time_month){
+            // echo $value['DATAS'].", ";
+            $gas_data_month += $value['DATAS'];
+            $count_month += 1;
+        }
+        else{
+            $gas_data_month += 0;
+            $count_month += 0;
+        }
+
     }
+
     if($count == 0) $gas_data_all = $gas_data;
     else $gas_data_all = (int)($gas_data / $count);
 
     if($count_week == 0) $gas_data_all_week = $gas_data_week;
     else $gas_data_all_week = (int)($gas_data_week / $count_week);
 
+    if($count_month == 0) $gas_data_all_month = $gas_data_month;
+    else $gas_data_all_month = (int)($gas_data_month / $count_month);
 
 ?>
 <style>
@@ -170,7 +188,7 @@
                     elseif((int)(date("d", time()+5*60*60)) >= 22 &&(int)(date("d", time()+5*60*60)) <= 28) echo "thứ tư (ngày 22-28) của tháng ".date("m-Y", time()+5*60*60);
                     else echo "cuối cùng của tháng ".date("m-Y", time()+5*60*60);
                     ?> là: <?php echo $gas_data_all_week ?>ppm.</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $gas_data ?>ppm.</h5>
+                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $gas_data_all_month ?>ppm.</h5>
 
                     </div>
                 </div>
