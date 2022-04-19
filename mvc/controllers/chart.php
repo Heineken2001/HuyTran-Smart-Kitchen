@@ -21,7 +21,7 @@
             $chart_model = $this->load->model('chartmodel');
             $data['humid'] = $chart_model->getrecord($id, $devid);
             $this->load->view('components/header');
-            $this->load->view('chart/humiditychart');
+            $this->load->view('chart/humiditychart', $data);
             $this->load->view('components/footer');
         }
 
@@ -31,7 +31,7 @@
             $chart_model = $this->load->model('chartmodel');
             $data['temp'] = $chart_model->getrecord($id, $devid);
             $this->load->view('components/header');
-            $this->load->view('chart/tempchart');
+            $this->load->view('chart/tempchart', $data);
             $this->load->view('components/footer');
         }
 

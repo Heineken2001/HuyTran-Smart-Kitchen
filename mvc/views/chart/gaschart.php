@@ -1,3 +1,27 @@
+<?php
+    // date_default_timezone_set("America/New_York");
+    // date_timezone_set($date, timezone_open('Asia/Ho_Chi_Minh'));
+    foreach ($gas as $key => $value){
+        // $gas_data = $value['DATAS'];
+        $time_data = $value['TIMES'];
+        // $times = strtotime($time_data);
+        $times1 = date(substr($time_data, 0, 10));
+        $times2 = strstr($time_data, 'T');
+        $times3 = date(substr($times2, 1, 8));
+        $times4 = str_replace('T', ' ', $time_data);
+        $times5 = (str_replace('Z', '', $times4));
+        $times6 = date("Y-m-d",strtotime($times5));
+        $time_now = date("Y-m-d", time()+5*60*60);
+        $time_test1 = mktime("13","00","00","04","15","2022");
+        $time_test2 = date("Y-m-d", $time_test1);
+        if ($times6 == $time_test2){
+            $gas_data = 100;
+        }
+        else{
+            $gas_data = "none";
+        }
+    }
+?>
 <style>
     .btn5-hover.btn5.active{
         /* background-image: linear-gradient(
@@ -52,9 +76,9 @@
                     </div>
                     <div>
                         
-                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong ngày:...</h5>
+                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trong ngày <?php echo date("Y-m-d", time()+5*60*60); echo " ".$times6?> là: <?php echo $gas_data ?>ppm.</h5>
                     <h5 id="gasweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tuần:...</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng:...</h5>
+                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("Y-m", time()+5*60*60);?> là: <?php echo $gas_data ?>ppm.</h5>
 
                     </div>
                 </div>
