@@ -4,6 +4,11 @@
     $count = 0;
     $gas_data = 0;
     
+    $gas_data_week = 0;
+    $count_week = 0;
+    $gas_data_month = 0;
+    $count_month = 0;
+
     foreach ($gas as $key => $value){
         // $gas_data = $value['DATAS'];
         
@@ -23,15 +28,85 @@
         echo $value['TIMES'].", ";
         echo $value['DATAS'].", ";
         echo "<br>";
-        if ($times6 == $time_test2){
+        if ($times6 == $time_now){
+            echo $value['DATAS'].", ";
             $gas_data += $value['DATAS'];
             $count += 1;
         }
         else{
             $gas_data += 0;
+            $count += 0;
         }
+
+
+        $time_week = (int)(date("d", time()+5*60*60));
+        $time_week_test1 = mktime("00","00","00","04","13","2022");
+        $time_week_test2 = (int)(date("d", $time_week_test1));
+        $times7 = (int)(date("d",strtotime($times5)+5*60*60));
+        if($time_week_test2 >= 1 && $time_week_test2 <= 7){
+            if($times7 >= 1 && $times7 <= 7){
+                echo $value['DATAS'].", ";
+                $gas_data_week += $value['DATAS'];
+                $count_week += 1;
+            }
+            else{
+                $gas_data_week += 0;
+                $count_week += 0;
+            }
+        }
+        elseif($time_week_test2 >= 8 && $time_week_test2 <= 14){
+            if($times7 >= 8 && $times7 <= 14){
+                echo $value['DATAS'].", ";
+                $gas_data_week += $value['DATAS'];
+                $count_week += 1;
+            }
+            else{
+                $gas_data_week += 0;
+                $count_week += 0;
+            }
+        }
+        elseif($time_week_test2 >= 15 && $time_week_test2 <= 21){
+            if($times7 >= 15 && $times7 <= 21){
+                echo $value['DATAS'].", ";
+                $gas_data_week += $value['DATAS'];
+                $count_week += 1;
+            }
+            else{
+                $gas_data_week += 0;
+                $count_week += 0;
+            }
+        }
+        elseif($time_week_test2 >= 22 && $time_week_test2 <= 28){
+            if($times7 >= 22 && $times7 <= 28){
+                echo $value['DATAS'].", ";
+                $gas_data_week += $value['DATAS'];
+                $count_week += 1;
+            }
+            else{
+                $gas_data_week += 0;
+                $count_week += 0;
+            }
+        }
+        else{
+            if($times7 >= 29 && $times7 <= 31){
+                echo $value['DATAS'].", ";
+                $gas_data_week += $value['DATAS'];
+                $count_week += 1;
+            }
+            else{
+                $gas_data_week += 0;
+                $count_week += 0;
+            }
+        }
+
     }
-    $gas_data_all = (int)($gas_data / $count);
+    if($count == 0) $gas_data_all = $gas_data;
+    else $gas_data_all = (int)($gas_data / $count);
+
+    if($count_week == 0) $gas_data_all_week = $gas_data_week;
+    else $gas_data_all_week = (int)($gas_data_week / $count_week);
+
+
 ?>
 <style>
     .btn5-hover.btn5.active{
@@ -87,9 +162,15 @@
                     </div>
                     <div>
                         
-                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trung bình trong ngày <?php echo date("Y-m-d", time()+5*60*60); echo ", ".$time_test2;echo ", ".$times6; echo ", ".$count?> là: <?php echo $gas_data_all ?>ppm.</h5>
-                    <h5 id="gasweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tuần:...</h5>
-                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("Y-m", time()+5*60*60);?> là: <?php echo $gas_data ?>ppm.</h5>
+                    <h5 id="gasdate" style="text-align:center ;color: black; margin: 20px auto">Nồng độ gas trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60); echo ", ".$time_test2;echo ", ".$times6; echo ", ".$count?> là: <?php echo $gas_data_all ?>ppm.</h5>
+                    <h5 id="gasweek" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trung bình trong tuần <?php
+                    if((int)(date("d", time()+5*60*60)) >= 1 &&(int)(date("d", time()+5*60*60)) <= 7) echo "thứ nhất (ngày 1-7) của tháng ".date("m-Y", time()+5*60*60);
+                    elseif((int)(date("d", time()+5*60*60)) >= 8 &&(int)(date("d", time()+5*60*60)) <= 14) echo "thứ hai (ngày 8-14) của tháng ".date("m-Y", time()+5*60*60);
+                    elseif((int)(date("d", time()+5*60*60)) >= 15 &&(int)(date("d", time()+5*60*60)) <= 21) echo "thứ ba (ngày 15-21) của tháng ".date("m-Y", time()+5*60*60);
+                    elseif((int)(date("d", time()+5*60*60)) >= 22 &&(int)(date("d", time()+5*60*60)) <= 28) echo "thứ tư (ngày 22-28) của tháng ".date("m-Y", time()+5*60*60);
+                    else echo "cuối cùng của tháng ".date("m-Y", time()+5*60*60);
+                    ?> là: <?php echo $gas_data_all_week ?>ppm.</h5>
+                    <h5 id="gasmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nồng độ gas trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $gas_data ?>ppm.</h5>
 
                     </div>
                 </div>
