@@ -201,4 +201,10 @@
             $statement->execute();
             return $statement->fetchAll($fetchStyle);
         }
+        public function getallrecord($id, $fetchStyle = PDO::FETCH_ASSOC){
+            $sql = "SELECT DATAS, TIMES, DevID FROM records WHERE ContID = $id";
+            $statement = $this->prepare($sql);
+            $statement->execute();
+            return $statement->fetchAll($fetchStyle);
+        }
     }
