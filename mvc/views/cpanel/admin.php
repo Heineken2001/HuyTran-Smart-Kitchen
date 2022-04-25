@@ -5,13 +5,7 @@
     <div class="row room__status__body" style="margin-top: 50px">
             <div class="grid">
                 <div class="row">
-                    <div class="col l-6 m-6 c-12 room__status__body__list" style="border-radius: 20px;">
-                        <div class="room__status__body__list__title">Summary Report</div>
-                        <div class="charkbtn">
-                            <a href="#"><button class="btn5-hover btn5">Details</Button></a>
-                        </div>
-                    </div>
-                    <div class="col l-6 m-6 c-12 room__status__body__list" style="border-radius: 20px; overflow: hidden">
+                    <div class="col l-8 m-8 c-12 room__status__body__list" style="border-radius: 20px; overflow: hidden">
                         <div class="room__status__body__list__title">User Management</div>
                        
                     <div class="tbl-header" style="margin-left: 15px; margin-right: 15px">
@@ -20,7 +14,8 @@
                             <tr>
                               <th style="width: 15%;">No</th>
                               <th style="width: 25%;">Name</th>
-                              <th style="width: 60%;">Email</th>
+                              <th style="width: 50%;">Email</th>
+                              <th style="width: 10%;">Report</th>
                             </tr>
                           </thead>
                         </table>
@@ -33,6 +28,7 @@
                               <td style="width: 15%;"><?php echo $key + 1?></td>
                               <td style="width: 25%;"><a href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
                               <td style="width: 60%;"><?php echo $value['EMAIL']?></td>
+                              <td style="width: 60%;"><a href="<?php echo BASE_URL.'/admin/summaryreport/'.$value['ContID']?>">Details</a></td>
                             </tr>
                             <?php }?>
                             

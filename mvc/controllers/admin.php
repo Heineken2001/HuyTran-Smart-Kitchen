@@ -145,5 +145,17 @@
             header('Location: ' .BASE_URL.'/admin/usermanagement');
             
         }
+
+        public function summaryreport($id) {
+            $user_table = 'users';
+            $admin_model = $this->load->model('adminmodel');
+            $data['users'] = $admin_model->getdata($user_table);
+            $data['reports'] = $admin_model->getreportunsolved();
+            $summaryreport_model = $this->load->model('summaryreportmodel');
+            $data['all'] = $summaryreport_model->getallrecord($id);
+            $this->load->view('components/header', $data);
+            $this->load->view('summaryreport', $data);
+            $this->load->view('components/footer');
+        }
     }
 ?>
