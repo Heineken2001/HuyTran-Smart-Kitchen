@@ -361,12 +361,19 @@
     else $gas_data_all_week = (int)($gas_data_week / $count_week);
 
     if($count_week1 > 0) $gas_week1_average = (int)($gas_week1/$count_week1);
+    else $gas_week1_average = 0;
     if($count_week2 > 0) $gas_week2_average = (int)($gas_week2/$count_week2);
+    else $gas_week2_average = 0;
     if($count_week3 > 0) $gas_week3_average = (int)($gas_week3/$count_week3);
+    else $gas_week3_average = 0;
     if($count_week4 > 0) $gas_week4_average = (int)($gas_week4/$count_week4);
+    else $gas_week4_average = 0;
     if($count_week5 > 0) $gas_week5_average = (int)($gas_week5/$count_week5);
+    else $gas_week5_average = 0;
     if($count_week6 > 0) $gas_week6_average = (int)($gas_week6/$count_week6);
+    else $gas_week6_average = 0;
     if($count_week7 > 0) $gas_week7_average = (int)($gas_week7/$count_week7);
+    else $gas_week7_average = 0;
 
     // echo $gas_week_arr[0];
     $gas_dataweek_arr = array($gas_week1_average,$gas_week2_average,$gas_week3_average,$gas_week4_average,$gas_week5_average,$gas_week6_average,$gas_week7_average);
@@ -378,10 +385,15 @@
     else $gas_data_all_month = (int)($gas_data_month / $count_month);
 
     if($count_month1 > 0) $gas_month1_average = (int)($gas_month1/$count_month1);
+    else $gas_month1_average = 0;
     if($count_month2 > 0) $gas_month2_average = (int)($gas_month2/$count_month2);
+    else $gas_month2_average = 0;
     if($count_month3 > 0) $gas_month3_average = (int)($gas_month3/$count_month3);
+    else $gas_month3_average = 0;
     if($count_month4 > 0) $gas_month4_average = (int)($gas_month4/$count_month4);
+    else $gas_month4_average = 0;
     if($count_month5 > 0) $gas_month5_average = (int)($gas_month5/$count_month5);
+    else $gas_month5_average = 0;
 
     $gas_datamonth_arr = array($gas_month1_average,$gas_month2_average,$gas_month3_average,$gas_month4_average,$gas_month5_average);
     for ($i = 0; $i < 5; $i += 1){

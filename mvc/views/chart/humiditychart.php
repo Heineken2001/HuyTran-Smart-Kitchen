@@ -59,10 +59,19 @@
     $count_month5 = 0;
     $humid_month5_average = 0;
 
+    if(count($humid) != 0){
     foreach ($humid as $key => $value){
         // $humid_data = $value['DATAS'];
         
         $time_data = $value['TIMES'];
+
+        // echo "ALOOOO";
+        // var_dump($value['TIMES']);
+        // if(isset($value['TIMES'])==false){
+        //     echo "HIIIIII";
+        // }
+        // else echo "HELLO";
+
         // $times1 = date(substr($time_data, 0, 10));
         // $times2 = strstr($time_data, 'T');
         // $times3 = date(substr($times2, 1, 8));
@@ -359,33 +368,49 @@
     else $humid_data_all_week = (int)($humid_data_week / $count_week);
 
     if($count_week1 > 0) $humid_week1_average = (int)($humid_week1/$count_week1);
+    else $humid_week1_average = 0;
     if($count_week2 > 0) $humid_week2_average = (int)($humid_week2/$count_week2);
+    else $humid_week2_average = 0;
     if($count_week3 > 0) $humid_week3_average = (int)($humid_week3/$count_week3);
+    else $humid_week3_average = 0;
     if($count_week4 > 0) $humid_week4_average = (int)($humid_week4/$count_week4);
+    else $humid_week4_average = 0;
     if($count_week5 > 0) $humid_week5_average = (int)($humid_week5/$count_week5);
+    else $humid_week5_average = 0;
     if($count_week6 > 0) $humid_week6_average = (int)($humid_week6/$count_week6);
+    else $humid_week6_average = 0;
     if($count_week7 > 0) $humid_week7_average = (int)($humid_week7/$count_week7);
+    else $humid_week7_average = 0;
 
     // echo $humid_week_arr[0];
     $humid_dataweek_arr = array($humid_week1_average,$humid_week2_average,$humid_week3_average,$humid_week4_average,$humid_week5_average,$humid_week6_average,$humid_week7_average);
     for ($i = 0; $i < 7; $i += 1){
         $humid_data_week_arr[$humid_week_arr[$i]] = $humid_dataweek_arr[$i];
+        // echo $humid_week_arr[$i];
     }
+    // echo $humid_data_week_arr[$humid_week_arr[4]];
 
     if($count_month == 0) $humid_data_all_month = $humid_data_month;
     else $humid_data_all_month = (int)($humid_data_month / $count_month);
 
     if($count_month1 > 0) $humid_month1_average = (int)($humid_month1/$count_month1);
+    else $humid_month1_average = 0;
     if($count_month2 > 0) $humid_month2_average = (int)($humid_month2/$count_month2);
+    else $humid_month2_average = 0;
     if($count_month3 > 0) $humid_month3_average = (int)($humid_month3/$count_month3);
+    else $humid_month3_average = 0;
     if($count_month4 > 0) $humid_month4_average = (int)($humid_month4/$count_month4);
+    else $humid_month4_average = 0;
     if($count_month5 > 0) $humid_month5_average = (int)($humid_month5/$count_month5);
+    else $humid_month5_average = 0;
 
     $humid_datamonth_arr = array($humid_month1_average,$humid_month2_average,$humid_month3_average,$humid_month4_average,$humid_month5_average);
     for ($i = 0; $i < 5; $i += 1){
         $humid_data_month_arr[$humid_month_arr[$i]] = $humid_datamonth_arr[$i];
     }
 
+}
+    
 
 ?>
 
@@ -413,7 +438,7 @@
         
         <div class="grid">
         
-            <div class="row">
+            <div id="row1" class="row" style="display:flex">
                 
                 <!-- <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <h1>HIIIIIIIII</h1>
@@ -495,6 +520,17 @@
                     </div>
                 </div>
             </div>
+            <div id="row2" class="row" style="display: none">
+                <div class="col l-12 m-12 c-12 room__status__body__list" style="border-radius: 20px">
+                    <div style="text-align: center; margin-top: 50px; margin-left: 30px; height: 50%; width: 50%; float:left;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4579/4579311.png" alt="no_data" style="height: auto; width: 30%">
+                            <h1 style="color: black; margin: 10px auto; margin-bottom: 0px">INVALID HUMIDITY DATA NOW!!!</h1>
+                    </div>
+                    <div class="" style="float: right; margin-top: 10%; margin-right: 9%">
+                        <h1 class="login__header__brand">SmartKitchen by CoderCodon</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -502,6 +538,27 @@
 
 
 <!-- <script src="<?php echo BASE_URL?>/public/js/humiditychart.js"></script> -->
+
+<script>
+    var row1 = document.getElementById('row1')
+    var row2 = document.getElementById('row2')
+
+    var check_arr = <?php echo count($humid)?>;
+    console.log(check_arr);
+    if (check_arr > 0){
+        row1.style.display = 'flex';
+        row2.style.display = 'none';
+    }
+    else{
+        console.log("ALOOOOO");
+        // row1.hidden = true;
+        // row2.hidden = false;
+        row2.style.display = 'flex';
+        row1.style.display = 'none';
+    }
+
+
+</script>
 
 <script>
     
