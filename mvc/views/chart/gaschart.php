@@ -60,7 +60,7 @@
     $gas_month5_average = 0;
 
 
-
+    if(count($gas) != 0){
     foreach ($gas as $key => $value){
         // $gas_data = $value['DATAS'];
         
@@ -400,6 +400,9 @@
         $gas_data_month_arr[$gas_month_arr[$i]] = $gas_datamonth_arr[$i];
     }
 
+}
+
+
 ?>
 <style>
     .btn5-hover.btn5.active{
@@ -433,7 +436,7 @@
         
         <div class="grid">
         
-            <div class="row">
+            <div id="row1" class="row" style="display:flex">
                 
                 <!-- <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <h1>HIIIIIIIII</h1>
@@ -509,6 +512,17 @@
                     </div>
                 </div>
             </div>
+            <div id="row2" class="row" style="display: none">
+                <div class="col l-12 m-12 c-12 room__status__body__list" style="border-radius: 20px">
+                    <div style="text-align: center; margin-top: 50px; margin-left: 30px; height: 50%; width: 50%; float:left;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4579/4579311.png" alt="no_data" style="height: auto; width: 30%">
+                            <h1 style="color: black; margin: 10px auto; margin-bottom: 0px">INVALID GAS CONCENTRATION DATA NOW!!!</h1>
+                    </div>
+                    <div class="" style="float: right; margin-top: 10%; margin-right: 9%">
+                        <h1 class="login__header__brand">SmartKitchen by CoderCodon</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -516,6 +530,27 @@
 
 
 <!-- <script src="<?php echo BASE_URL?>/public/js/gaschart.js"></script> -->
+
+<script>
+    var row1 = document.getElementById('row1')
+    var row2 = document.getElementById('row2')
+
+    var check_arr = <?php echo count($gas)?>;
+    console.log(check_arr);
+    if (check_arr > 0){
+        row1.style.display = 'flex';
+        row2.style.display = 'none';
+    }
+    else{
+        // console.log("ALOOOOO");
+        // row1.hidden = true;
+        // row2.hidden = false;
+        row2.style.display = 'flex';
+        row1.style.display = 'none';
+    }
+
+
+</script>
 
 <script>
     

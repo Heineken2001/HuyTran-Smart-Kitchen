@@ -550,7 +550,7 @@
         row2.style.display = 'none';
     }
     else{
-        console.log("ALOOOOO");
+        // console.log("ALOOOOO");
         // row1.hidden = true;
         // row2.hidden = false;
         row2.style.display = 'flex';
