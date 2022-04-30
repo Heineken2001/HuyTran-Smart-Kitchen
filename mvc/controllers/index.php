@@ -129,7 +129,7 @@
              
                 $res = $homemodel->updatelightmode($_SESSION['userid'], $light);
             }
-
+            echo json_encode($data);
             // $data['gas_bound'] = $recordmodel->getGasbound($_SESSION['userid']);
             // foreach ($data['gas_bound'] as $key => $value) {
             //     $gasbound = $value['GASBOUND'];
