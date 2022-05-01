@@ -218,6 +218,8 @@ $(document).ready(function() {
                 $(".number1").html(`<h2>${gas_now.DATAS}<span>ppm</span></h2>`)
                 $(".number2").html(`<h2>${humid_now.DATAS}<span>%</span></h2>`)
                 $(".number3").html(`<h2>${temperature_now.DATAS}<span>°C</span></h2>`)
+                $("#lightonoff").attr("src",(light_now.DATAS == 1)?"https://cdn-icons-png.flaticon.com/512/3176/3176298.png":"https://cdn-icons-png.flaticon.com/512/3176/3176276.png")
+
                 console.log("ok")
                 //$("#humantest").html()
                 //$('#load').load(location.href+" #load");
