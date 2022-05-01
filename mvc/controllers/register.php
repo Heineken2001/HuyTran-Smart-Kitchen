@@ -48,7 +48,8 @@ class register extends Controller {
                     "PASS" => md5($password),
                     "EMAIL" => $email,
                     "GASBOUND" => 600,
-                    "LIGHTMODE" => 5
+                    "LIGHTMODE" => 5,
+                    "IMAGE" => "default.jpg"
                 );
                 $res = $usermodel->insertdata($tbl_user, $user);
                 // $this->load->view('registersuccess', []);
