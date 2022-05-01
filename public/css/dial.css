@@ -185,6 +185,10 @@ body {
     padding: 0;
 }
 
+.card1{
+  z-index: 90;
+}
+
 .dial_container1 {
   position: relative;
   width: 900px;
@@ -306,7 +310,7 @@ body {
 
 .card1:nth-child(1) svg circle:nth-child(2) {
   stroke-dashoffset: calc(440 - (440 * 90) / 100);
-  stroke: #ff0000;
+  stroke: #00ff43;
 }
 
 .card1:nth-child(2) svg circle:nth-child(2) {
@@ -315,7 +319,7 @@ body {
 }
 .card1:nth-child(3) svg circle:nth-child(2) {
   stroke-dashoffset: calc(440 - (440 * 80) / 100);
-  stroke: #fbff04;
+  stroke: #ff04f7;
 }
 
 @media (max-width: 991px) {

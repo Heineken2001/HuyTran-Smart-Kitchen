@@ -188,9 +188,39 @@ $(document).ready(function() {
         
             },
             cache: false,
-            success: function() {
+            success: function(response) {
+                //console.log(response)
+                response = JSON.parse(response)
+                //console.log(response['buzzer_now'][0].DATAS)
+                buzzer_now = response['buzzer_now'][0]
+                humid_now = response['humid_now'][0]
+                temperature_now = response['temperature_now'][0]
+                infrared_now = response['infrared_now'][0]
+                gas_now = response['gas_now'][0]
+                light_now = response['light_now'][0]
+                light_mode = response['light_mode'][0]
+                if (infrared_now.DATAS == 1) $("#humantest").html("Human in room")
+                else $("#humantest").html("No human")
+                $("#gas_now").html("Nồng độ Gas hiện tại: "+gas_now.DATAS+ "ppm")
+                $("#gas_alert").attr("data-value",((gas_now.DATAS/1023)*100))
+                $("#checked_buzzer").attr("checked",(buzzer_now.DATAS == 2)?true:false)
+                $("#buzzer_slider").attr("hidden", (buzzer_now.DATAS == 3)?true:false)
+                $("#buzzer_slider").attr("disabled", (buzzer_now.DATAS == 3)?true:false)
+                $("#buzzeronoff").attr("src",(buzzer_now.DATAS == 2)?"https://cdn-icons-png.flaticon.com/512/5936/5936468.png":"https://cdn-icons-png.flaticon.com/512/5936/5936529.png")
+                $("#humid_now").html("Độ ẩm hiện tại: "+humid_now.DATAS+ "%")
+                $("#humid_num").attr("data-value",gas_now.DATAS)
+                $("#temp_now").html("Nhiệt độ hiện tại: "+temperature_now.DATAS+"°C")
+                $("#temp_num").attr("data-value",temperature_now.DATAS)
+                $("#checked_light").attr("checked",(light_now.DATAS == 1)?true:false)
+                $("#squaredcheck").attr("checked",(light_mode.LIGHTMODE == 5)?true:false)
+                $("#supportlight").attr("hidden", (light_mode.LIGHTMODE == 5)?true:false)
+                $(".number1").html(`<h2>${gas_now.DATAS}<span>ppm</span></h2>`)
+                $(".number2").html(`<h2>${humid_now.DATAS}<span>%</span></h2>`)
+                $(".number3").html(`<h2>${temperature_now.DATAS}<span>°C</span></h2>`)
+                console.log("ok")
+                //$("#humantest").html()
                 //$('#load').load(location.href+" #load");
-                location.reload();
+                //location.reload();
                 //$("#divSettings").html(this);
             }
             // success: function() {

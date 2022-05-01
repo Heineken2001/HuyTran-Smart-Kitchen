@@ -1,3 +1,5 @@
+
+
 var Dial = function(container_temp) {
     this.container_temp = container_temp;
     this.size = this.container_temp.dataset.size;
@@ -174,3 +176,4 @@ Dial.prototype.setValue = function(value) {
 var containers = document.getElementsByClassName("chart_temp");
 var dial = new Dial(containers[0]);
 dial.animateStart();
+

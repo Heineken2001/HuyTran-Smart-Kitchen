@@ -83,8 +83,12 @@
     background: #c6f;
     }
 
-    
 </style>
+
+<link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/dial.css">
+<link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/dial2.css">
+<link rel="stylesheet" href="<?php echo BASE_URL ?>/public/css/dial3.css">
+
 <div class="grid wide container" id="load" style="margin-top:0px">
     <div class="row" >  
         <div class="col l-12 c-12 m-12">
@@ -104,14 +108,62 @@
                     
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
-                    <div class="room__status__body__list__title">Gas</div>
+                        <div class="room__status__body__list__title">Gas</div>
                         <h1 id="gas-now">
-                            <h5 style="text-align:center; margin: 5px auto; color:black">Nồng độ Gas hiện tại: <?php echo $gas_now1;?>ppm</h5>
+                            <h5 id="gas_now" style="text-align:center; margin: 5px auto; color:black">Nồng độ Gas hiện tại: <?php echo $gas_now1;?>ppm</h5>
                         </h1>
                         <div class="wrapper" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%" >
-                            <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>"  data-arrow="up">
+                            <!-- <div id="gas_alert" class="container_alert chart" data-size="200" data-value="<?php echo (($gas_now1/1023)*100); ?>"  data-arrow="up"> -->
+                            <!-- <span><?php echo ($gas_now1); ?></span>     -->  
+                            <!-- </div> -->
+                            <div class="alldial1">
+                                <div class="dial_container1">
+                                    <div class="card1">
+                                        <!-- <div class="box" style=""> -->
+                                            <div class="percent1" style="background: #222;">
+                                                <svg class="svg1">
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                </svg>
+                                                <div class="number1">
+                                                    <h2><?php echo ($gas_now1); ?><span>ppm</span></h2>
+                                                </div>
+                                            </div>
+                                            <!-- <h2 class="text">HTML</h2> -->
+                                        <!-- </div> -->
+                                    </div>
+                                    <!-- <div class="card">
+                                        <div class="box">
+                                            <div class="percent">
+                                                <svg>
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                </svg>
+                                                <div class="number">
+                                                    <h2>50<span>%</span></h2>
+                                                </div>
+                                            </div>
+                                            <h2 class="text">CSS</h2>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="card">
+                                        <div class="box">
+                                            <div class="percent">
+                                                <svg>
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                    <circle cx="70" cy="70" r="70"></circle>
+                                                </svg>
+                                                <div class="number">
+                                                    <h2>80<span>%</span></h2>
+                                                </div>
+                                            </div>
+                                            <h2 class="text">JS</h2>
+                                        </div>
+                                    </div> -->
+                                </div>
                             </div>
                         </div>
+                        
                     <!-- </div> -->
 
                     <!-- <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script> -->
@@ -121,7 +173,7 @@
                         <label class="switch" style="float: right;" >
                             <input id='checked_buzzer' name='buzzer_switch1' value="" <?php if ($buzzer_now1 == 2) {echo 'checked';} ?> type="checkbox" onclick="">
                             <!-- <?php if ($buzzer_now1 == 3) {echo 'disabled';} ?> -->
-                            <span class="slider round" <?php if ($buzzer_now1 == 3) {echo 'hidden';}?>></span>
+                            <span id="buzzer_slider" class="slider round" <?php if ($buzzer_now1 == 3) {echo 'hidden';}?>></span>
                         </label>
                         
                         <!-- <button id="submitbtn" type="submit">Kennads</button> -->
@@ -133,10 +185,26 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Humidity</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:black">Độ ẩm hiện tại: <?php echo $humid_now1;?>%</h5>
+                    <h5 id="humid_now" style="text-align:center; margin: 5px auto; color:black">Độ ẩm hiện tại: <?php echo $humid_now1;?>%</h5>
 
                     <div class="wrapper_humid" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%">
-                        <div class="container_humid chart_humid" data-size="200" data-value="<?php echo ($humid_now1); ?>" data-arrow="up"></div>
+                        <!-- <div id="humid_num" class="container_humid chart_humid" data-size="200" data-value="<?php echo ($humid_now1); ?>" data-arrow="up"></div> -->
+                        <!-- <span><?php echo ($humid_now1); ?></span> -->
+                        <div class="alldial2">
+                            <div class="dial_container2">
+                                <div class="card2">
+                                        <div class="percent2">
+                                            <svg class="svg2">
+                                                <circle cx="70" cy="70" r="70"></circle>
+                                                <circle cx="70" cy="70" r="70"></circle>
+                                            </svg>
+                                            <div class="number2">
+                                                <h2><?php echo ($humid_now1); ?><span>%</span></h2>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -146,7 +214,7 @@
                 </div>
                 <div class="col l-2-4 m-4 c-12 room__status__body__list" style="border-radius: 20px;">
                     <div class="room__status__body__list__title">Temperature</div>
-                    <h5 style="text-align:center; margin: 5px auto; color:black">Nhiệt độ hiện tại: <?php echo $temp_now1;?>°C</h5>
+                    <h5 id="temp_now" style="text-align:center; margin: 5px auto; color:black">Nhiệt độ hiện tại: <?php echo $temp_now1;?>°C</h5>
 
                     <!-- <div class="body_temp">
                         <div class="container_temp">
@@ -174,10 +242,25 @@
                     </div> -->
 
                     <div class="wrapper_temp" style="display:flex; width: 100%; justify-content: center; align-items: center; margin-top:10%">
-                        <div class="container_temp chart_temp" data-size="200" data-value="<?php echo ($temp_now1); ?>" data-arrow="up"></div>
+                        <!-- <div id="temp_num" class="container_temp chart_temp" data-size="200" data-value="<?php echo ($temp_now1); ?>" data-arrow="up"></div>
+                        <span><?php echo ($temp_now1); ?></span> -->
+                        <div class="alldial3">
+                            <div class="dial_container3">
+                                <div class="card3">
+                                        <div class="percent3">
+                                            <svg class="svg3">
+                                                <circle cx="70" cy="70" r="70"></circle>
+                                                <circle cx="70" cy="70" r="70"></circle>
+                                            </svg>
+                                            <div class="number3">
+                                                <h2><?php echo $temp_now1;?><span>°C</span></h2>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <script src="<?php echo BASE_URL ?>/public/js/temp_alert.js"></script>
                     
                     <div class="charkbtn">
                         <a href="<?php echo BASE_URL ?>/chart/temp"><button class="btn5-hover btn5">Chart</Button></a>
@@ -217,6 +300,7 @@
                 
                 <div class="col l-12 m-12 c-12">
                     <a href="<?php echo BASE_URL ?>/summaryreport" style="text-decoration:none"><button class="btn5-hover btn5" style="display: block; margin: 10% auto;">Summary Report</Button></a>
+                    
                 </div>
 
             </div>  
@@ -228,12 +312,12 @@
 </div>
 
 <script src="<?php echo BASE_URL?>/public/js/data.js"></script>
-
+<!-- 
 <script src="<?php echo BASE_URL ?>/public/js/gas_alert.js"></script>
 
 <script src="<?php echo BASE_URL ?>/public/js/humid.js"></script>
 
-<script src="<?php echo BASE_URL ?>/public/js/temp.js"></script>
+<script src="<?php echo BASE_URL ?>/public/js/temp.js"></script> -->
 
 <!-- <script>
     $(document).ready(function(){
