@@ -15,7 +15,7 @@
                 </div>
                 <div class="row" style="margin-top: 32px;">
                     <div class="col l-12 l-o-3">
-                        <a style="margin: 0 auto ; display: inline-block" href="<?php echo BASE_URL?>/admin/solved/<?php echo $details[0]['RepID']?>"><button class="btn5-hover btn5 change__info__btn">Confirm solved</button></a>
+                        <a style="margin: 0 auto ; display: inline-block" href="<?php echo BASE_URL?>/admin/solved/<?php echo $details[0]['RepID']?>"><button class="btn5-hover btn5 change__info__btn" style="margin-left: 180px">Confirm solved</button></a>
                     </div>
                 </div>
             </div>
