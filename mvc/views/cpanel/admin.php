@@ -35,7 +35,7 @@
                           </tbody>
                         </table>
                       </div>
-                        <div class="charkbtn" style="margin-bottom: 15px;">
+                        <div class="charkbtn" style="margin-bottom: 15px; position: relative">
                             <a href="<?php echo BASE_URL ?>/admin/usermanagement"><button class="btn5-hover btn5">Manage</Button></a>
                         </div>
                     </div>
