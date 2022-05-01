@@ -201,6 +201,7 @@ $(document).ready(function() {
                 light_mode = response['light_mode'][0]
                 if (infrared_now.DATAS == 1) $("#humantest").html("Human in room")
                 else $("#humantest").html("No human")
+                $("#humanonoff").attr("src",(infrared_now.DATAS == 1)?"https://cdn-icons-png.flaticon.com/512/2723/2723537.png":"https://cdn-icons-png.flaticon.com/512/2723/2723532.png")
                 $("#gas_now").html("Nồng độ Gas hiện tại: "+gas_now.DATAS+ "ppm")
                 $("#gas_alert").attr("data-value",((gas_now.DATAS/1023)*100))
                 $("#checked_buzzer").attr("checked",(buzzer_now.DATAS == 2)?true:false)
