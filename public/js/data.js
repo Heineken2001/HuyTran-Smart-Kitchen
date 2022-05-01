@@ -206,6 +206,7 @@ $(document).ready(function() {
                 $("#checked_buzzer").attr("checked",(buzzer_now.DATAS == 2)?true:false)
                 $("#buzzer_slider").attr("hidden", (buzzer_now.DATAS == 3)?true:false)
                 $("#buzzer_slider").attr("disabled", (buzzer_now.DATAS == 3)?true:false)
+                $("#buzzeronoff").attr("src",(buzzer_now.DATAS == 2)?"https://cdn-icons-png.flaticon.com/512/5936/5936468.png":"https://cdn-icons-png.flaticon.com/512/5936/5936529.png")
                 $("#humid_now").html("Độ ẩm hiện tại: "+humid_now.DATAS+ "%")
                 $("#humid_num").attr("data-value",gas_now.DATAS)
                 $("#temp_now").html("Nhiệt độ hiện tại: "+temperature_now.DATAS+"°C")
@@ -213,8 +214,10 @@ $(document).ready(function() {
                 $("#checked_light").attr("checked",(light_now.DATAS == 1)?true:false)
                 $("#squaredcheck").attr("checked",(light_mode.LIGHTMODE == 5)?true:false)
                 $("#supportlight").attr("hidden", (light_mode.LIGHTMODE == 5)?true:false)
-
-
+                $(".number1").html(`<h2>${gas_now.DATAS}<span>ppm</span></h2>`)
+                $(".number2").html(`<h2>${humid_now.DATAS}<span>%</span></h2>`)
+                $(".number3").html(`<h2>${temperature_now.DATAS}<span>°C</span></h2>`)
+                console.log("ok")
                 //$("#humantest").html()
                 //$('#load').load(location.href+" #load");
                 //location.reload();

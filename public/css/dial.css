@@ -185,6 +185,10 @@ body {
     padding: 0;
 }
 
+.card1{
+  z-index: 90;
+}
+
 .dial_container1 {
   position: relative;
   width: 900px;

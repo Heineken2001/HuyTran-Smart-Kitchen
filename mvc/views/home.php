@@ -126,7 +126,7 @@
                                                     <circle cx="70" cy="70" r="70"></circle>
                                                 </svg>
                                                 <div class="number1">
-                                                    <h2>90<span>%</span></h2>
+                                                    <h2><?php echo ($gas_now1); ?><span>ppm</span></h2>
                                                 </div>
                                             </div>
                                             <!-- <h2 class="text">HTML</h2> -->
@@ -199,7 +199,7 @@
                                                 <circle cx="70" cy="70" r="70"></circle>
                                             </svg>
                                             <div class="number2">
-                                                <h2>50<span>%</span></h2>
+                                                <h2><?php echo ($humid_now1); ?><span>%</span></h2>
                                             </div>
                                         </div>
                                 </div>
@@ -253,7 +253,7 @@
                                                 <circle cx="70" cy="70" r="70"></circle>
                                             </svg>
                                             <div class="number3">
-                                                <h2>80<span>°C</span></h2>
+                                                <h2><?php echo $temp_now1;?><span>°C</span></h2>
                                             </div>
                                         </div>
                                 </div>
