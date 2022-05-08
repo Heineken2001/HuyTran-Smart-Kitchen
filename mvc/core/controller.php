@@ -6,4 +6,5 @@
             $this->load = new Load();
             $this->api = new Api();
         }
+        public function getdata() {}
     }

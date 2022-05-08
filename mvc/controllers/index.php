@@ -142,6 +142,12 @@
             // }
         }
 
+        public function getdatabuzzer()
+        {
+            $data = new data();
+            return $data.viewData('buzzer');
+        }
+
         public function addgasrecord() {
             $tbl_records = 'records';
             $homemodel = $this->load->model('homemodel');

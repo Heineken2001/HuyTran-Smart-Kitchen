@@ -5,6 +5,13 @@
             parent::__construct();
         }
 
+        public function getdata()
+        {
+            $buzzer_data = file_get_contents('https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-2-color-led/data');
+            $data = json_decode($json);
+            return $data;
+        }
+
         public function switch()
         {
             $datalight = 0;
