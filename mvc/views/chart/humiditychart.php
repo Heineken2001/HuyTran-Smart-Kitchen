@@ -465,7 +465,7 @@
                     <h5 id="humiditymonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Độ ẩm trong tháng:...</h5> -->
                     
 
-                    <h5 id="humiditydate" style="text-align: left; color: black; margin: 40px auto auto 40px">Độ ẩm trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $humid_data_all ?>%.
+                    <h5 id="humiditydate" style="text-align: left; color: black; margin: 40px auto auto 40px; line-height: 22px">Độ ẩm trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $humid_data_all ?>%.
                     <br>Độ ẩm gần nhất trong ngày hiện tại:
                     <br>
                     <?php
@@ -479,7 +479,7 @@
                     ?>
                     
                     </h5>
-                    <h5 id="humidityweek" style="text-align: left; color: black; margin: 40px auto auto 20px" hidden>Độ ẩm trung bình trong tuần <?php
+                    <h5 id="humidityweek" style="text-align: left; color: black; margin: 40px auto auto 20px; line-height: 22px" hidden>Độ ẩm trung bình trong tuần <?php
                     if((int)(date("d", time()+5*60*60)) >= 1 &&(int)(date("d", time()+5*60*60)) <= 7) echo "thứ nhất (ngày 1-7) của tháng ".date("m-Y", time()+5*60*60);
                     elseif((int)(date("d", time()+5*60*60)) >= 8 &&(int)(date("d", time()+5*60*60)) <= 14) {
                         echo "thứ hai (ngày 8-14) của tháng ".date("m-Y", time()+5*60*60);
@@ -497,7 +497,7 @@
                         }
                     ?>
                     </h5>
-                    <h5 id="humiditymonth" style="text-align: left; color: black; margin: 40px auto auto 40px" hidden>Độ ẩm trung bình trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $humid_data_all_month ?>%.
+                    <h5 id="humiditymonth" style="text-align: left; color: black; margin: 40px auto auto 40px; line-height: 22px" hidden>Độ ẩm trung bình trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $humid_data_all_month ?>%.
                     <br>Độ ẩm của các tuần trong tháng hiện tại:
                     <br>
                     <?php

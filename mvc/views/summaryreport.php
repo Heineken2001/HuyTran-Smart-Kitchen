@@ -30,7 +30,7 @@
     </div>
 
     
-    <div class="row room__status__body" style="margin-top: 50px">
+    <div class="row room__status__body" style="margin-top: 50px; font-size: 25px">
         
         <div class="grid">
         
@@ -226,7 +226,7 @@
                         <br>
                         <h5 style="color: black; margin: 10px auto; margin-bottom: 50px">Số lần nồng độ Gas vượt ngưỡng trong ngày <?php echo date("d-m-Y",strtotime($date_time))?> là: <?php echo $danger_gas?>.</h5>
                     </div>
-                    <div class="" style="float: right; margin-top: 10%; margin-right: 9%">
+                    <div class="" style="float: right; margin-top: 15%; margin-right: 9%; font-size: 15px">
                         <h1 class="login__header__brand">SmartKitchen by CoderCodon</h1>
                     </div>
                     
