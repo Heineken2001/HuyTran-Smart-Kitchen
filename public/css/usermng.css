@@ -21,6 +21,7 @@ table{
     background-color: rgba(255,255,255,0.4);
     margin-left: auto;
     margin-right: auto;
+    border-collapse:collapse;
 }
 
 .tbl-header{
@@ -96,4 +97,11 @@ text-decoration: underline;
 } 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+}
+
+
+.t-row:hover{
+    background-color:rgb(10, 2, 2);
+    opacity: 0.4;
+    cursor:pointer;
 }

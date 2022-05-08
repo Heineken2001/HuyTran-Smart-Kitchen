@@ -30,7 +30,7 @@
     </div>
 
     
-    <div class="row room__status__body" style="margin-top: 50px">
+    <div class="row room__status__body" style="margin-top: 50px; font-size: 25px">
         
         <div class="grid">
         
@@ -77,6 +77,9 @@
                             $light_time_arr = array();
                             $light_time = 0;
                             $light_test = true;
+                            $light_test2 = true;
+                            $prev_value = array();
+                            // $count_prev_value = 0;
 
                             $danger_gas = 0;
 
@@ -124,10 +127,17 @@
 
                                 if($date_time_after == $times3 && $value['DevID'] == 2){
                                     
+                                    // if($count_prev_value >= 1) $prev_value = ;
+                                    // $count_prev_value += 1;
+                                    // echo $count_prev_value . "<br> HOLA <br>";
+
+                                    $prev_value[] = $value['DATAS'];
+                                    // echo $prev_value[count($prev_value) - 1] . "<br> HOLA <br>";
+
                                     $times4 = date("H:i:s",strtotime($times2)+5*60*60);
                                     $times5 = strtotime($times4);
                                     // echo $times5.", ";
-
+                                    // echo "<br> TESSTTTTTTTT <br>";
                                     // echo $times4. ", ";
                                     // echo $value['DATAS']. "<br>";
 
@@ -139,7 +149,11 @@
                                             if($light_test == true) $light_time += ($times5 - $light_time_arr[count($light_time_arr) - 1]);
                                             $light_time_arr[] = $times5;
                                             $light_test = true;
-                                            // echo $light_time. "HELLO,";
+                                            if($prev_value[count($prev_value) - 2] == '1'){
+                                                $light_test2 = true;
+                                                // echo var_dump($light_test2) . " HAHA1 <br>";
+                                            }
+                                            // echo $light_time. "HELLO, <br>";
                                         }
                                     }
                                     else {
@@ -147,12 +161,22 @@
                                             $light_time += ($times5 - $times5);
                                         }
                                         else{
-                                            $light_time += ($times5 - $light_time_arr[count($light_time_arr) - 1]);
+                                            // echo $light_time. ",HELLOOOOOO11111, <br>";
+                                            if($light_test == false) {
+                                                $light_time += ($times5 - $times5);
+                                                // echo count($prev_value) ." OH ". $prev_value[count($prev_value) - 2] . " HIHI <br>";
+                                                if($prev_value[count($prev_value) - 2] == '0'){
+                                                    $light_test2 = false;
+                                                    // echo var_dump($light_test2) . " HAHA <br>";
+                                                }
+                                            }
+                                            if($light_test2 == true && $light_test == true) $light_time += ($times5 - $light_time_arr[count($light_time_arr) - 1]);
                                             $light_test = false;
-                                            // echo $light_time. ",HELLO,";
+                                            // echo $light_time. ",HELLOOOOOO, <br>";
                                         }
                                     }
-                                    // echo $light_time_arr[count($light_time_arr) - 1]. "HIIII, ";
+                                    // echo count($light_time_arr) . "COUNT <br>";
+                                    // echo $light_time_arr[count($light_time_arr) - 1]. "HIIII, <br>";
                                 }
 
                                 if($date_time_after == $times3 && $value['DevID'] == 6){
@@ -226,7 +250,7 @@
                         <br>
                         <h5 style="color: black; margin: 10px auto; margin-bottom: 50px">Số lần nồng độ Gas vượt ngưỡng trong ngày <?php echo date("d-m-Y",strtotime($date_time))?> là: <?php echo $danger_gas?>.</h5>
                     </div>
-                    <div class="" style="float: right; margin-top: 10%; margin-right: 9%">
+                    <div class="" style="float: right; margin-top: 15%; margin-right: 9%; font-size: 15px">
                         <h1 class="login__header__brand">SmartKitchen by CoderCodon</h1>
                     </div>
                     

@@ -25,9 +25,9 @@
                         <table cellpadding="0" cellspacing="0" border="0">
                           <tbody>
                             <?php foreach ($users as $key => $value) {?>
-                            <tr>
+                            <tr class="t-row">
                               <td><?php echo $key + 1?></td>
-                              <td><a  style="color: lightgreen; text-decoration:underline" href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
+                              <td><a  style="color: aqua; text-decoration:underline" href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
                               <td><?php echo $value['EMAIL']?></td>
                               <td><?php echo $value['ADDRESS']?></td>
                               <td><?php echo $value['ContID']?></td>

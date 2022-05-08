@@ -453,7 +453,7 @@
                     <h5 id="tempmonth" style="text-align:center ;color: black; margin: 20px auto" hidden>Nhiệt độ trong tháng:...</h5> -->
 
 
-                    <h5 id="tempdate" style="text-align: left; color: black; margin: 40px auto auto 40px">Nhiệt độ trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $temp_data_all ?>°C.
+                    <h5 id="tempdate" style="text-align: left; color: black; margin: 40px auto auto 40px; line-height: 22px">Nhiệt độ trung bình trong ngày <?php echo date("d-m-Y", time()+5*60*60);?> là: <?php echo $temp_data_all ?>°C.
                     <br>Nhiệt độ gần nhất trong ngày hiện tại:
                     <br>
                     <?php
@@ -467,7 +467,7 @@
                     ?>
                     
                     </h5>
-                    <h5 id="tempweek" style="text-align: left; color: black; margin: 40px auto auto 20px" hidden>Nhiệt độ trung bình trong tuần <?php
+                    <h5 id="tempweek" style="text-align: left; color: black; margin: 40px auto auto 20px; line-height: 22px" hidden>Nhiệt độ trung bình trong tuần <?php
                     if((int)(date("d", time()+5*60*60)) >= 1 &&(int)(date("d", time()+5*60*60)) <= 7) echo "thứ nhất (ngày 1-7) của tháng ".date("m-Y", time()+5*60*60);
                     elseif((int)(date("d", time()+5*60*60)) >= 8 &&(int)(date("d", time()+5*60*60)) <= 14) {
                         echo "thứ hai (ngày 8-14) của tháng ".date("m-Y", time()+5*60*60);
@@ -485,7 +485,7 @@
                         }
                     ?>
                     </h5>
-                    <h5 id="tempmonth" style="text-align: left; color: black; margin: 40px auto auto 40px" hidden>Nhiệt độ trung bình trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $temp_data_all_month ?>°C.
+                    <h5 id="tempmonth" style="text-align: left; color: black; margin: 40px auto auto 40px; line-height: 22px" hidden>Nhiệt độ trung bình trong tháng <?php echo date("m-Y", time()+5*60*60);?> là: <?php echo $temp_data_all_month ?>°C.
                     <br>Nhiệt độ của các tuần trong tháng hiện tại:
                     <br>
                     <?php
