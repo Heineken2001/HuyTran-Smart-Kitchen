@@ -29,3 +29,15 @@
     border-radius: 50px;
     margin: 0 auto;
 }
+
+table, th, td{
+    /* border:1px solid #ccc; */
+}
+table{
+    border-collapse:collapse;
+}
+.t-row:hover{
+    background-color:rgb(10, 2, 2);
+    opacity: 0.4;
+    cursor:pointer;
+}

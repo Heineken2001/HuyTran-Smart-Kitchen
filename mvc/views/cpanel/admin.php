@@ -24,11 +24,11 @@
                         <table cellpadding="0" cellspacing="0">
                           <tbody>
                             <?php foreach ($users as $key => $value) {?>
-                            <tr>
+                            <tr class="t-row">
                               <td style="width: 15%;"><?php echo $key + 1?></td>
-                              <td style="width: 25%;"><a style="text-decoration:underline; color: lightgreen" href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
+                              <td style="width: 25%;"><a style="text-decoration:underline; color:aqua; font-weight: bold" href="<?php echo BASE_URL.'/admin/userinfo/'.$value['ContID']?>"><?php echo $value['FNAME']?></a></td>
                               <td style="width: 50%;"><?php echo $value['EMAIL']?></td>
-                              <td style="width: 10%;"><a style="text-decoration:underline; color: lightgreen" href="<?php echo BASE_URL.'/admin/summaryreport/'.$value['ContID']?>">Details</a></td>
+                              <td style="width: 10%;"><a style="text-decoration:underline; color: aqua" href="<?php echo BASE_URL.'/admin/summaryreport/'.$value['ContID']?>">Details</a></td>
                             </tr>
                             <?php }?>
                             
