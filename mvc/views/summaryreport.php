@@ -45,7 +45,7 @@
                     <form method="POST">
                     <div class="room__status__body__list__title" style="text-align: center;">
                         <input style="margin-top: 20px" type="text" name="data" id="basicDate" placeholder="Please select Date Time" value="" onchange="changedate()" data-input>
-                        <!-- <?php echo date("Y-m-d", time()+5*60*60) ?> -->
+                        <!-- <?php echo date("Y-m-d", time()+7*60*60) ?> -->
                         <input style="margin-top: 20px" type="submit" id="get_date" name="form_click" class="btn5-hover btn5" onclick="clickfunc()">
                         <?php 
                             if (isset($_POST['form_click'])){
@@ -94,14 +94,14 @@
                                 // echo "<br>";
                                 // echo $date_time;
 
-                                $time_now = date("Y-m-d", time()+5*60*60);
+                                $time_now = date("Y-m-d", time()+7*60*60);
 
                                 $date_time_after = date("Y-m-d",strtotime($date_time));
                                 
                                 $time_data = $value['TIMES'];
                                 $times1 = str_replace('T', ' ', $time_data);
                                 $times2 = (str_replace('Z', '', $times1));
-                                $times3 = date("Y-m-d",strtotime($times2)+5*60*60);
+                                $times3 = date("Y-m-d",strtotime($times2)+7*60*60);
 
                                 $time_test1 = mktime("00","00","00","04","13","2022");
                                 $time_test2 = date("Y-m-d", $time_test1);
@@ -134,7 +134,7 @@
                                     $prev_value[] = $value['DATAS'];
                                     // echo $prev_value[count($prev_value) - 1] . "<br> HOLA <br>";
 
-                                    $times4 = date("H:i:s",strtotime($times2)+5*60*60);
+                                    $times4 = date("H:i:s",strtotime($times2)+7*60*60);
                                     $times5 = strtotime($times4);
                                     // echo $times5.", ";
                                     // echo "<br> TESSTTTTTTTT <br>";
@@ -181,7 +181,7 @@
 
                                 if($date_time_after == $times3 && $value['DevID'] == 6){
                                     
-                                    $times6 = date("H:i:s",strtotime($times2)+5*60*60);
+                                    $times6 = date("H:i:s",strtotime($times2)+7*60*60);
                                     $times7 = strtotime($times6);
                                     // echo $times7.", ";
 
