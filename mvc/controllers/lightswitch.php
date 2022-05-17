@@ -7,7 +7,7 @@
 
         public function getdata()
         {
-            $buzzer_data = file_get_contents('https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-2-color-led/data');
+            $json = file_get_contents('https://io.adafruit.com/api/v2/nhungcoder_codon/feeds/do-an-da-nganh.co3109-2-color-led/data');
             $data = json_decode($json);
             return $data;
         }
@@ -36,12 +36,12 @@
 
             $data = http_build_query($data_array);
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_DTiY04021PVfww6LzPtVDlterYMy'));
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key1: aio_DTiY04021PVfww6LzPtVDlterYMy'));
 
 
             $resp = curl_exec($ch);
@@ -104,12 +104,12 @@
 
             $data = http_build_query($data_array);
 
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key: aio_DTiY04021PVfww6LzPtVDlterYMy'));
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-AIO-Key1: aio_DTiY04021PVfww6LzPtVDlterYMy'));
 
 
             $resp = curl_exec($ch);
